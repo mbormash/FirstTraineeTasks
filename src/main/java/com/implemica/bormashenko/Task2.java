@@ -40,6 +40,9 @@ public class Task2 {
         if (floorsInHouse <= 0 || flatsOnFloor <= 0) {
             throw new IncorrectArgumentException("Number should be positive.");
         }
+        if ((long)floorsInHouse * flatsOnFloor > Integer.MAX_VALUE) {
+            throw new IntegerOverflowException("Numbers are too large.");
+        }
         this.floorsInHouse = floorsInHouse;
         this.flatsOnFloor = flatsOnFloor;
     }
