@@ -35,6 +35,7 @@ public class Task2 {
      * @param flatsOnFloor value of flats on floor.
      *
      * @throws IncorrectArgumentException if any argument is non-positive.
+     * @throws IntegerOverflowException if result of multiplying these parameters is larger than Integer.MAX_VALUE.
      */
     public Task2(int floorsInHouse, int flatsOnFloor) {
         if (floorsInHouse <= 0 || flatsOnFloor <= 0) {

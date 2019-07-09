@@ -1,9 +1,11 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
+import com.implemica.bormashenko.IntegerOverflowException;
 import com.implemica.bormashenko.Task2;
 import org.junit.jupiter.api.Test;
 
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
+import static java.lang.String.valueOf;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -12,6 +14,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Mykhailo Bormashenko
  */
 class Task2Test {
+
+    /**
+     * Value of sqrt of Integer.MAX_VALUE, converted to int.
+     */
+    private static final int SQRT_MAX = (int)Math.sqrt(MAX_VALUE);
 
     /**
      * Function for testing valid args for task2 (flats).
@@ -31,8 +38,10 @@ class Task2Test {
 
     /**
      * Function for testing non-valid args for task2 (flats).
-     * For inputted parameters an IncorrectArgumentException should be thrown.
+     * For inputted parameters an IncorrectArgumentException or
+     * IntegerOverflowException should be thrown.
      * @see IncorrectArgumentException
+     * @see IntegerOverflowException
      * @param floorsInHouse number of floors in house.
      * @param flatsOnFloor number of flats on floor.
      * @param numberOfFlat number of flat, for which have to define house and floor.
@@ -41,7 +50,7 @@ class Task2Test {
         try {
             new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
             fail("Exception was not thrown");
-        } catch (IncorrectArgumentException e) {
+        } catch (IncorrectArgumentException | IntegerOverflowException e) {
             assertTrue(true);
         }
     }
@@ -50,7 +59,7 @@ class Task2Test {
      * Tests with valid args for task2 (flats).
      */
     @Test
-    void validArgsTests() { //29 + 21 + 43 + 2 + 36 + 150 + 400
+    void validArgsTests() { //29 + 21 + 43 + 16 + 2 + 55 + 400
         //9 floors and 4 flats on floor
         //1, 1 expected
         check(9, 4, 1, "1", "1");
@@ -226,7 +235,7 @@ class Task2Test {
         check(1, 1, MAX_VALUE, String.valueOf(MAX_VALUE), "1");
         check(1, 1, MAX_VALUE - 1, String.valueOf(MAX_VALUE - 1), "1");
 
-        //Bound (floors * flats = MAX):
+        //floors * flats = MAX
         check(1, MAX_VALUE, 1, "1", "1");
         check(1, MAX_VALUE, 2, "1", "1");
         check(1, MAX_VALUE, MAX_VALUE / 2, "1", "1");
@@ -235,11 +244,11 @@ class Task2Test {
 
         check(MAX_VALUE, 1, 1, "1", "1");
         check(MAX_VALUE, 1, 2, "1", "2");
-        check(MAX_VALUE, 1, MAX_VALUE / 2, "1", String.valueOf(MAX_VALUE / 2));
-        check(MAX_VALUE, 1, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE - 1));
-        check(MAX_VALUE, 1, MAX_VALUE, "1", String.valueOf(MAX_VALUE));
+        check(MAX_VALUE, 1, MAX_VALUE / 2, "1", valueOf(MAX_VALUE / 2));
+        check(MAX_VALUE, 1, MAX_VALUE - 1, "1", valueOf(MAX_VALUE - 1));
+        check(MAX_VALUE, 1, MAX_VALUE, "1", valueOf(MAX_VALUE));
 
-        //Left nearest point:
+        //floors * flat = near to MAX
         check(1, MAX_VALUE - 1, 1, "1", "1");
         check(1, MAX_VALUE - 1, 2, "1", "1");
         check(1, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
@@ -248,182 +257,51 @@ class Task2Test {
 
         check(MAX_VALUE - 1, 1, 1, "1", "1");
         check(MAX_VALUE - 1, 1, 2, "1", "2");
-        check(MAX_VALUE - 1, 1, MAX_VALUE / 2, "1", String.valueOf(MAX_VALUE / 2));
-        check(MAX_VALUE - 1, 1, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE - 1));
+        check(MAX_VALUE - 1, 1, MAX_VALUE / 2, "1", valueOf(MAX_VALUE / 2));
+        check(MAX_VALUE - 1, 1, MAX_VALUE - 1, "1", valueOf(MAX_VALUE - 1));
         check(MAX_VALUE - 1, 1, MAX_VALUE, "2", "1");
 
-        //Right nearest point
-        check(2, (int)((MAX_VALUE + 1L) / 2), 1, "1", "1");
-        check(2, (int)((MAX_VALUE + 1L) / 2), 2, "1", "1");
-        check(2, (int)((MAX_VALUE + 1L) / 2), MAX_VALUE / 2, "1", "1");
-        check(2, (int)((MAX_VALUE + 1L) / 2), MAX_VALUE - 1, "1", "2");
-        check(2, (int)((MAX_VALUE + 1L) / 2), MAX_VALUE, "1", "2");
-
-        check((int)((MAX_VALUE + 1L) / 2), 2, 1, "1", "1");
-        check((int)((MAX_VALUE + 1L) / 2), 2, 2, "1", "1");
-        check((int)((MAX_VALUE + 1L) / 2), 2, MAX_VALUE / 2, "1", String.valueOf((MAX_VALUE / 4) + 1));
-        check((int)((MAX_VALUE + 1L) / 2), 2, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE / 2));
-        check((int)((MAX_VALUE + 1L) / 2), 2, MAX_VALUE, "1", String.valueOf((MAX_VALUE / 2) + 1));
-
-        //1 floor in house
-        //1 flat on floor
-        check(1, 1, 1, "1", "1");
-        check(1, 1, 2, "2", "1");
-        check(1, 1, MAX_VALUE / 2, String.valueOf(MAX_VALUE / 2), "1");
-        check(1, 1, MAX_VALUE - 1, String.valueOf(MAX_VALUE - 1), "1");
-        check(1, 1, MAX_VALUE, String.valueOf(MAX_VALUE), "1");
-        //2 flats on floor
-        check(1, 2, 1, "1", "1");
-        check(1, 2, 2, "1", "1");
-        check(1, 2, MAX_VALUE / 2, String.valueOf((MAX_VALUE / 4) + 1), "1");
-        check(1, 2, MAX_VALUE - 1, String.valueOf(MAX_VALUE / 2), "1");
-        check(1, 2, MAX_VALUE, String.valueOf((MAX_VALUE / 2) + 1), "1");
-        //MAX / 2 flats on floor
-        check(1, MAX_VALUE / 2, 1, "1", "1");
-        check(1, MAX_VALUE / 2, 2, "1", "1");
-        check(1, MAX_VALUE / 2, MAX_VALUE / 2, "1", "1");
-        check(1, MAX_VALUE / 2, MAX_VALUE - 1, "2", "1");
-        check(1, MAX_VALUE / 2, MAX_VALUE, "3", "1");
-        //MAX - 1 flats on floor
-        check(1, MAX_VALUE - 1, 1, "1", "1");
-        check(1, MAX_VALUE - 1, 2, "1", "1");
-        check(1, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
-        check(1, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
-        check(1, MAX_VALUE - 1, MAX_VALUE, "2", "1");
-        //MAX flats on floor
-        check(1, MAX_VALUE, 1, "1", "1");
-        check(1, MAX_VALUE, 2, "1", "1");
-        check(1, MAX_VALUE, MAX_VALUE / 2, "1", "1");
-        check(1, MAX_VALUE, MAX_VALUE - 1, "1", "1");
-        check(1, MAX_VALUE, MAX_VALUE, "1", "1");
-
-        //2 floors in house
-        //1 flat on floor
-        check(2, 1, 1, "1", "1");
-        check(2, 1, 2, "1", "2");
-        check(2, 1, MAX_VALUE / 2, String.valueOf((MAX_VALUE / 4) + 1), "1");
-        check(2, 1, MAX_VALUE - 1, String.valueOf(MAX_VALUE / 2) , "2");
-        check(2, 1, MAX_VALUE, String.valueOf((MAX_VALUE / 2) + 1), "1");
-        //2 flats on floor
-        check(2, 2, 1, "1", "1");
-        check(2, 2, 2, "1", "1");
-        check(2, 2, MAX_VALUE / 2, String.valueOf((MAX_VALUE / 8) + 1), "2");
-        check(2, 2, MAX_VALUE - 1, String.valueOf((MAX_VALUE / 4) + 1), "1");
-        check(2, 2, MAX_VALUE, String.valueOf((MAX_VALUE / 4) + 1), "2");
-        //MAX / 2 flats on floor
         check(2, MAX_VALUE / 2, 1, "1", "1");
         check(2, MAX_VALUE / 2, 2, "1", "1");
         check(2, MAX_VALUE / 2, MAX_VALUE / 2, "1", "1");
         check(2, MAX_VALUE / 2, MAX_VALUE - 1, "1", "2");
         check(2, MAX_VALUE / 2, MAX_VALUE, "2", "1");
-        //MAX - 1 flats on floor
-        check(2, MAX_VALUE - 1, 1, "1", "1");
-        check(2, MAX_VALUE - 1, 2, "1", "1");
-        check(2, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
-        check(2, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
-        check(2, MAX_VALUE - 1, MAX_VALUE, "1", "2");
-        //MAX flats on floor
-        check(2, MAX_VALUE, 1, "1", "1");
-        check(2, MAX_VALUE, 2, "1", "1");
-        check(2, MAX_VALUE, MAX_VALUE / 2, "1", "1");
-        check(2, MAX_VALUE, MAX_VALUE - 1, "1", "1");
-        check(2, MAX_VALUE, MAX_VALUE, "1", "1");
 
-        //MAX / 2 floors in house
-        //1 flat on floor
-        check(MAX_VALUE / 2, 1, 1, "1", "1");
-        check(MAX_VALUE / 2, 1, 2, "1", "2");
-        check(MAX_VALUE / 2, 1, MAX_VALUE / 2, "1", String.valueOf(MAX_VALUE / 2));
-        check(MAX_VALUE / 2, 1, MAX_VALUE - 1, "2", String.valueOf(MAX_VALUE / 2));
-        check(MAX_VALUE / 2, 1, MAX_VALUE, "3","1");
-        //2 flats on floor
         check(MAX_VALUE / 2, 2, 1, "1", "1");
         check(MAX_VALUE / 2, 2, 2, "1", "1");
-        check(MAX_VALUE / 2, 2, MAX_VALUE / 2, "1", String.valueOf((MAX_VALUE / 4) + 1));
-        check(MAX_VALUE / 2, 2, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE / 2));
+        check(MAX_VALUE / 2, 2, MAX_VALUE / 2, "1", valueOf((MAX_VALUE / 4) + 1));
+        check(MAX_VALUE / 2, 2, MAX_VALUE - 1, "1", valueOf(MAX_VALUE / 2));
         check(MAX_VALUE / 2, 2, MAX_VALUE, "2", "1");
-        //MAX / 2 flats on floor
-        check(MAX_VALUE / 2, MAX_VALUE / 2, 1, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE / 2, 2, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE / 2, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE - 1, "1", "2");
-        check(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE, "1", "3");
-        //MAX - 1 flats on floor
-        check(MAX_VALUE / 2, MAX_VALUE - 1, 1, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE - 1, 2, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE, "1", "2");
-        //MAX flats on floor
-        check(MAX_VALUE / 2, MAX_VALUE, 1, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE, 2, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE / 2, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE - 1, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE, "1", "1");
 
-        //MAX - 1 floors in house
-        //1 flat on floor
-        check(MAX_VALUE - 1, 1, 1, "1", "1");
-        check(MAX_VALUE - 1, 1, 2, "1", "2");
-        check(MAX_VALUE - 1, 1, MAX_VALUE / 2, "1", String.valueOf(MAX_VALUE / 2));
-        check(MAX_VALUE - 1, 1, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE - 1));
-        check(MAX_VALUE - 1, 1, MAX_VALUE, "2", "1");
-        //2 flats on floor
-        check(MAX_VALUE - 1, 2, 1, "1", "1");
-        check(MAX_VALUE - 1, 2, 2, "1", "1");
-        check(MAX_VALUE - 1, 2, MAX_VALUE / 2, "1", String.valueOf((MAX_VALUE / 4) + 1));
-        check(MAX_VALUE - 1, 2, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE / 2));
-        check(MAX_VALUE - 1, 2, MAX_VALUE, "1", String.valueOf((MAX_VALUE / 2) + 1));
-        //MAX / 2 flats on floor
-        check(MAX_VALUE - 1, MAX_VALUE / 2, 1, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE / 2, 2, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE / 2, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE - 1, "1", "2");
-        check(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE, "1", "3");
-        //MAX - 1 flats on floor
-        check(MAX_VALUE - 1, MAX_VALUE - 1, 1, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE - 1, 2, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE, "1", "2");
-        //MAX flats on floor
-        check(MAX_VALUE - 1, MAX_VALUE, 1, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE, 2, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE / 2, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE - 1, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE, "1", "1");
+        check(10, MAX_VALUE / 10, 1, "1", "1");
+        check(10, MAX_VALUE / 10, 2, "1", "1");
+        check(10, MAX_VALUE / 10, MAX_VALUE / 2, "1", "6");
+        check(10, MAX_VALUE / 10, MAX_VALUE - 1, "2", "1");
+        check(10, MAX_VALUE / 10, MAX_VALUE, "2", "1");
 
-        //MAX floors in house
-        //1 flat on floor
-        check(MAX_VALUE, 1, 1, "1", "1");
-        check(MAX_VALUE, 1, 2, "1", "2");
-        check(MAX_VALUE, 1, MAX_VALUE / 2, "1", String.valueOf(MAX_VALUE / 2));
-        check(MAX_VALUE, 1, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE - 1));
-        check(MAX_VALUE, 1, MAX_VALUE, "1", String.valueOf(MAX_VALUE));
-        //2 flats on floor
-        check(MAX_VALUE, 2, 1, "1", "1");
-        check(MAX_VALUE, 2, 2, "1", "1");
-        check(MAX_VALUE, 2, MAX_VALUE / 2, "1", String.valueOf((MAX_VALUE / 4) + 1));
-        check(MAX_VALUE, 2, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE / 2));
-        check(MAX_VALUE, 2, MAX_VALUE, "1", String.valueOf((MAX_VALUE / 2) + 1));
-        //MAX / 2 flats on floor
-        check(MAX_VALUE, MAX_VALUE / 2, 1, "1", "1");
-        check(MAX_VALUE, MAX_VALUE / 2, 2, "1", "1");
-        check(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE / 2, "1", "1");
-        check(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE - 1, "1", "2");
-        check(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE, "1", "3");
-        //MAX - 1 flats on floor
-        check(MAX_VALUE, MAX_VALUE - 1, 1, "1", "1");
-        check(MAX_VALUE, MAX_VALUE - 1, 2, "1", "1");
-        check(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
-        check(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
-        check(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE, "1", "2");
-        //MAX flats on floor
-        check(MAX_VALUE, MAX_VALUE, 1, "1", "1");
-        check(MAX_VALUE, MAX_VALUE, 2, "1", "1");
-        check(MAX_VALUE, MAX_VALUE, MAX_VALUE / 2, "1", "1");
-        check(MAX_VALUE, MAX_VALUE, MAX_VALUE - 1, "1", "1");
-        check(MAX_VALUE, MAX_VALUE, MAX_VALUE, "1", "1");
+        check(MAX_VALUE / 10, 10, 1, "1", "1");
+        check(MAX_VALUE / 10, 10, 2, "1", "1");
+        check(MAX_VALUE / 10, 10, MAX_VALUE / 2, "1", valueOf((MAX_VALUE / 20) + 1));
+        check(MAX_VALUE / 10, 10, MAX_VALUE - 1, "2", "1");
+        check(MAX_VALUE / 10, 10, MAX_VALUE, "2", "1");
+
+        check(100, MAX_VALUE / 100, 1, "1", "1");
+        check(100, MAX_VALUE / 100, 2, "1", "1");
+        check(100, MAX_VALUE / 100, MAX_VALUE / 2, "1",  "51");
+        check(100, MAX_VALUE / 100, MAX_VALUE - 1, "2", "1");
+        check(100, MAX_VALUE / 100, MAX_VALUE, "2", "1");
+
+        check(MAX_VALUE / 100, 100, 1, "1", "1");
+        check(MAX_VALUE / 100, 100, 2, "1", "1");
+        check(MAX_VALUE / 100, 100, MAX_VALUE / 2, "1", valueOf((MAX_VALUE / 200) + 1));
+        check(MAX_VALUE / 100, 100, MAX_VALUE - 1, "2", "1");
+        check(MAX_VALUE / 100, 100, MAX_VALUE, "2", "1");
+
+        check(SQRT_MAX, SQRT_MAX, 1, "1", "1");
+        check(SQRT_MAX, SQRT_MAX, 2, "1", "1");
+        check(SQRT_MAX, SQRT_MAX, MAX_VALUE / 2, "1", valueOf(((MAX_VALUE / 2) / SQRT_MAX) + 1));
+        check(SQRT_MAX, SQRT_MAX, MAX_VALUE - 1, "2", "2");
+        check(SQRT_MAX, SQRT_MAX, MAX_VALUE, "2", "2");
 
         //1 flat on floor
         //1st house expected
@@ -850,12 +728,11 @@ class Task2Test {
         check(4, 4, 64, "4", "4");
     }
 
-
     /**
      * Tests with non-valid args for task2 (swap).
      */
     @Test
-    void nonValidArgsTests() { //50 + 45
+    void nonValidArgsTests() { //50 + 25 + 85 + 45
         //50 random not valid args
         checkException(-6134, 75134, 1);
         checkException(-5123, 12313, 5123);
@@ -908,6 +785,150 @@ class Task2Test {
         checkException(-23524, -2424, -234);
         checkException(-234, -6243, -925);
 
+        //25 random too large numbers
+        checkException(444444444, 5, 1239);
+        checkException(1235141, 1242313123, 3);
+        checkException(92184014, 151251251, 13124);
+        checkException(734252352, 2342342, 98423);
+        checkException(897149814, 182571, 1234);
+        checkException(1249871491, 142141, 131231);
+        checkException(124109481, 1412414, 5141);
+        checkException(20213, 62351151, 141241);
+        checkException(6135411, 513141, 625412415);
+        checkException(511513121, 512512412, 151231);
+        checkException(51412311, 141276, 1143123);
+        checkException(21471864, 7816481, 413139999);
+        checkException(6551515, 565464, 5656546);
+        checkException(169286336, 555892314, 48899166);
+        checkException(15313216, 3151651,9155233);
+        checkException(6525665, 565656,8949433);
+        checkException(265626403, 6565648, 234526532);
+        checkException(8532702, 965275638, 65236523);
+        checkException(514, 51231141, 612412431);
+        checkException(125154, 141231, 15124);
+        checkException(124141, 51141, 1512);
+        checkException(62356, 97815, 5171);
+        checkException(91748214, 154124, 51412);
+        checkException(982198274, 1421314, 1412);
+        checkException(1412414, 12414, 692481);
+
+        //tests for large numbers
+        //(int)(MAX_VALUE + 1L) / 2 and 2
+        checkException((int)(MAX_VALUE + 1L) / 2, 2, 1);
+        checkException((int)(MAX_VALUE + 1L) / 2, 2, 2);
+        checkException((int)(MAX_VALUE + 1L) / 2, 2, MAX_VALUE / 2);
+        checkException((int)(MAX_VALUE + 1L) / 2, 2, MAX_VALUE - 1);
+        checkException((int)(MAX_VALUE + 1L) / 2, 2, MAX_VALUE);
+
+        checkException(2, (int)(MAX_VALUE + 1L) / 2, 1);
+        checkException(2, (int)(MAX_VALUE + 1L) / 2, 2);
+        checkException(2, (int)(MAX_VALUE + 1L) / 2, MAX_VALUE / 2);
+        checkException(2, (int)(MAX_VALUE + 1L) / 2, MAX_VALUE - 1);
+        checkException(2, (int)(MAX_VALUE + 1L) / 2, MAX_VALUE);
+
+        //MAX_VALUE / 2
+        //and 3
+        checkException(MAX_VALUE / 2, 3, 1);
+        checkException(MAX_VALUE / 2, 3, 2);
+        checkException(MAX_VALUE / 2, 3, MAX_VALUE / 2);
+        checkException(MAX_VALUE / 2, 3, MAX_VALUE - 1);
+        checkException(MAX_VALUE / 2, 3, MAX_VALUE);
+
+        checkException(3, MAX_VALUE / 2, 1);
+        checkException(3, MAX_VALUE / 2, 2);
+        checkException(3, MAX_VALUE / 2, MAX_VALUE / 2);
+        checkException(3, MAX_VALUE / 2, MAX_VALUE - 1);
+        checkException(3, MAX_VALUE / 2, MAX_VALUE);
+
+        //and MAX_VALUE / 2
+        checkException(MAX_VALUE / 2, MAX_VALUE / 2, 1);
+        checkException(MAX_VALUE / 2, MAX_VALUE / 2, 2);
+        checkException(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE / 2);
+        checkException(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE - 1);
+        checkException(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE);
+
+        //and MAX_VALUE - 1
+        checkException(MAX_VALUE / 2, MAX_VALUE - 1, 1);
+        checkException(MAX_VALUE / 2, MAX_VALUE - 1, 2);
+        checkException(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE / 2);
+        checkException(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE - 1);
+        checkException(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE);
+
+        checkException(MAX_VALUE - 1, MAX_VALUE / 2, 1);
+        checkException(MAX_VALUE - 1, MAX_VALUE / 2, 2);
+        checkException(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE / 2);
+        checkException(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE - 1);
+        checkException(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE);
+
+        //and MAX_VALUE
+        checkException(MAX_VALUE / 2, MAX_VALUE, 1);
+        checkException(MAX_VALUE / 2, MAX_VALUE, 2);
+        checkException(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE / 2);
+        checkException(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE - 1);
+        checkException(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE);
+
+        checkException(MAX_VALUE, MAX_VALUE / 2, 1);
+        checkException(MAX_VALUE, MAX_VALUE / 2, 2);
+        checkException(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE / 2);
+        checkException(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE - 1);
+        checkException(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE);
+
+        //MAX_VALUE - 1
+        //and 2
+        checkException(MAX_VALUE - 1, 2, 1);
+        checkException(MAX_VALUE - 1, 2, 2);
+        checkException(MAX_VALUE - 1, 2, MAX_VALUE / 2);
+        checkException(MAX_VALUE - 1, 2, MAX_VALUE - 1);
+        checkException(MAX_VALUE - 1, 2, MAX_VALUE);
+
+        checkException(2, MAX_VALUE - 1, 1);
+        checkException(2, MAX_VALUE - 1, 2);
+        checkException(2, MAX_VALUE - 1, MAX_VALUE / 2);
+        checkException(2, MAX_VALUE - 1, MAX_VALUE - 1);
+        checkException(2, MAX_VALUE - 1, MAX_VALUE);
+
+        //and MAX_VALUE - 1
+        checkException(MAX_VALUE - 1, MAX_VALUE - 1, 1);
+        checkException(MAX_VALUE - 1, MAX_VALUE - 1, 2);
+        checkException(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE / 2);
+        checkException(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE - 1);
+        checkException(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE);
+
+        //and MAX_VALUE
+        checkException(MAX_VALUE - 1, MAX_VALUE, 1);
+        checkException(MAX_VALUE - 1, MAX_VALUE, 2);
+        checkException(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE / 2);
+        checkException(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE - 1);
+        checkException(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE);
+
+        checkException(MAX_VALUE, MAX_VALUE - 1, 1);
+        checkException(MAX_VALUE, MAX_VALUE - 1, 2);
+        checkException(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE / 2);
+        checkException(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE - 1);
+        checkException(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE);
+
+        //MAX_VALUE
+        //and 2
+        checkException(MAX_VALUE, 2, 1);
+        checkException(MAX_VALUE, 2, 2);
+        checkException(MAX_VALUE, 2, MAX_VALUE / 2);
+        checkException(MAX_VALUE, 2, MAX_VALUE - 1);
+        checkException(MAX_VALUE, 2, MAX_VALUE);
+
+        checkException(2, MAX_VALUE, 1);
+        checkException(2, MAX_VALUE, 2);
+        checkException(2, MAX_VALUE, MAX_VALUE / 2);
+        checkException(2, MAX_VALUE, MAX_VALUE - 1);
+        checkException(2, MAX_VALUE, MAX_VALUE);
+
+        //and MAX_VALUE
+        checkException(MAX_VALUE, MAX_VALUE, 1);
+        checkException(MAX_VALUE, MAX_VALUE, 2);
+        checkException(MAX_VALUE, MAX_VALUE, MAX_VALUE / 2);
+        checkException(MAX_VALUE, MAX_VALUE, MAX_VALUE - 1);
+        checkException(MAX_VALUE, MAX_VALUE, MAX_VALUE);
+
+        //non-positive numbers tests
         //first
         //with random negative
         checkException(MIN_VALUE, -75362, -23424);
