@@ -19,11 +19,11 @@ public class Task2 {
     /**
      * Number of flat to define.
      */
-    private long flat;
+    private int flat;
     /**
      * Number of house where flat is located.
      */
-    private long house;
+    private int house;
     /**
      * Number of floor where flat is located.
      */
@@ -52,13 +52,13 @@ public class Task2 {
      *
      * @throws IncorrectArgumentException if number of flat is non-positive.
      */
-    public String defineHouseAndFloor(long flat) {
+    public String defineHouseAndFloor(int flat) {
         if (flat <= 0) {
             throw new IncorrectArgumentException("Number should be positive.");
         }
         this.flat = flat;
-        long flatsInHome = (long)flatsOnFloor * floorsInHouse;
-        long house = 0;
+        int flatsInHome = flatsOnFloor * floorsInHouse;
+        int house = 0;
         if (flat > flatsInHome) {
             house = flat / flatsInHome;
             flat = flat % flatsInHome;
@@ -71,7 +71,7 @@ public class Task2 {
         this.house = ++house;
         int floor = 1;
         if (flat > flatsOnFloor) {
-            floor = (int)(flat / flatsOnFloor);
+            floor = flat / flatsOnFloor;
             if (flat % flatsOnFloor != 0) {
                 floor++;
             }

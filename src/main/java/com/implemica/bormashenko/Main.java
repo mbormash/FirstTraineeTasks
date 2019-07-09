@@ -40,7 +40,7 @@ public class Main {
      * @param flatsOnFloor number of flats on floor.
      * @param flat number of flat, for which have to define house and floor.
      */
-    private static void task2(int floorsInHouse, int flatsOnFloor, long flat) {
+    private static void task2(int floorsInHouse, int flatsOnFloor, int flat) {
         System.out.println("Task 2: flat");
         Task2 task2 = new Task2(floorsInHouse, flatsOnFloor);
         System.out.println(task2.defineHouseAndFloor(flat));

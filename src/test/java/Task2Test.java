@@ -22,7 +22,7 @@ class Task2Test {
      * @param expectedHouse expected value of house.
      * @param expectedFloor expected value of floor.
      */
-    private void check(int floorsInHouse, int flatsOnFloor, long numberOfFlat,
+    private void check(int floorsInHouse, int flatsOnFloor, int numberOfFlat,
                        String expectedHouse, String expectedFloor) {
         String expected = numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house";
         String actual = new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
@@ -37,7 +37,7 @@ class Task2Test {
      * @param flatsOnFloor number of flats on floor.
      * @param numberOfFlat number of flat, for which have to define house and floor.
      */
-    private void checkException(int floorsInHouse, int flatsOnFloor, long numberOfFlat) {
+    private void checkException(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
         try {
             new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
             fail("Exception was not thrown");
@@ -223,8 +223,8 @@ class Task2Test {
         check(9, 4, 4, "1", "1");
 
         //max value of house returned
-        check(1, 1, Long.MAX_VALUE, String.valueOf(Long.MAX_VALUE), "1");
-        check(1, 1, Long.MAX_VALUE - 1, String.valueOf(Long.MAX_VALUE - 1), "1");
+        check(1, 1, MAX_VALUE, String.valueOf(MAX_VALUE), "1");
+        check(1, 1, MAX_VALUE - 1, String.valueOf(MAX_VALUE - 1), "1");
 
         //Bound (floors * flats = MAX):
         check(1, MAX_VALUE, 1, "1", "1");
@@ -232,14 +232,12 @@ class Task2Test {
         check(1, MAX_VALUE, MAX_VALUE / 2, "1", "1");
         check(1, MAX_VALUE, MAX_VALUE - 1, "1", "1");
         check(1, MAX_VALUE, MAX_VALUE, "1", "1");
-        check(1, MAX_VALUE, MAX_VALUE + 1L, "2", "1");
 
         check(MAX_VALUE, 1, 1, "1", "1");
         check(MAX_VALUE, 1, 2, "1", "2");
         check(MAX_VALUE, 1, MAX_VALUE / 2, "1", String.valueOf(MAX_VALUE / 2));
         check(MAX_VALUE, 1, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE - 1));
         check(MAX_VALUE, 1, MAX_VALUE, "1", String.valueOf(MAX_VALUE));
-        check(MAX_VALUE, 1, MAX_VALUE + 1L, "2", "1");
 
         //Left nearest point:
         check(1, MAX_VALUE - 1, 1, "1", "1");
@@ -247,14 +245,12 @@ class Task2Test {
         check(1, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
         check(1, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
         check(1, MAX_VALUE - 1, MAX_VALUE, "2", "1");
-        check(1, MAX_VALUE - 1, MAX_VALUE + 1L, "2", "1");
 
         check(MAX_VALUE - 1, 1, 1, "1", "1");
         check(MAX_VALUE - 1, 1, 2, "1", "2");
         check(MAX_VALUE - 1, 1, MAX_VALUE / 2, "1", String.valueOf(MAX_VALUE / 2));
         check(MAX_VALUE - 1, 1, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE - 1));
         check(MAX_VALUE - 1, 1, MAX_VALUE, "2", "1");
-        check(MAX_VALUE - 1, 1, MAX_VALUE + 1L, "2", "2");
 
         //Right nearest point
         check(2, (int)((MAX_VALUE + 1L) / 2), 1, "1", "1");
@@ -262,14 +258,12 @@ class Task2Test {
         check(2, (int)((MAX_VALUE + 1L) / 2), MAX_VALUE / 2, "1", "1");
         check(2, (int)((MAX_VALUE + 1L) / 2), MAX_VALUE - 1, "1", "2");
         check(2, (int)((MAX_VALUE + 1L) / 2), MAX_VALUE, "1", "2");
-        check(2, (int)((MAX_VALUE + 1L) / 2), MAX_VALUE + 1L, "1", "2");
 
         check((int)((MAX_VALUE + 1L) / 2), 2, 1, "1", "1");
         check((int)((MAX_VALUE + 1L) / 2), 2, 2, "1", "1");
         check((int)((MAX_VALUE + 1L) / 2), 2, MAX_VALUE / 2, "1", String.valueOf((MAX_VALUE / 4) + 1));
         check((int)((MAX_VALUE + 1L) / 2), 2, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE / 2));
         check((int)((MAX_VALUE + 1L) / 2), 2, MAX_VALUE, "1", String.valueOf((MAX_VALUE / 2) + 1));
-        check((int)((MAX_VALUE + 1L) / 2), 2, MAX_VALUE + 1L, "1",  String.valueOf((MAX_VALUE / 2) + 1));
 
         //1 floor in house
         //1 flat on floor
@@ -278,35 +272,30 @@ class Task2Test {
         check(1, 1, MAX_VALUE / 2, String.valueOf(MAX_VALUE / 2), "1");
         check(1, 1, MAX_VALUE - 1, String.valueOf(MAX_VALUE - 1), "1");
         check(1, 1, MAX_VALUE, String.valueOf(MAX_VALUE), "1");
-        check(1, 1, MAX_VALUE + 1L, String.valueOf(MAX_VALUE + 1L), "1");
         //2 flats on floor
         check(1, 2, 1, "1", "1");
         check(1, 2, 2, "1", "1");
         check(1, 2, MAX_VALUE / 2, String.valueOf((MAX_VALUE / 4) + 1), "1");
         check(1, 2, MAX_VALUE - 1, String.valueOf(MAX_VALUE / 2), "1");
         check(1, 2, MAX_VALUE, String.valueOf((MAX_VALUE / 2) + 1), "1");
-        check(1, 2, MAX_VALUE + 1L, String.valueOf((MAX_VALUE / 2) + 1), "1");
         //MAX / 2 flats on floor
         check(1, MAX_VALUE / 2, 1, "1", "1");
         check(1, MAX_VALUE / 2, 2, "1", "1");
         check(1, MAX_VALUE / 2, MAX_VALUE / 2, "1", "1");
         check(1, MAX_VALUE / 2, MAX_VALUE - 1, "2", "1");
         check(1, MAX_VALUE / 2, MAX_VALUE, "3", "1");
-        check(1, MAX_VALUE / 2, MAX_VALUE + 1L, "3", "1");
         //MAX - 1 flats on floor
         check(1, MAX_VALUE - 1, 1, "1", "1");
         check(1, MAX_VALUE - 1, 2, "1", "1");
         check(1, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
         check(1, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
         check(1, MAX_VALUE - 1, MAX_VALUE, "2", "1");
-        check(1, MAX_VALUE - 1, MAX_VALUE + 1L, "2", "1");
         //MAX flats on floor
         check(1, MAX_VALUE, 1, "1", "1");
         check(1, MAX_VALUE, 2, "1", "1");
         check(1, MAX_VALUE, MAX_VALUE / 2, "1", "1");
         check(1, MAX_VALUE, MAX_VALUE - 1, "1", "1");
         check(1, MAX_VALUE, MAX_VALUE, "1", "1");
-        check(1, MAX_VALUE, MAX_VALUE + 1L, "2", "1");
 
         //2 floors in house
         //1 flat on floor
@@ -315,35 +304,30 @@ class Task2Test {
         check(2, 1, MAX_VALUE / 2, String.valueOf((MAX_VALUE / 4) + 1), "1");
         check(2, 1, MAX_VALUE - 1, String.valueOf(MAX_VALUE / 2) , "2");
         check(2, 1, MAX_VALUE, String.valueOf((MAX_VALUE / 2) + 1), "1");
-        check(2, 1, MAX_VALUE + 1L, String.valueOf((MAX_VALUE / 2) + 1), "2");
         //2 flats on floor
         check(2, 2, 1, "1", "1");
         check(2, 2, 2, "1", "1");
         check(2, 2, MAX_VALUE / 2, String.valueOf((MAX_VALUE / 8) + 1), "2");
         check(2, 2, MAX_VALUE - 1, String.valueOf((MAX_VALUE / 4) + 1), "1");
         check(2, 2, MAX_VALUE, String.valueOf((MAX_VALUE / 4) + 1), "2");
-        check(2, 2, MAX_VALUE + 1L, String.valueOf((MAX_VALUE / 4) + 1), "2");
         //MAX / 2 flats on floor
         check(2, MAX_VALUE / 2, 1, "1", "1");
         check(2, MAX_VALUE / 2, 2, "1", "1");
         check(2, MAX_VALUE / 2, MAX_VALUE / 2, "1", "1");
         check(2, MAX_VALUE / 2, MAX_VALUE - 1, "1", "2");
         check(2, MAX_VALUE / 2, MAX_VALUE, "2", "1");
-        check(2, MAX_VALUE / 2, MAX_VALUE + 1L, "2", "1");
         //MAX - 1 flats on floor
         check(2, MAX_VALUE - 1, 1, "1", "1");
         check(2, MAX_VALUE - 1, 2, "1", "1");
         check(2, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
         check(2, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
         check(2, MAX_VALUE - 1, MAX_VALUE, "1", "2");
-        check(2, MAX_VALUE - 1, MAX_VALUE + 1L, "1", "2");
         //MAX flats on floor
         check(2, MAX_VALUE, 1, "1", "1");
         check(2, MAX_VALUE, 2, "1", "1");
         check(2, MAX_VALUE, MAX_VALUE / 2, "1", "1");
         check(2, MAX_VALUE, MAX_VALUE - 1, "1", "1");
         check(2, MAX_VALUE, MAX_VALUE, "1", "1");
-        check(2, MAX_VALUE, MAX_VALUE + 1L, "1", "2");
 
         //MAX / 2 floors in house
         //1 flat on floor
@@ -352,35 +336,30 @@ class Task2Test {
         check(MAX_VALUE / 2, 1, MAX_VALUE / 2, "1", String.valueOf(MAX_VALUE / 2));
         check(MAX_VALUE / 2, 1, MAX_VALUE - 1, "2", String.valueOf(MAX_VALUE / 2));
         check(MAX_VALUE / 2, 1, MAX_VALUE, "3","1");
-        check(MAX_VALUE / 2, 1, MAX_VALUE + 1L, "3", "2");
         //2 flats on floor
         check(MAX_VALUE / 2, 2, 1, "1", "1");
         check(MAX_VALUE / 2, 2, 2, "1", "1");
         check(MAX_VALUE / 2, 2, MAX_VALUE / 2, "1", String.valueOf((MAX_VALUE / 4) + 1));
         check(MAX_VALUE / 2, 2, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE / 2));
         check(MAX_VALUE / 2, 2, MAX_VALUE, "2", "1");
-        check(MAX_VALUE / 2, 2, MAX_VALUE + 1L, "2", "1");
         //MAX / 2 flats on floor
         check(MAX_VALUE / 2, MAX_VALUE / 2, 1, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE / 2, 2, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE / 2, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE - 1, "1", "2");
         check(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE, "1", "3");
-        check(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE + 1L, "1", "3");
         //MAX - 1 flats on floor
         check(MAX_VALUE / 2, MAX_VALUE - 1, 1, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE - 1, 2, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE, "1", "2");
-        check(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE + 1L, "1", "2");
         //MAX flats on floor
         check(MAX_VALUE / 2, MAX_VALUE, 1, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE, 2, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE / 2, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE - 1, "1", "1");
         check(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE, "1", "1");
-        check(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE + 1L, "1", "2");
 
         //MAX - 1 floors in house
         //1 flat on floor
@@ -389,35 +368,30 @@ class Task2Test {
         check(MAX_VALUE - 1, 1, MAX_VALUE / 2, "1", String.valueOf(MAX_VALUE / 2));
         check(MAX_VALUE - 1, 1, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE - 1));
         check(MAX_VALUE - 1, 1, MAX_VALUE, "2", "1");
-        check(MAX_VALUE - 1, 1, MAX_VALUE + 1L, "2", "2");
         //2 flats on floor
         check(MAX_VALUE - 1, 2, 1, "1", "1");
         check(MAX_VALUE - 1, 2, 2, "1", "1");
         check(MAX_VALUE - 1, 2, MAX_VALUE / 2, "1", String.valueOf((MAX_VALUE / 4) + 1));
         check(MAX_VALUE - 1, 2, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE / 2));
         check(MAX_VALUE - 1, 2, MAX_VALUE, "1", String.valueOf((MAX_VALUE / 2) + 1));
-        check(MAX_VALUE - 1, 2, MAX_VALUE + 1L, "1", String.valueOf((MAX_VALUE / 2) + 1));
         //MAX / 2 flats on floor
         check(MAX_VALUE - 1, MAX_VALUE / 2, 1, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE / 2, 2, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE / 2, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE - 1, "1", "2");
         check(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE, "1", "3");
-        check(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE + 1L, "1", "3");
         //MAX - 1 flats on floor
         check(MAX_VALUE - 1, MAX_VALUE - 1, 1, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE - 1, 2, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE, "1", "2");
-        check(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE + 1L, "1", "2");
         //MAX flats on floor
         check(MAX_VALUE - 1, MAX_VALUE, 1, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE, 2, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE / 2, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE - 1, "1", "1");
         check(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE, "1", "1");
-        check(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE + 1L, "1", "2");
 
         //MAX floors in house
         //1 flat on floor
@@ -426,35 +400,30 @@ class Task2Test {
         check(MAX_VALUE, 1, MAX_VALUE / 2, "1", String.valueOf(MAX_VALUE / 2));
         check(MAX_VALUE, 1, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE - 1));
         check(MAX_VALUE, 1, MAX_VALUE, "1", String.valueOf(MAX_VALUE));
-        check(MAX_VALUE, 1, MAX_VALUE + 1L, "2", "1");
         //2 flats on floor
         check(MAX_VALUE, 2, 1, "1", "1");
         check(MAX_VALUE, 2, 2, "1", "1");
         check(MAX_VALUE, 2, MAX_VALUE / 2, "1", String.valueOf((MAX_VALUE / 4) + 1));
         check(MAX_VALUE, 2, MAX_VALUE - 1, "1", String.valueOf(MAX_VALUE / 2));
         check(MAX_VALUE, 2, MAX_VALUE, "1", String.valueOf((MAX_VALUE / 2) + 1));
-        check(MAX_VALUE, 2, MAX_VALUE + 1L, "1", String.valueOf((MAX_VALUE / 2) + 1));
         //MAX / 2 flats on floor
         check(MAX_VALUE, MAX_VALUE / 2, 1, "1", "1");
         check(MAX_VALUE, MAX_VALUE / 2, 2, "1", "1");
         check(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE / 2, "1", "1");
         check(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE - 1, "1", "2");
         check(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE, "1", "3");
-        check(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE + 1L, "1", "3");
         //MAX - 1 flats on floor
         check(MAX_VALUE, MAX_VALUE - 1, 1, "1", "1");
         check(MAX_VALUE, MAX_VALUE - 1, 2, "1", "1");
         check(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE / 2, "1", "1");
         check(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE - 1, "1", "1");
         check(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE, "1", "2");
-        check(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE + 1L, "1", "2");
         //MAX flats on floor
         check(MAX_VALUE, MAX_VALUE, 1, "1", "1");
         check(MAX_VALUE, MAX_VALUE, 2, "1", "1");
         check(MAX_VALUE, MAX_VALUE, MAX_VALUE / 2, "1", "1");
         check(MAX_VALUE, MAX_VALUE, MAX_VALUE - 1, "1", "1");
         check(MAX_VALUE, MAX_VALUE, MAX_VALUE, "1", "1");
-        check(MAX_VALUE, MAX_VALUE, MAX_VALUE + 1L, "1", "2");
 
         //1 flat on floor
         //1st house expected
