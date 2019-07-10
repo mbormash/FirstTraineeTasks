@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a985dfb-d202-474b-a364-f23dfd434018" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/IntegerOverflowException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Task1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Task1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Task2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Task2Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Task3Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Task3Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Task4Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Task4Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Task5Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Task5Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Task1Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Task1Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Task2Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Task2Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Task3Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Task3Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Task4Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Task4Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Task5Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Task5Test.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,87 +30,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="47" column="41" lean-forward="true" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+              <folding>
+                <element signature="e#2724#2725#0" expanded="true" />
+                <element signature="e#2798#2799#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Task2Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="71" column="7" lean-forward="true" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="7" />
+            <state relative-caret-position="150">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Task3Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="341" column="24" selection-start-line="341" selection-start-column="24" selection-end-line="341" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Task4Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Task5Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="767" column="23" selection-start-line="767" selection-start-column="23" selection-end-line="767" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Task1Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1032#1033#0" expanded="true" />
-                <element signature="e#1065#1066#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-              <folding>
-                <element signature="e#2798#2799#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,13 +88,13 @@
         <option value="$PROJECT_DIR$/src/test/java/MainClassTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IntegerOverflowException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task1.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task1Test.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task2Test.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task3Test.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task4Test.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task5Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java" />
       </list>
     </option>
   </component>
@@ -235,7 +172,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562750041916" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562751866731" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -312,19 +249,17 @@
       <option name="project" value="LOCAL" />
       <updated>1562706214124</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding description for number of tests in javadoc">
+      <created>1562751433533</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562751433533</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Task2Test - 2019.07.09 at 23h 02m 51s.xml">
-      <configuration name="Task2Test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Task2Test - 2019.07.09 at 23h 03m 07s.xml">
-      <configuration name="Task2Test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Task2Test - 2019.07.09 at 23h 04m 21s.xml">
-      <configuration name="Task2Test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Task2Test - 2019.07.09 at 23h 05m 03s.xml">
       <configuration name="Task2Test" configurationId="JUnit" />
     </history-entry>
@@ -346,6 +281,15 @@
     <history-entry file="Task2Test - 2019.07.10 at 00h 08m 46s.xml">
       <configuration name="Task2Test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Task2Test - 2019.07.10 at 12h 38m 31s.xml">
+      <configuration name="Task2Test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Task2Test - 2019.07.10 at 12h 40m 04s.xml">
+      <configuration name="Task2Test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Task2Test - 2019.07.10 at 12h 40m 27s.xml">
+      <configuration name="Task2Test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -365,7 +309,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" sideWeight="0.502008" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" weight="0.32974428" />
       <window_info anchor="bottom" id="Terminal" sideWeight="0.4993573" weight="0.32974428" />
@@ -373,11 +317,11 @@
       <window_info anchor="bottom" id="Messages" weight="0.32974428" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32974428" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.32974428" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32974428" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Maven" order="2" />
@@ -422,7 +366,8 @@
     <MESSAGE value="Changing type of flat in task 2 from long to int.&#10;Note that tests had not been changed." />
     <MESSAGE value="Adding IntegerOverflowException class.&#10;Note that tests had not been changed." />
     <MESSAGE value="Adding new tests for task 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding new tests for task 2" />
+    <MESSAGE value="Adding description for number of tests in javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding description for number of tests in javadoc" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -486,16 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-          <folding>
-            <element signature="e#2798#2799#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -509,6 +444,36 @@
             <element signature="e#696#697#0" expanded="true" />
             <element signature="e#792#793#0" expanded="true" />
             <element signature="e#816#817#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Task3Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="341" column="24" selection-start-line="341" selection-start-column="24" selection-end-line="341" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Task4Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Task5Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12988">
+          <caret line="764" column="61" lean-forward="true" selection-start-line="764" selection-start-column="61" selection-end-line="764" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -535,42 +500,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Task3Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="341" column="24" selection-start-line="341" selection-start-column="24" selection-end-line="341" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Task2Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="7" lean-forward="true" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="7" />
+        <state relative-caret-position="150">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Task4Test.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
+        <state relative-caret-position="201">
+          <caret line="47" column="41" lean-forward="true" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Task5Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="767" column="23" selection-start-line="767" selection-start-column="23" selection-end-line="767" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2724#2725#0" expanded="true" />
+            <element signature="e#2798#2799#0" expanded="true" />
           </folding>
         </state>
       </provider>
