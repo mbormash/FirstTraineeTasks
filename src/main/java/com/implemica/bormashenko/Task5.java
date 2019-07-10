@@ -49,6 +49,7 @@ public class Task5 {
                 days += dayToFind;
                 days += dayOfNewYear - 1;
         }
+
         days %= 7;
         String day;
         switch (days) {

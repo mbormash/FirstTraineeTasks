@@ -37,11 +37,8 @@ public class Task3 {
             } else {
                 y %= x;
             }
-            if (x == 1 || y == 1 || (x - y) == 1) {
-                return 1;
-            }
         }
-        return (x + y);
+        return x + y;
     }
 
     /**

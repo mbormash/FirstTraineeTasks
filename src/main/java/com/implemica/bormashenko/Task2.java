@@ -73,6 +73,7 @@ public class Task2 {
             }
         }
         this.house = ++house;
+
         int floor = 1;
         if (flat > flatsOnFloor) {
             floor = flat / flatsOnFloor;
@@ -81,7 +82,6 @@ public class Task2 {
             }
         }
         this.floor = floor;
-
         return this.toString();
     }
 
