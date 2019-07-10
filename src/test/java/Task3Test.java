@@ -47,10 +47,15 @@ class Task3Test {
 
     /**
      * Tests with valid args for task3 (gcd).
+     * 10 tests for several values return from 1 to 10;
+     * 14 tests for mutually prime with primes;
+     * 3 tests for mutually prime without primes;
+     * 173 boundary tests;
+     * 200 tests at all.
      */
     @Test
-    void validArgsTest() { //10 + 17 + 173
-        //several values
+    void validArgsTest() {
+        //several values return from 1 to 10
         check(17, 19, 20, 45, 1);
         check(2, 100, 50, 10, 2);
         check(9, 12, 15, 24, 3);
@@ -332,6 +337,9 @@ class Task3Test {
 
     /**
      * Tests with non-valid args for task3 (gcd).
+     * 50 tests for random non-valid args;
+     * 220 boundary tests;
+     * 270 tests at all.
      */
     @Test
     void nonValidArgsTest() { //50 + 220

@@ -64,7 +64,7 @@ public class Task1 {
      * without using third variable
      * and prints this process.
      */
-    public void showSwapping() {
+    void showSwapping() {
         System.out.println("Before reversing:\na: " + getA() + ", b: " + getB());
         swap();
         System.out.println("After reversing:\na: " + getA() + ", b: " + getB());

@@ -44,9 +44,17 @@ class Task1Test {
 
     /**
      * Tests for task1 (swap).
+     * 6 tests for positive and positive;
+     * 6 tests for negative and negative;
+     * 6 tests for positive and negative;
+     * 6 tests for negative and positive;
+     * 24 tests for random;
+     * 12 tests for same numbers;
+     * 81 boundary tests;
+     * 141 test at all.
      */
     @Test
-    void tests() { //24 + 24 + 12 + 81
+    void tests() {
         //positive and positive
         check(9, 10);
         check(99, 100);
@@ -75,6 +83,7 @@ class Task1Test {
         check(-100000, 99999);
         check(-1000000, 999999);
         check(-10000000, 9999999);
+
         //random
         check(123, 762);
         check(1257, -62234);
@@ -100,6 +109,7 @@ class Task1Test {
         check(-2756, 762);
         check(13, 8664);
         check(1231, 12);
+
         //same numbers
         check(11, 11);
         check(5434, 5434);

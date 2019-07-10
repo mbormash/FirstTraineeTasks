@@ -57,9 +57,56 @@ class Task2Test {
 
     /**
      * Tests with valid args for task2 (flats).
+     * 21 tests for 5-floors and 4-flats-on-floor house;
+     * 29 tests for 9-floors and 4-flats-on-floor house;
+     * 43 tests for 16-floors and 4-flats-on-floor house;
+     * 4 tests for number of flat more than (flats on floor * floors);
+     * 4 tests for number of flat equals (flats on floor * floors);
+     * 4 tests for number of flat more than flats on floor;
+     * 4 tests for number of flat equals flats on floor;
+     * 2 tests for max value of house returned;
+     * 10 tests for floors * flats = MAX;
+     * 45 tests for floors * flat = near to MAX;
+     * 400 tests for all flats in first 4 houses of 1-2-3-4-flats-on-floor 1-2-3-4-floors house;
+     * 566 tests at all.
      */
     @Test
-    void validArgsTests() { //29 + 21 + 43 + 16 + 2 + 55 + 400
+    void validArgsTests() {
+        //5 floors and 4 flats on floor
+        //1, 1 expected
+        check(5, 4, 1, "1", "1");
+        check(5, 4, 2, "1", "1");
+        check(5, 4, 3, "1", "1");
+        check(5, 4, 4, "1", "1");
+        //1, 2 expected
+        check(5, 4, 5, "1", "2");
+        check(5, 4, 8, "1", "2");
+        //1, 3 expected
+        check(5, 4, 9, "1", "3");
+        check(5, 4, 12, "1", "3");
+        //1, 4 expected
+        check(5, 4, 13, "1", "4");
+        check(5, 4, 16, "1", "4");
+        //1, 5 expected
+        check(5, 4, 17, "1", "5");
+        check(5, 4, 18, "1", "5");
+        check(5, 4, 19, "1", "5");
+        check(5, 4, 20, "1", "5");
+        //2, 1 expected
+        check(5, 4, 21, "2", "1");
+        //2, 5 expected
+        check(5, 4, 40, "2", "5");
+        //3, 1expected
+        check(5, 4, 41, "3", "1");
+        //3, 5 expected
+        check(5, 4, 60, "3", "5");
+        //4, 1 expected
+        check(5, 4, 61, "4", "1");
+        //4, 5 expected
+        check(5, 4, 80, "4", "5");
+        //5, 1 expected
+        check(5, 4, 81, "5", "1");
+
         //9 floors and 4 flats on floor
         //1, 1 expected
         check(9, 4, 1, "1", "1");
@@ -106,41 +153,6 @@ class Task2Test {
         check(9, 4, 144, "4", "9");
         //5, 1 expected
         check(9, 4, 145, "5", "1");
-
-        //5 floors and 4 flats on floor
-        //1, 1 expected
-        check(5, 4, 1, "1", "1");
-        check(5, 4, 2, "1", "1");
-        check(5, 4, 3, "1", "1");
-        check(5, 4, 4, "1", "1");
-        //1, 2 expected
-        check(5, 4, 5, "1", "2");
-        check(5, 4, 8, "1", "2");
-        //1, 3 expected
-        check(5, 4, 9, "1", "3");
-        check(5, 4, 12, "1", "3");
-        //1, 4 expected
-        check(5, 4, 13, "1", "4");
-        check(5, 4, 16, "1", "4");
-        //1, 5 expected
-        check(5, 4, 17, "1", "5");
-        check(5, 4, 18, "1", "5");
-        check(5, 4, 19, "1", "5");
-        check(5, 4, 20, "1", "5");
-        //2, 1 expected
-        check(5, 4, 21, "2", "1");
-        //2, 5 expected
-        check(5, 4, 40, "2", "5");
-        //3, 1expected
-        check(5, 4, 41, "3", "1");
-        //3, 5 expected
-        check(5, 4, 60, "3", "5");
-        //4, 1 expected
-        check(5, 4, 61, "4", "1");
-        //4, 5 expected
-        check(5, 4, 80, "4", "5");
-        //5, 1 expected
-        check(5, 4, 81, "5", "1");
 
         //16 floors and 4 flats on floor
         //1, 1 expected
@@ -730,10 +742,15 @@ class Task2Test {
 
     /**
      * Tests with non-valid args for task2 (swap).
+     * 50 tests for random non-positive args;
+     * 25 tests for too large numbers;
+     * 85 boundary tests for too large numbers;
+     * 45 tests for non-positive numbers tests;
+     * 205 tests at all.
      */
     @Test
-    void nonValidArgsTests() { //50 + 25 + 85 + 45
-        //50 random not valid args
+    void nonValidArgsTests() {
+        //50 random non-positive args
         checkException(-6134, 75134, 1);
         checkException(-5123, 12313, 5123);
         checkException(-824, 6134, 6412);
@@ -812,7 +829,7 @@ class Task2Test {
         checkException(982198274, 1421314, 1412);
         checkException(1412414, 12414, 692481);
 
-        //tests for large numbers
+        //boundary tests for too large numbers
         //(int)(MAX_VALUE + 1L) / 2 and 2
         checkException((int)(MAX_VALUE + 1L) / 2, 2, 1);
         checkException((int)(MAX_VALUE + 1L) / 2, 2, 2);

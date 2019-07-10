@@ -56,9 +56,12 @@ class Task5Test {
 
     /**
      * Tests with valid args for task5 (day of week).
+     * 7 tests for several values return from "Monday" to "Sunday";
+     * 7 * 12 * 7 (168) boundary and special values tests;
+     * 175 tests at all.
      */
     @Test
-    void validArgsTests() { //7 + 168
+    void validArgsTests() {
         //several random tests
         check(2, 27, 5, "Monday");
         check(3, 15, 7, "Tuesday");
@@ -757,6 +760,12 @@ class Task5Test {
 
     /**
      * Tests with non-valid args for task5 (day of week).
+     * 9 tests for non-valid day of week;
+     * 9 tests for non-valid day of month for February;
+     * 9 tests for non-valid day of month for 30-days months;
+     * 9 tests for non-valid day of month for 31-days months;
+     * 9 tests for non-valid month;
+     * 45 tests at all.
      */
     @Test
     void testExceptionsForDayOfWeek() { //45
