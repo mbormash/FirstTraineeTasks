@@ -14,38 +14,6 @@ import static java.lang.Integer.MIN_VALUE;
 class Task3Test {
 
     /**
-     * Function for testing valid args for task3 (gcd).
-     * For inputted args define greatest common divisor.
-     * @param a first parameter.
-     * @param b second parameter.
-     * @param c third parameter.
-     * @param d fourth parameter.
-     * @param expected expected result of gcd for inputted args.
-     */
-    private void check(int a, int b, int c, int d, int expected) {
-        int actual = Task3.nod4args(a, b, c, d);
-        assertEquals(expected, actual);
-    }
-
-    /**
-     * Function for testing non-valid args for task3 (gcd).
-     * For inputted parameters an IncorrectArgumentException should be thrown.
-     * @see IncorrectArgumentException
-     * @param a first parameter.
-     * @param b second parameter.
-     * @param c third parameter.
-     * @param d fourth parameter.
-     */
-    private void checkException(int a, int b, int c, int d) {
-        try {
-            Task3.nod4args(a, b, c, d);
-            fail("Exception was not thrown");
-        } catch (IncorrectArgumentException e) {
-            assertTrue(true);
-        }
-    }
-
-    /**
      * Tests with valid args for task3 (gcd).
      * 10 tests for several values return from 1 to 10;
      * 14 tests for mutually prime with primes;
@@ -690,5 +658,37 @@ class Task3Test {
         //second is MAX_VALUE
         //third is MAX_VALUE
         checkException(MIN_VALUE, MAX_VALUE, MAX_VALUE, MAX_VALUE);
+    }
+
+    /**
+     * Function for testing valid args for task3 (gcd).
+     * For inputted args define greatest common divisor.
+     * @param a first parameter.
+     * @param b second parameter.
+     * @param c third parameter.
+     * @param d fourth parameter.
+     * @param expected expected result of gcd for inputted args.
+     */
+    private void check(int a, int b, int c, int d, int expected) {
+        int actual = Task3.nod4args(a, b, c, d);
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Function for testing non-valid args for task3 (gcd).
+     * For inputted parameters an IncorrectArgumentException should be thrown.
+     * @see IncorrectArgumentException
+     * @param a first parameter.
+     * @param b second parameter.
+     * @param c third parameter.
+     * @param d fourth parameter.
+     */
+    private void checkException(int a, int b, int c, int d) {
+        try {
+            Task3.nod4args(a, b, c, d);
+            fail("Exception was not thrown");
+        } catch (IncorrectArgumentException e) {
+            //correct behavior
+        }
     }
 }

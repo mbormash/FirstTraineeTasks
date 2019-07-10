@@ -21,41 +21,6 @@ class Task2Test {
     private static final int SQRT_MAX = (int)Math.sqrt(MAX_VALUE);
 
     /**
-     * Function for testing valid args for task2 (flats).
-     * For inputted parameters define in which house and on which floor the flat is located.
-     * @param floorsInHouse number of floors in house.
-     * @param flatsOnFloor number of flats on floor.
-     * @param numberOfFlat number of flat, for which have to define house and floor.
-     * @param expectedHouse expected value of house.
-     * @param expectedFloor expected value of floor.
-     */
-    private void check(int floorsInHouse, int flatsOnFloor, int numberOfFlat,
-                       String expectedHouse, String expectedFloor) {
-        String expected = numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house";
-        String actual = new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
-        assertEquals(expected, actual);
-    }
-
-    /**
-     * Function for testing non-valid args for task2 (flats).
-     * For inputted parameters an IncorrectArgumentException or
-     * IntegerOverflowException should be thrown.
-     * @see IncorrectArgumentException
-     * @see IntegerOverflowException
-     * @param floorsInHouse number of floors in house.
-     * @param flatsOnFloor number of flats on floor.
-     * @param numberOfFlat number of flat, for which have to define house and floor.
-     */
-    private void checkException(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
-        try {
-            new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
-            fail("Exception was not thrown");
-        } catch (IncorrectArgumentException | IntegerOverflowException e) {
-            assertTrue(true);
-        }
-    }
-
-    /**
      * Tests with valid args for task2 (flats).
      * 21 tests for 5-floors and 4-flats-on-floor house;
      * 29 tests for 9-floors and 4-flats-on-floor house;
@@ -1011,5 +976,40 @@ class Task2Test {
         checkException(0, 0, MIN_VALUE / 2);
         checkException(0, 0, -1);
         checkException(0, 0, 0);
+    }
+
+    /**
+     * Function for testing valid args for task2 (flats).
+     * For inputted parameters define in which house and on which floor the flat is located.
+     * @param floorsInHouse number of floors in house.
+     * @param flatsOnFloor number of flats on floor.
+     * @param numberOfFlat number of flat, for which have to define house and floor.
+     * @param expectedHouse expected value of house.
+     * @param expectedFloor expected value of floor.
+     */
+    private void check(int floorsInHouse, int flatsOnFloor, int numberOfFlat,
+                       String expectedHouse, String expectedFloor) {
+        String expected = numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house";
+        String actual = new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Function for testing non-valid args for task2 (flats).
+     * For inputted parameters an IncorrectArgumentException or
+     * IntegerOverflowException should be thrown.
+     * @see IncorrectArgumentException
+     * @see IntegerOverflowException
+     * @param floorsInHouse number of floors in house.
+     * @param flatsOnFloor number of flats on floor.
+     * @param numberOfFlat number of flat, for which have to define house and floor.
+     */
+    private void checkException(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
+        try {
+            new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
+            fail("Exception was not thrown");
+        } catch (IncorrectArgumentException | IntegerOverflowException e) {
+            //correct behavior
+        }
     }
 }

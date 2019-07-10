@@ -18,31 +18,6 @@ class Task4Test {
     private static final int SPECIAL_POINT = 100000;
 
     /**
-     * Function for testing valid args for task4 (fibonacci).
-     * For inputted parameter define fibonacci's number.
-     * @param n number of fibonacci's value.
-     * @param expected expected fibonacci's value.
-     */
-    private void check(int n, String expected) {
-        assertEquals(new BigInteger(expected), Task4.genNFib(n), "genNFib(" + n + "):");
-    }
-
-    /**
-     * Function for testing non-valid args for task4 (fibonacci).
-     * For inputted parameter an IncorrectArgumentException should be thrown.
-     * @see IncorrectArgumentException
-     * @param n number of fibonacci's value.
-     */
-    private void checkException(int n) {
-        try {
-            Task4.genNFib(n);
-            fail("Exception was not thrown");
-        } catch (IncorrectArgumentException e) {
-            assertTrue(true);
-        }
-    }
-
-    /**
      * Tests with valid args for task4 (fibonacci).
      * 5 tests for special points and near to them;
      * 39 tests for first values;
@@ -179,5 +154,30 @@ class Task4Test {
         checkException(-64);
         checkException(-31);
         checkException(-6241);
+    }
+
+    /**
+     * Function for testing valid args for task4 (fibonacci).
+     * For inputted parameter define fibonacci's number.
+     * @param n number of fibonacci's value.
+     * @param expected expected fibonacci's value.
+     */
+    private void check(int n, String expected) {
+        assertEquals(new BigInteger(expected), Task4.genNFib(n), "genNFib(" + n + "):");
+    }
+
+    /**
+     * Function for testing non-valid args for task4 (fibonacci).
+     * For inputted parameter an IncorrectArgumentException should be thrown.
+     * @see IncorrectArgumentException
+     * @param n number of fibonacci's value.
+     */
+    private void checkException(int n) {
+        try {
+            Task4.genNFib(n);
+            fail("Exception was not thrown");
+        } catch (IncorrectArgumentException e) {
+            //correct behavior
+        }
     }
 }

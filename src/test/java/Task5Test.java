@@ -25,36 +25,6 @@ class Task5Test {
     private static final int MAX_DAY_OF_MONTH_31 = 31;
 
     /**
-     * Function for testing valid args for task5 (day of week).
-     * For inputted args define day of week.
-     * @param dayOfNewYear day of week from which the year started.
-     * @param dayToFind number of day to define day of week.
-     * @param monthToFind number of month to define day of week.
-     * @param expected expected day of week.
-     */
-    private void check(int dayOfNewYear, int dayToFind, int monthToFind, String expected) {
-        String actual = Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
-        assertEquals(expected, actual);
-    }
-
-    /**
-     * Function for testing non-valid args for task5 (day of week).
-     * For inputted parameters an IncorrectArgumentException should be thrown.
-     * @see IncorrectArgumentException
-     * @param dayOfNewYear day of week from which the year started.
-     * @param dayToFind number of day to define day of week.
-     * @param monthToFind number of month to define day of week.
-     */
-    private void checkException(int dayOfNewYear, int dayToFind, int monthToFind) {
-        try {
-            Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
-            fail("Exception was not thrown");
-        } catch (IncorrectArgumentException e) {
-            assertTrue(true);
-        }
-    }
-
-    /**
      * Tests with valid args for task5 (day of week).
      * 7 tests for several values return from "Monday" to "Sunday";
      * 7 * 12 * 7 (168) boundary and special values tests;
@@ -823,5 +793,35 @@ class Task5Test {
         checkException(6, 6, Integer.MAX_VALUE / 2);
         checkException(6, 6, Integer.MAX_VALUE - 1);
         checkException(6, 6, Integer.MAX_VALUE);
+    }
+
+    /**
+     * Function for testing valid args for task5 (day of week).
+     * For inputted args define day of week.
+     * @param dayOfNewYear day of week from which the year started.
+     * @param dayToFind number of day to define day of week.
+     * @param monthToFind number of month to define day of week.
+     * @param expected expected day of week.
+     */
+    private void check(int dayOfNewYear, int dayToFind, int monthToFind, String expected) {
+        String actual = Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Function for testing non-valid args for task5 (day of week).
+     * For inputted parameters an IncorrectArgumentException should be thrown.
+     * @see IncorrectArgumentException
+     * @param dayOfNewYear day of week from which the year started.
+     * @param dayToFind number of day to define day of week.
+     * @param monthToFind number of month to define day of week.
+     */
+    private void checkException(int dayOfNewYear, int dayToFind, int monthToFind) {
+        try {
+            Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
+            fail("Exception was not thrown");
+        } catch (IncorrectArgumentException e) {
+            //correct behavior
+        }
     }
 }

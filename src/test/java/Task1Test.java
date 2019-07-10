@@ -19,30 +19,6 @@ class Task1Test {
     private static Task1 obj;
 
     /**
-     * Function for testing task1 (swap).
-     * Values of two parameters should be swapped between each other.
-     * @param aBefore value of first test parameter.
-     * @param bBefore value of second test parameter.
-     */
-    private void check(int aBefore, int bBefore) {
-        obj.setA(aBefore);
-        obj.setB(bBefore);
-        obj.swap();
-        int aAfter = obj.getA();
-        int bAfter = obj.getB();
-        assertEquals(bBefore, aAfter);
-        assertEquals(aBefore, bAfter);
-    }
-
-    /**
-     * Setting up object.
-     */
-    @BeforeAll
-    static void setupBeforeTests() {
-        obj = new Task1();
-    }
-
-    /**
      * Tests for task1 (swap).
      * 6 tests for positive and positive;
      * 6 tests for negative and negative;
@@ -222,5 +198,29 @@ class Task1Test {
         check(MIN_VALUE, MIN_VALUE / 2);
         check(MIN_VALUE, MIN_VALUE + 1);
         check(MIN_VALUE, MIN_VALUE);
+    }
+
+    /**
+     * Function for testing task1 (swap).
+     * Values of two parameters should be swapped between each other.
+     * @param aBefore value of first test parameter.
+     * @param bBefore value of second test parameter.
+     */
+    private void check(int aBefore, int bBefore) {
+        obj.setA(aBefore);
+        obj.setB(bBefore);
+        obj.swap();
+        int aAfter = obj.getA();
+        int bAfter = obj.getB();
+        assertEquals(bBefore, aAfter);
+        assertEquals(aBefore, bAfter);
+    }
+
+    /**
+     * Setting up object.
+     */
+    @BeforeAll
+    static void setupBeforeTests() {
+        obj = new Task1();
     }
 }
