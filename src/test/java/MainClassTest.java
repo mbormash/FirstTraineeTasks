@@ -18,6 +18,7 @@ class MainClassTest {
     private void check(String... args) {
         try {
             Main.main(args);
+
         } catch (Exception e) {
             fail(e.getMessage());
         }

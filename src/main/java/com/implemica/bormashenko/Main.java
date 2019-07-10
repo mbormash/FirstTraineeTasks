@@ -1,5 +1,8 @@
 package com.implemica.bormashenko;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * Main class for first tasks.
  *
@@ -9,24 +12,49 @@ public class Main {
 
     /**
      * Entry point for program.
+     *
      * @param args command line args.
      */
     public static void main(String... args) {
-        task1(100, 200);
-        task2(9, 4, 100);
-        task3(90, 12, 45, 63);
-        task4(15);
-        task5(3, 18, 7);
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.println("Input number of task from 1 to 5.");
+            int task;
+            task = in.nextInt();
+            switch (task) {
+                case 1:
+                    task1(in);
+                    break;
+                case 2:
+                    task2(in);
+                    break;
+                case 3:
+                    task3(in);
+                    break;
+                case 4:
+                    task4(in);
+                    break;
+                case 5:
+                    task5(in);
+                    break;
+                default:
+                    throw new IncorrectArgumentException("Number should be from 1 to 5");
+            }
+        } catch (NumberFormatException | IncorrectArgumentException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
-     * Shows how task1 works.
-     * @see Task1
-     * @param a first parameter.
-     * @param b second parameter.
+     * Allows user to check how task 1 works.
+     * @param in scanner that allows user to input numbers from console input.
+     * @throws IncorrectArgumentException if arguments are non valid for this task.
+     * @throws NumberFormatException if user have not inputted an integer numbers.
      */
-    private static void task1(int a, int b) {
+    private static void task1(Scanner in) throws IncorrectArgumentException, NumberFormatException {
         System.out.println("Task 1: swap.");
+        System.out.println("Input 2 integer numbers.");
+        int a = in.nextInt();
+        int b = in.nextInt();
         Task1 task1 = new Task1();
         task1.setA(a);
         task1.setB(b);
@@ -34,50 +62,62 @@ public class Main {
     }
 
     /**
-     * Shows how task2 works.
-     * @see Task2
-     * @param floorsInHouse number of floors in house.
-     * @param flatsOnFloor number of flats on floor.
-     * @param flat number of flat, for which have to define house and floor.
+     * Allows user to check how task 2 works.
+     * @param in scanner that allows user to input numbers from console input.
+     * @throws IncorrectArgumentException if arguments are non valid for this task.
+     * @throws NumberFormatException if user have not inputted an integer numbers.
      */
-    private static void task2(int floorsInHouse, int flatsOnFloor, int flat) {
-        System.out.println("Task 2: flat");
+    private static void task2(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+        System.out.println("Task 2: flat.");
+        System.out.println("Input number of floors in house, number of flats on floor and number of flat.");
+        int floorsInHouse = in.nextInt();
+        int flatsOnFloor = in.nextInt();
+        int flat = in.nextInt();
         Task2 task2 = new Task2(floorsInHouse, flatsOnFloor);
         System.out.println(task2.defineHouseAndFloor(flat));
     }
 
     /**
-     * Shows how task3 works.
-     * @see Task3
-     * @param a first parameter.
-     * @param b second parameter.
-     * @param c third parameter.
-     * @param d fourth parameter.
+     * Allows user to check how task 3 works.
+     * @param in scanner that allows user to input numbers from console input.
+     * @throws IncorrectArgumentException if arguments are non valid for this task.
+     * @throws NumberFormatException if user have not inputted an integer numbers.
      */
-    private static void task3(int a, int b, int c, int d) {
-        System.out.println("Task 3: gcd");
+    private static void task3(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+        System.out.println("Task 3: gcd.");
+        System.out.println("Input 4 integer numbers.");
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int c = in.nextInt();
+        int d = in.nextInt();
         System.out.println(Task3.nod4args(a, b, c, d));
     }
 
     /**
-     * Shows how task4 works.
-     * @see Task4
-     * @param n number of fibonacci's value.
+     * Allows user to check how task 4 works.
+     * @param in scanner that allows user to input numbers from console input.
+     * @throws IncorrectArgumentException if arguments are non valid for this task.
+     * @throws NumberFormatException if user have not inputted an integer number.
      */
-    private static void task4(int n) {
-        System.out.println("Task 4: fibonacci");
+    private static void task4(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+        System.out.println("Task 4: fibonacci.");
+        System.out.println("Input integer number.");
+        int n = in.nextInt();
         System.out.println(Task4.genNFib(n));
     }
 
     /**
-     * Shows how task5 works.
-     * @see Task5
-     * @param dayOfNewYear day of week from which the year started.
-     * @param dayToFind number of day to define day of week.
-     * @param monthToFind number of month to define day of week.
+     * Allows user to check how task 5 works.
+     * @param in scanner that allows user to input numbers from console input.
+     * @throws IncorrectArgumentException if arguments are non valid for this task.
+     * @throws NumberFormatException if user have not inputted an integer numbers.
      */
-    private static void task5(int dayOfNewYear, int dayToFind, int monthToFind) {
-        System.out.println("Task 5: day of week");
+    private static void task5(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+        System.out.println("Task 5: day of week.");
+        System.out.println("Input day of New Year, day to find, month to find.");
+        int dayOfNewYear = in.nextInt();
+        int dayToFind = in.nextInt();
+        int monthToFind = in.nextInt();
         System.out.println(Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind));
     }
 }
