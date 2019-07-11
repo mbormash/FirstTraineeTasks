@@ -65,8 +65,10 @@ public class Task1 {
      * and prints this process.
      */
     void showSwapping() {
-        System.out.println("Before reversing:\na: " + getA() + ", b: " + getB());
+        System.out.println("Before reversing:" + System.lineSeparator() +
+                "a: " + getA() + ", b: " + getB());
         swap();
-        System.out.println("After reversing:\na: " + getA() + ", b: " + getB());
+        System.out.println("After reversing:" + System.lineSeparator() +
+                "a: " + getA() + ", b: " + getB());
     }
 }

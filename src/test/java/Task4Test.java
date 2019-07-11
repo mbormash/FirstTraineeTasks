@@ -162,7 +162,7 @@ class Task4Test {
      * @param n number of fibonacci's value.
      * @param expected expected fibonacci's value.
      */
-    private void check(int n, String expected) {
+    void check(int n, String expected) {
         assertEquals(new BigInteger(expected), Task4.genNFib(n), "genNFib(" + n + "):");
     }
 
@@ -172,7 +172,7 @@ class Task4Test {
      * @see IncorrectArgumentException
      * @param n number of fibonacci's value.
      */
-    private void checkException(int n) {
+    void checkException(int n) {
         try {
             Task4.genNFib(n);
             fail("Exception was not thrown");

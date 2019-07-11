@@ -206,7 +206,7 @@ class Task1Test {
      * @param aBefore value of first test parameter.
      * @param bBefore value of second test parameter.
      */
-    private void check(int aBefore, int bBefore) {
+    void check(int aBefore, int bBefore) {
         obj.setA(aBefore);
         obj.setB(bBefore);
         obj.swap();

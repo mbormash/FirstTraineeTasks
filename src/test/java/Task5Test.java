@@ -738,7 +738,7 @@ class Task5Test {
      * 45 tests at all.
      */
     @Test
-    void testExceptionsForDayOfWeek() { //45
+    void nonValidArgsTests() { //45
         //non valid day of week
         checkException(Integer.MIN_VALUE, 6, 6);
         checkException(Integer.MIN_VALUE + 1, 6, 6);
@@ -803,7 +803,7 @@ class Task5Test {
      * @param monthToFind number of month to define day of week.
      * @param expected expected day of week.
      */
-    private void check(int dayOfNewYear, int dayToFind, int monthToFind, String expected) {
+    void check(int dayOfNewYear, int dayToFind, int monthToFind, String expected) {
         String actual = Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
         assertEquals(expected, actual);
     }
@@ -816,7 +816,7 @@ class Task5Test {
      * @param dayToFind number of day to define day of week.
      * @param monthToFind number of month to define day of week.
      */
-    private void checkException(int dayOfNewYear, int dayToFind, int monthToFind) {
+    void checkException(int dayOfNewYear, int dayToFind, int monthToFind) {
         try {
             Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
             fail("Exception was not thrown");

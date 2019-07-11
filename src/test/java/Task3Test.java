@@ -22,7 +22,7 @@ class Task3Test {
      * 200 tests at all.
      */
     @Test
-    void validArgsTest() {
+    void validArgsTests() {
         //several values return from 1 to 10
         check(17, 19, 20, 45, 1);
         check(2, 100, 50, 10, 2);
@@ -310,7 +310,7 @@ class Task3Test {
      * 270 tests at all.
      */
     @Test
-    void nonValidArgsTest() { //50 + 220
+    void nonValidArgsTests() { //50 + 220
         //50 random not valid args
         checkException(MIN_VALUE, 521, 1425, 5234);
         checkException(MIN_VALUE, 614, 6241, 242);
@@ -669,7 +669,7 @@ class Task3Test {
      * @param d fourth parameter.
      * @param expected expected result of gcd for inputted args.
      */
-    private void check(int a, int b, int c, int d, int expected) {
+    void check(int a, int b, int c, int d, int expected) {
         int actual = Task3.nod4args(a, b, c, d);
         assertEquals(expected, actual);
     }
@@ -683,7 +683,7 @@ class Task3Test {
      * @param c third parameter.
      * @param d fourth parameter.
      */
-    private void checkException(int a, int b, int c, int d) {
+    void checkException(int a, int b, int c, int d) {
         try {
             Task3.nod4args(a, b, c, d);
             fail("Exception was not thrown");

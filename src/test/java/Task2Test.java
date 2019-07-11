@@ -987,7 +987,7 @@ class Task2Test {
      * @param expectedHouse expected value of house.
      * @param expectedFloor expected value of floor.
      */
-    private void check(int floorsInHouse, int flatsOnFloor, int numberOfFlat,
+    void check(int floorsInHouse, int flatsOnFloor, int numberOfFlat,
                        String expectedHouse, String expectedFloor) {
         String expected = numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house";
         String actual = new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
@@ -1004,7 +1004,7 @@ class Task2Test {
      * @param flatsOnFloor number of flats on floor.
      * @param numberOfFlat number of flat, for which have to define house and floor.
      */
-    private void checkException(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
+    void checkException(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
         try {
             new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
             fail("Exception was not thrown");

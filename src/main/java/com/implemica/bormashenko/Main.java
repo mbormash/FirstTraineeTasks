@@ -1,6 +1,6 @@
 package com.implemica.bormashenko;
 
-import java.util.Arrays;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -15,7 +15,8 @@ public class Main {
      *
      * @param args command line args.
      */
-    public static void main(String... args) {
+    public static void main(String... args) throws IncorrectArgumentException, NumberFormatException,
+                                                   NoSuchElementException, IntegerOverflowException {
         try (Scanner in = new Scanner(System.in)) {
             System.out.println("Input number of task from 1 to 5.");
             int task;
@@ -39,18 +40,17 @@ public class Main {
                 default:
                     throw new IncorrectArgumentException("Number should be from 1 to 5");
             }
-        } catch (NumberFormatException | IncorrectArgumentException e) {
-            e.printStackTrace();
         }
     }
 
     /**
      * Allows user to check how task 1 works.
+     *
      * @param in scanner that allows user to input numbers from console input.
      * @throws IncorrectArgumentException if arguments are non valid for this task.
-     * @throws NumberFormatException if user have not inputted an integer numbers.
+     * @throws NumberFormatException      if user have not inputted an integer numbers.
      */
-    private static void task1(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+    private static void task1(Scanner in) throws NumberFormatException, NoSuchElementException {
         System.out.println("Task 1: swap.");
         System.out.println("Input 2 integer numbers.");
         int a = in.nextInt();
@@ -63,11 +63,13 @@ public class Main {
 
     /**
      * Allows user to check how task 2 works.
+     *
      * @param in scanner that allows user to input numbers from console input.
      * @throws IncorrectArgumentException if arguments are non valid for this task.
-     * @throws NumberFormatException if user have not inputted an integer numbers.
+     * @throws NumberFormatException      if user have not inputted an integer numbers.
      */
-    private static void task2(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+    private static void task2(Scanner in) throws IncorrectArgumentException, NumberFormatException,
+                                                 NoSuchElementException {
         System.out.println("Task 2: flat.");
         System.out.println("Input number of floors in house, number of flats on floor and number of flat.");
         int floorsInHouse = in.nextInt();
@@ -79,11 +81,13 @@ public class Main {
 
     /**
      * Allows user to check how task 3 works.
+     *
      * @param in scanner that allows user to input numbers from console input.
      * @throws IncorrectArgumentException if arguments are non valid for this task.
-     * @throws NumberFormatException if user have not inputted an integer numbers.
+     * @throws NumberFormatException      if user have not inputted an integer numbers.
      */
-    private static void task3(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+    private static void task3(Scanner in) throws IncorrectArgumentException, NumberFormatException,
+                                                 NoSuchElementException, IntegerOverflowException {
         System.out.println("Task 3: gcd.");
         System.out.println("Input 4 integer numbers.");
         int a = in.nextInt();
@@ -95,11 +99,13 @@ public class Main {
 
     /**
      * Allows user to check how task 4 works.
+     *
      * @param in scanner that allows user to input numbers from console input.
      * @throws IncorrectArgumentException if arguments are non valid for this task.
-     * @throws NumberFormatException if user have not inputted an integer number.
+     * @throws NumberFormatException      if user have not inputted an integer number.
      */
-    private static void task4(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+    private static void task4(Scanner in) throws IncorrectArgumentException, NumberFormatException,
+                                                 NoSuchElementException {
         System.out.println("Task 4: fibonacci.");
         System.out.println("Input integer number.");
         int n = in.nextInt();
@@ -108,11 +114,13 @@ public class Main {
 
     /**
      * Allows user to check how task 5 works.
+     *
      * @param in scanner that allows user to input numbers from console input.
      * @throws IncorrectArgumentException if arguments are non valid for this task.
-     * @throws NumberFormatException if user have not inputted an integer numbers.
+     * @throws NumberFormatException      if user have not inputted an integer numbers.
      */
-    private static void task5(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+    private static void task5(Scanner in) throws IncorrectArgumentException, NumberFormatException,
+                                                 NoSuchElementException {
         System.out.println("Task 5: day of week.");
         System.out.println("Input day of New Year, day to find, month to find.");
         int dayOfNewYear = in.nextInt();
