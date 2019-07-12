@@ -1,7 +1,12 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
-import com.implemica.bormashenko.Task3;
+import com.implemica.bormashenko.Main;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static java.lang.System.lineSeparator;
 import static org.junit.jupiter.api.Assertions.*;
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
@@ -52,7 +57,7 @@ class Task3Test {
         check(101, 206, 103, 107, 1);
         check(109, 113, 127, 131, 1);
         //without primes
-        check(4, 9, 25, 49,1);
+        check(4, 9, 25, 49, 1);
         check(12, 16, 70, 147, 1);
         check(49, 77, 55, 36, 1);
 
@@ -663,30 +668,50 @@ class Task3Test {
     /**
      * Function for testing valid args for task3 (gcd).
      * For inputted args define greatest common divisor.
-     * @param a first parameter.
-     * @param b second parameter.
-     * @param c third parameter.
-     * @param d fourth parameter.
+     * Simulates user input from console with valid args.
+     *
+     * @param a        first parameter.
+     * @param b        second parameter.
+     * @param c        third parameter.
+     * @param d        fourth parameter.
      * @param expected expected result of gcd for inputted args.
      */
     void check(int a, int b, int c, int d, int expected) {
-        int actual = Task3.nod4args(a, b, c, d);
-        assertEquals(expected, actual);
+        String input = "3" + lineSeparator() + a + lineSeparator() +
+                b + lineSeparator() + c + lineSeparator() + d;
+        String expectedOutput = "Input number of task from 1 to 5." + lineSeparator() +
+                "Task 3: gcd." + lineSeparator() +
+                "Input 4 integer numbers." + lineSeparator() +
+                expected + lineSeparator();
+
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output));
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        Main.main();
+        assertEquals(expectedOutput, output.toString());
     }
 
     /**
      * Function for testing non-valid args for task3 (gcd).
      * For inputted parameters an IncorrectArgumentException should be thrown.
-     * @see IncorrectArgumentException
+     * Simulates user input from console with non-valid args.
+     *
      * @param a first parameter.
      * @param b second parameter.
      * @param c third parameter.
      * @param d fourth parameter.
+     * @see IncorrectArgumentException
      */
     void checkException(int a, int b, int c, int d) {
         try {
-            Task3.nod4args(a, b, c, d);
-            fail("Exception was not thrown");
+            String input = "3" + lineSeparator() + a + lineSeparator() +
+                    b + lineSeparator() + c + lineSeparator() + d;
+
+            ByteArrayOutputStream output = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(output));
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+            Main.main();
+            fail("Exception was not thrown.");
         } catch (IncorrectArgumentException e) {
             //correct behavior
         }

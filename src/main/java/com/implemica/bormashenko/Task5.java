@@ -17,7 +17,7 @@ public class Task5 {
      *
      * @throws IncorrectArgumentException if validation for args is not passed.
      */
-    public static String defineDayOfWeek(int dayOfNewYear, int dayToFind, int monthToFind) {
+    static String defineDayOfWeek(int dayOfNewYear, int dayToFind, int monthToFind) {
         if (!validation(dayOfNewYear, dayToFind, monthToFind)) {
             throw new IncorrectArgumentException("Wrong date for " + dayToFind + " day of " + monthToFind + " month");
         }

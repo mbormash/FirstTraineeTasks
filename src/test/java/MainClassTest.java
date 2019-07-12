@@ -1,12 +1,10 @@
 import com.implemica.bormashenko.*;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.util.NoSuchElementException;
 
 import static java.lang.System.lineSeparator;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
@@ -15,276 +13,6 @@ import static org.junit.jupiter.api.Assertions.fail;
  * @author Mykhailo Bormashenko
  */
 class MainClassTest {
-
-    /**
-     * Returns standard System.in and System.out.
-     */
-    @AfterEach
-    void returnSystemInAndOut() {
-        System.setIn(System.in);
-        System.setOut(System.out);
-    }
-
-    /**
-     * Tests for task 1, called from main.
-     * Simulates user input from keyboard and
-     * console output. Tests from task 1 used with
-     * override check method.
-     * @see Task1Test
-     */
-    @Test
-    void testTask1() {
-        Task1Test task1Test = new Task1Test() {
-            /**
-             * Overrides method from task1Test, used in tests.
-             * Simulates user input from console with valid args.
-             * @param aBefore value of first test parameter.
-             * @param bBefore value of second test parameter.
-             */
-            @Override
-            void check(int aBefore, int bBefore) {
-                String input = "1" + lineSeparator() + aBefore + lineSeparator() + bBefore;
-                String expected = "Input number of task from 1 to 5." + lineSeparator() +
-                        "Task 1: swap." + lineSeparator() +
-                        "Input 2 integer numbers." + lineSeparator() +
-                        "Before reversing:" + lineSeparator() +
-                        "a: " + aBefore + ", b: " + bBefore + lineSeparator() +
-                        "After reversing:" + lineSeparator() +
-                        "a: " + bBefore + ", b: " + aBefore + lineSeparator();
-
-                ByteArrayOutputStream output = setInAndOut(input);
-                Main.main();
-                assertEquals(expected, output.toString());
-            }
-        };
-        task1Test.tests();
-    }
-
-    /**
-     * Tests for task 2, called from main.
-     * Simulates user input from keyboard and
-     * console output. Tests from task 2 used with
-     * override check method.
-     * @see Task2Test
-     */
-    @Test
-    void testTask2() {
-        Task2Test task2Test = new Task2Test() {
-            /**
-             * Overrides method from task2Test, used in tests.
-             * Simulates user input from console with valid args.
-             * @param floorsInHouse number of floors in house.
-             * @param flatsOnFloor number of flats on floor.
-             * @param numberOfFlat number of flat, for which have to define house and floor.
-             * @param expectedHouse expected value of house.
-             * @param expectedFloor expected value of floor.
-             */
-            @Override
-            void check(int floorsInHouse, int flatsOnFloor, int numberOfFlat,
-                       String expectedHouse, String expectedFloor) {
-                String input = "2" + lineSeparator() + floorsInHouse + lineSeparator() +
-                        flatsOnFloor + lineSeparator() + numberOfFlat;
-                String expected = "Input number of task from 1 to 5." + lineSeparator() +
-                        "Task 2: flat." + lineSeparator() +
-                        "Input number of floors in house, number of flats on floor and number of flat." + lineSeparator() +
-                        numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house" + lineSeparator();
-
-                ByteArrayOutputStream output = setInAndOut(input);
-                Main.main();
-                assertEquals(expected, output.toString());
-            }
-
-            /**
-             * Overrides method from task2Test, used in tests.
-             * Simulates user input from console with valid args.
-             * @param floorsInHouse number of floors in house.
-             * @param flatsOnFloor number of flats on floor.
-             * @param numberOfFlat number of flat, for which have to define house and floor.
-             */
-            @Override
-            void checkException(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
-                try {
-                    String input = "2" + lineSeparator() + floorsInHouse + lineSeparator() +
-                            flatsOnFloor + lineSeparator() + numberOfFlat;
-
-                    setInAndOut(input);
-                    Main.main();
-                    fail("Exception was not thrown.");
-                } catch (IncorrectArgumentException | IntegerOverflowException e) {
-                    //correct behavior
-                }
-            }
-        };
-        task2Test.validArgsTests();
-        task2Test.nonValidArgsTests();
-    }
-
-    /**
-     * Tests for task 3, called from main.
-     * Simulates user input from keyboard and
-     * console output. Tests from task 3 used with
-     * override check method.
-     * @see Task3Test
-     */
-    @Test
-    void testTask3() {
-        Task3Test task3Test = new Task3Test() {
-            /**
-             * Overrides method from task3Test, used in tests.
-             * Simulates user input from console with valid args.
-             * @param a first parameter.
-             * @param b second parameter.
-             * @param c third parameter.
-             * @param d fourth parameter.
-             * @param expected expected result of gcd for inputted args.
-             */
-            @Override
-            void check(int a, int b, int c, int d, int expected) {
-                String input = "3" + lineSeparator() + a + lineSeparator() +
-                        b + lineSeparator() + c + lineSeparator() + d;
-                String expectedOutput = "Input number of task from 1 to 5." + lineSeparator() +
-                        "Task 3: gcd." + lineSeparator() +
-                        "Input 4 integer numbers." + lineSeparator() +
-                        expected + lineSeparator();
-
-                ByteArrayOutputStream output = setInAndOut(input);
-                Main.main();
-                assertEquals(expectedOutput, output.toString());
-            }
-
-            /**
-             * Overrides method from task3Test, used in tests.
-             * Simulates user input from console with valid args.
-             * @param a first parameter.
-             * @param b second parameter.
-             * @param c third parameter.
-             * @param d fourth parameter.
-             */
-            @Override
-            void checkException(int a, int b, int c, int d) {
-                try {
-                    String input = "3" + lineSeparator() + a + lineSeparator() +
-                            b + lineSeparator() + c + lineSeparator() + d;
-
-                    setInAndOut(input);
-                    Main.main();
-                    fail("Exception was not thrown.");
-                } catch (IncorrectArgumentException e) {
-                    //correct behavior
-                }
-            }
-        };
-        task3Test.validArgsTests();
-        task3Test.nonValidArgsTests();
-    }
-
-    /**
-     * Tests for task 4, called from main.
-     * Simulates user input from keyboard and
-     * console output. Tests from task 4 used with
-     * override check method.
-     * @see Task4Test
-     */
-    @Test
-    void testTask4() {
-        Task4Test task4Test = new Task4Test() {
-            /**
-             * Overrides method from task4Test, used in tests.
-             * Simulates user input from console with valid args.
-             * @param n number of fibonacci's value.
-             * @param expected expected fibonacci's value.
-             */
-            @Override
-            void check(int n, String expected) {
-                String input = "4" + lineSeparator() + n;
-                expected = "Input number of task from 1 to 5." + lineSeparator() +
-                        "Task 4: fibonacci." + lineSeparator() +
-                        "Input integer number." + lineSeparator() +
-                        expected + lineSeparator();
-
-                ByteArrayOutputStream output = setInAndOut(input);
-                Main.main();
-                assertEquals(expected, output.toString());
-            }
-
-            /**
-             * Overrides method from task4Test, used in tests.
-             * Simulates user input from console with valid args.
-             * @param n number of fibonacci's value.
-             */
-            @Override
-            void checkException(int n) {
-                try {
-                    String input = "4" + lineSeparator() + n;
-
-                    setInAndOut(input);
-                    Main.main();
-                    fail("Exception was not thrown.");
-                } catch (IncorrectArgumentException e) {
-                    //correct behavior
-                }
-            }
-        };
-        task4Test.validArgsTests();
-        task4Test.nonValidArgsTests();
-    }
-
-    /**
-     * Tests for task 5, called from main.
-     * Simulates user input from keyboard and
-     * console output. Tests from task 5 used with
-     * override check method.
-     * @see Task5Test
-     */
-    @Test
-    void testTask5() {
-        Task5Test task5Test = new Task5Test() {
-            /**
-             * Overrides method from task5Test, used in tests.
-             * Simulates user input from console with valid args.
-             * @param dayOfNewYear day of week from which the year started.
-             * @param dayToFind number of day to define day of week.
-             * @param monthToFind number of month to define day of week.
-             * @param expected expected day of week.
-             */
-            @Override
-            void check(int dayOfNewYear, int dayToFind, int monthToFind, String expected) {
-                String input = "5" + lineSeparator() + dayOfNewYear + lineSeparator() +
-                        dayToFind + lineSeparator() + monthToFind;
-                expected = "Input number of task from 1 to 5." + lineSeparator() +
-                        "Task 5: day of week." + lineSeparator() +
-                        "Input day of New Year, day to find, month to find." + lineSeparator() +
-                        expected + lineSeparator();
-
-                ByteArrayOutputStream output = setInAndOut(input);
-                Main.main();
-                assertEquals(expected, output.toString());
-            }
-
-            /**
-             * Overrides method from task5Test, used in tests.
-             * Simulates user input from console with non-valid args.
-             * @param dayOfNewYear day of week from which the year started.
-             * @param dayToFind number of day to define day of week.
-             * @param monthToFind number of month to define day of week.
-             */
-            @Override
-            void checkException(int dayOfNewYear, int dayToFind, int monthToFind) {
-                try {
-                    String input = "5" + lineSeparator() + dayOfNewYear + lineSeparator() +
-                            dayToFind + lineSeparator() + monthToFind;
-
-                    setInAndOut(input);
-                    Main.main();
-                    fail("Exception was not thrown.");
-                } catch (IncorrectArgumentException e) {
-                    //correct behavior
-                }
-            }
-        };
-        task5Test.validArgsTests();
-        task5Test.nonValidArgsTests();
-    }
 
     /**
      * Tests with non-valid args for main.
@@ -772,14 +500,15 @@ class MainClassTest {
      * Emulates input from keyboard.
      * For inputted parameters an IncorrectArgumentException or
      * NoSuchElementException should be thrown.
+     *
+     * @param args strings that could be inputted from keyboard.
      * @see IncorrectArgumentException
      * @see NoSuchElementException
-     * @param args strings that could be inputted from keyboard.
      */
     private void checkException(String... args) {
         try {
             StringBuilder input = new StringBuilder();
-            for (String s: args) {
+            for (String s : args) {
                 input.append(s);
                 input.append(lineSeparator());
             }
@@ -791,18 +520,5 @@ class MainClassTest {
         } catch (NoSuchElementException | IncorrectArgumentException e) {
             //correct behavior
         }
-    }
-
-    /**
-     * Overrides System.in and System.out for simulating user
-     * input from keyboard and console output.
-     * @param input the line that the user could enter.
-     * @return ByteArrayStream in which output (that should be in console) would be written.
-     */
-    private ByteArrayOutputStream setInAndOut(String input) {
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(output));
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        return output;
     }
 }

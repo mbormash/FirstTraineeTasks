@@ -1,8 +1,12 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
-import com.implemica.bormashenko.Task4;
+import com.implemica.bormashenko.Main;
 import org.junit.jupiter.api.Test;
-import java.math.BigInteger;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static java.lang.System.lineSeparator;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -159,23 +163,42 @@ class Task4Test {
     /**
      * Function for testing valid args for task4 (fibonacci).
      * For inputted parameter define fibonacci's number.
-     * @param n number of fibonacci's value.
+     * Simulates user input from console with valid args.
+     *
+     * @param n        number of fibonacci's value.
      * @param expected expected fibonacci's value.
      */
     void check(int n, String expected) {
-        assertEquals(new BigInteger(expected), Task4.genNFib(n), "genNFib(" + n + "):");
+        String input = "4" + lineSeparator() + n;
+        expected = "Input number of task from 1 to 5." + lineSeparator() +
+                "Task 4: fibonacci." + lineSeparator() +
+                "Input integer number." + lineSeparator() +
+                expected + lineSeparator();
+
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output));
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        Main.main();
+        assertEquals(expected, output.toString());
     }
 
     /**
      * Function for testing non-valid args for task4 (fibonacci).
      * For inputted parameter an IncorrectArgumentException should be thrown.
-     * @see IncorrectArgumentException
+     * Simulates user input from console with non-valid args.
+     *
      * @param n number of fibonacci's value.
+     * @see IncorrectArgumentException
      */
     void checkException(int n) {
         try {
-            Task4.genNFib(n);
-            fail("Exception was not thrown");
+            String input = "4" + lineSeparator() + n;
+
+            ByteArrayOutputStream output = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(output));
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+            Main.main();
+            fail("Exception was not thrown.");
         } catch (IncorrectArgumentException e) {
             //correct behavior
         }

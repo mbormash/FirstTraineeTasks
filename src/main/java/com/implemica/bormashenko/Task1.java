@@ -21,7 +21,7 @@ public class Task1 {
      * Setting parameter a.
      * @param a value to set.
      */
-    public void setA(int a) {
+    void setA(int a) {
         this.a = a;
     }
 
@@ -29,31 +29,15 @@ public class Task1 {
      * Setting parameter b.
      * @param b value to set.
      */
-    public void setB(int b) {
+    void setB(int b) {
         this.b = b;
-    }
-
-    /**
-     * Getting parameter a.
-     * @return value of a.
-     */
-    public int getA() {
-        return a;
-    }
-
-    /**
-     * Getting parameter b.
-     * @return value of b.
-     */
-    public int getB() {
-        return b;
     }
 
     /**
      * Swaps the value of two variables
      * without using third variable.
      */
-    public void swap() {
+    private void swap() {
         a += b;
         b = a - b;
         a -= b;
@@ -66,9 +50,9 @@ public class Task1 {
      */
     void showSwapping() {
         System.out.println("Before reversing:" + System.lineSeparator() +
-                "a: " + getA() + ", b: " + getB());
+                "a: " + a + ", b: " + b);
         swap();
         System.out.println("After reversing:" + System.lineSeparator() +
-                "a: " + getA() + ", b: " + getB());
+                "a: " + a + ", b: " + b);
     }
 }

@@ -1,11 +1,16 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.IntegerOverflowException;
-import com.implemica.bormashenko.Task2;
+import com.implemica.bormashenko.Main;
 import org.junit.jupiter.api.Test;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
 import static java.lang.String.valueOf;
+import static java.lang.System.lineSeparator;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -18,7 +23,7 @@ class Task2Test {
     /**
      * Value of sqrt of Integer.MAX_VALUE, converted to int.
      */
-    private static final int SQRT_MAX = (int)Math.sqrt(MAX_VALUE);
+    private static final int SQRT_MAX = (int) Math.sqrt(MAX_VALUE);
 
     /**
      * Tests with valid args for task2 (flats).
@@ -264,7 +269,7 @@ class Task2Test {
 
         check(100, MAX_VALUE / 100, 1, "1", "1");
         check(100, MAX_VALUE / 100, 2, "1", "1");
-        check(100, MAX_VALUE / 100, MAX_VALUE / 2, "1",  "51");
+        check(100, MAX_VALUE / 100, MAX_VALUE / 2, "1", "51");
         check(100, MAX_VALUE / 100, MAX_VALUE - 1, "2", "1");
         check(100, MAX_VALUE / 100, MAX_VALUE, "2", "1");
 
@@ -782,8 +787,8 @@ class Task2Test {
         checkException(21471864, 7816481, 413139999);
         checkException(6551515, 565464, 5656546);
         checkException(169286336, 555892314, 48899166);
-        checkException(15313216, 3151651,9155233);
-        checkException(6525665, 565656,8949433);
+        checkException(15313216, 3151651, 9155233);
+        checkException(6525665, 565656, 8949433);
         checkException(265626403, 6565648, 234526532);
         checkException(8532702, 965275638, 65236523);
         checkException(514, 51231141, 612412431);
@@ -796,17 +801,17 @@ class Task2Test {
 
         //boundary tests for too large numbers
         //(int)(MAX_VALUE + 1L) / 2 and 2
-        checkException((int)(MAX_VALUE + 1L) / 2, 2, 1);
-        checkException((int)(MAX_VALUE + 1L) / 2, 2, 2);
-        checkException((int)(MAX_VALUE + 1L) / 2, 2, MAX_VALUE / 2);
-        checkException((int)(MAX_VALUE + 1L) / 2, 2, MAX_VALUE - 1);
-        checkException((int)(MAX_VALUE + 1L) / 2, 2, MAX_VALUE);
+        checkException((int) (MAX_VALUE + 1L) / 2, 2, 1);
+        checkException((int) (MAX_VALUE + 1L) / 2, 2, 2);
+        checkException((int) (MAX_VALUE + 1L) / 2, 2, MAX_VALUE / 2);
+        checkException((int) (MAX_VALUE + 1L) / 2, 2, MAX_VALUE - 1);
+        checkException((int) (MAX_VALUE + 1L) / 2, 2, MAX_VALUE);
 
-        checkException(2, (int)(MAX_VALUE + 1L) / 2, 1);
-        checkException(2, (int)(MAX_VALUE + 1L) / 2, 2);
-        checkException(2, (int)(MAX_VALUE + 1L) / 2, MAX_VALUE / 2);
-        checkException(2, (int)(MAX_VALUE + 1L) / 2, MAX_VALUE - 1);
-        checkException(2, (int)(MAX_VALUE + 1L) / 2, MAX_VALUE);
+        checkException(2, (int) (MAX_VALUE + 1L) / 2, 1);
+        checkException(2, (int) (MAX_VALUE + 1L) / 2, 2);
+        checkException(2, (int) (MAX_VALUE + 1L) / 2, MAX_VALUE / 2);
+        checkException(2, (int) (MAX_VALUE + 1L) / 2, MAX_VALUE - 1);
+        checkException(2, (int) (MAX_VALUE + 1L) / 2, MAX_VALUE);
 
         //MAX_VALUE / 2
         //and 3
@@ -981,33 +986,52 @@ class Task2Test {
     /**
      * Function for testing valid args for task2 (flats).
      * For inputted parameters define in which house and on which floor the flat is located.
+     * Simulates user input from console with valid args.
+     *
      * @param floorsInHouse number of floors in house.
-     * @param flatsOnFloor number of flats on floor.
-     * @param numberOfFlat number of flat, for which have to define house and floor.
+     * @param flatsOnFloor  number of flats on floor.
+     * @param numberOfFlat  number of flat, for which have to define house and floor.
      * @param expectedHouse expected value of house.
      * @param expectedFloor expected value of floor.
      */
     void check(int floorsInHouse, int flatsOnFloor, int numberOfFlat,
-                       String expectedHouse, String expectedFloor) {
-        String expected = numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house";
-        String actual = new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
-        assertEquals(expected, actual);
+               String expectedHouse, String expectedFloor) {
+        String input = "2" + lineSeparator() + floorsInHouse + lineSeparator() +
+                flatsOnFloor + lineSeparator() + numberOfFlat;
+        String expected = "Input number of task from 1 to 5." + lineSeparator() +
+                "Task 2: flat." + lineSeparator() +
+                "Input number of floors in house, number of flats on floor and number of flat." + lineSeparator() +
+                numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house" + lineSeparator();
+
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output));
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        Main.main();
+        assertEquals(expected, output.toString());
     }
 
     /**
      * Function for testing non-valid args for task2 (flats).
      * For inputted parameters an IncorrectArgumentException or
      * IntegerOverflowException should be thrown.
+     * Simulates user input from console with non-valid args.
+     *
+     * @param floorsInHouse number of floors in house.
+     * @param flatsOnFloor  number of flats on floor.
+     * @param numberOfFlat  number of flat, for which have to define house and floor.
      * @see IncorrectArgumentException
      * @see IntegerOverflowException
-     * @param floorsInHouse number of floors in house.
-     * @param flatsOnFloor number of flats on floor.
-     * @param numberOfFlat number of flat, for which have to define house and floor.
      */
     void checkException(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
         try {
-            new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
-            fail("Exception was not thrown");
+            String input = "2" + lineSeparator() + floorsInHouse + lineSeparator() +
+                    flatsOnFloor + lineSeparator() + numberOfFlat;
+
+            ByteArrayOutputStream output = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(output));
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+            Main.main();
+            fail("Exception was not thrown.");
         } catch (IncorrectArgumentException | IntegerOverflowException e) {
             //correct behavior
         }

@@ -1,7 +1,12 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
-import com.implemica.bormashenko.Task5;
+import com.implemica.bormashenko.Main;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static java.lang.System.lineSeparator;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -798,28 +803,48 @@ class Task5Test {
     /**
      * Function for testing valid args for task5 (day of week).
      * For inputted args define day of week.
+     * Simulates user input from console with valid args.
+     *
      * @param dayOfNewYear day of week from which the year started.
-     * @param dayToFind number of day to define day of week.
-     * @param monthToFind number of month to define day of week.
-     * @param expected expected day of week.
+     * @param dayToFind    number of day to define day of week.
+     * @param monthToFind  number of month to define day of week.
+     * @param expected     expected day of week.
      */
     void check(int dayOfNewYear, int dayToFind, int monthToFind, String expected) {
-        String actual = Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
-        assertEquals(expected, actual);
+        String input = "5" + lineSeparator() + dayOfNewYear + lineSeparator() +
+                dayToFind + lineSeparator() + monthToFind;
+        expected = "Input number of task from 1 to 5." + lineSeparator() +
+                "Task 5: day of week." + lineSeparator() +
+                "Input day of New Year, day to find, month to find." + lineSeparator() +
+                expected + lineSeparator();
+
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output));
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        Main.main();
+        assertEquals(expected, output.toString());
     }
 
     /**
      * Function for testing non-valid args for task5 (day of week).
      * For inputted parameters an IncorrectArgumentException should be thrown.
-     * @see IncorrectArgumentException
+     * Simulates user input from console with non-valid args.
+     *
      * @param dayOfNewYear day of week from which the year started.
-     * @param dayToFind number of day to define day of week.
-     * @param monthToFind number of month to define day of week.
+     * @param dayToFind    number of day to define day of week.
+     * @param monthToFind  number of month to define day of week.
+     * @see IncorrectArgumentException
      */
     void checkException(int dayOfNewYear, int dayToFind, int monthToFind) {
         try {
-            Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
-            fail("Exception was not thrown");
+            String input = "5" + lineSeparator() + dayOfNewYear + lineSeparator() +
+                    dayToFind + lineSeparator() + monthToFind;
+
+            ByteArrayOutputStream output = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(output));
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+            Main.main();
+            fail("Exception was not thrown.");
         } catch (IncorrectArgumentException e) {
             //correct behavior
         }
