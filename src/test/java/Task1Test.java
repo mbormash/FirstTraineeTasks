@@ -1,4 +1,6 @@
 import com.implemica.bormashenko.Main;
+import com.implemica.bormashenko.Task1;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -7,9 +9,7 @@ import java.io.PrintStream;
 
 import static java.lang.Integer.MIN_VALUE;
 import static java.lang.Integer.MAX_VALUE;
-import static java.lang.System.lineSeparator;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 
 /**
  * Test class for Task1 (swap).
@@ -17,6 +17,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author Mykhailo Bormashenko
  */
 class Task1Test {
+
+    /**
+     * Constant for lineSeparator.
+     */
+    private static final String L_S = System.lineSeparator();
+
+    /**
+     * Object of Task1.
+     */
+    private static Task1 obj;
+
+    /**
+     * Setting up an object.
+     */
+    @BeforeAll
+    static void setupObject() {
+        obj = new Task1();
+    }
 
     /**
      * Tests for task1 (swap).
@@ -203,25 +221,47 @@ class Task1Test {
     /**
      * Function for testing task1 (swap).
      * Values of two parameters should be swapped between each other.
-     * Simulates user input from console with valid args.
+     * Also simulates user input from console with valid args.
      *
      * @param aBefore value of first test parameter.
      * @param bBefore value of second test parameter.
      */
     void check(int aBefore, int bBefore) {
-        String input = "1" + lineSeparator() + aBefore + lineSeparator() + bBefore;
-        String expected = "Input number of task from 1 to 5." + lineSeparator() +
-                "Task 1: swap." + lineSeparator() +
-                "Input 2 integer numbers." + lineSeparator() +
-                "Before reversing:" + lineSeparator() +
-                "a: " + aBefore + ", b: " + bBefore + lineSeparator() +
-                "After reversing:" + lineSeparator() +
-                "a: " + bBefore + ", b: " + aBefore + lineSeparator();
+        //Task 1 by itself
+        obj.setA(aBefore);
+        obj.setB(bBefore);
+        obj.swap();
+        int aAfter = obj.getA();
+        int bAfter = obj.getB();
+        assertEquals(bBefore, aAfter);
+        assertEquals(aBefore, bAfter);
 
+        //Task 1 in main
+        String input = "1" + L_S + aBefore + L_S + bBefore;
+        String expected =
+                "Input number of task from 1 to 5." + L_S +
+                "Task 1: swap." + L_S +
+                "Input 2 integer numbers." + L_S +
+                "Before reversing:" + L_S +
+                "a: " + aBefore + ", b: " + bBefore + L_S +
+                "After reversing:" + L_S +
+                "a: " + bBefore + ", b: " + aBefore + L_S;
+
+        ByteArrayOutputStream output = setInAndOut(input);
+        Main.main();
+        assertEquals(expected, output.toString());
+    }
+
+    /**
+     * Overrides System.in and System.out.
+     *
+     * @param input string that should be converted to System.in.
+     * @return System.out that should be converted to ByteArrayOutputStream.
+     */
+    private ByteArrayOutputStream setInAndOut(String input) {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         System.setOut(new PrintStream(output));
         System.setIn(new ByteArrayInputStream(input.getBytes()));
-        Main.main();
-        assertEquals(expected, output.toString());
+        return output;
     }
 }

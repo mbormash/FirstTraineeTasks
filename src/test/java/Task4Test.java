@@ -1,12 +1,13 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.Main;
+import com.implemica.bormashenko.Task4;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.math.BigInteger;
 
-import static java.lang.System.lineSeparator;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -15,6 +16,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Mykhailo Bormashenko
  */
 class Task4Test {
+
+    /**
+     * Constant for lineSeparator.
+     */
+    private static final String L_S = System.lineSeparator();
 
     /**
      * Special point for testing.
@@ -169,17 +175,20 @@ class Task4Test {
      * @param expected expected fibonacci's value.
      */
     void check(int n, String expected) {
-        String input = "4" + lineSeparator() + n;
-        expected = "Input number of task from 1 to 5." + lineSeparator() +
-                "Task 4: fibonacci." + lineSeparator() +
-                "Input integer number." + lineSeparator() +
-                expected + lineSeparator();
+        //Task 4 by itself
+        assertEquals(new BigInteger(expected), Task4.genNFib(n), "genNFib(" + n + "):");
 
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(output));
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        //Task 4 in main
+        String input = "4" + L_S + n;
+        String expectedMain =
+                "Input number of task from 1 to 5." + L_S +
+                "Task 4: fibonacci." + L_S +
+                "Input integer number." + L_S +
+                expected + L_S;
+
+        ByteArrayOutputStream output = setInAndOut(input);
         Main.main();
-        assertEquals(expected, output.toString());
+        assertEquals(expectedMain, output.toString());
     }
 
     /**
@@ -191,16 +200,29 @@ class Task4Test {
      * @see IncorrectArgumentException
      */
     void checkException(int n) {
+        //Task 4 by itself
         try {
-            String input = "4" + lineSeparator() + n;
+            Task4.genNFib(n);
+            fail("Exception was not thrown");
+        } catch (IncorrectArgumentException e) {
+            //correct behavior
+        }
 
-            ByteArrayOutputStream output = new ByteArrayOutputStream();
-            System.setOut(new PrintStream(output));
-            System.setIn(new ByteArrayInputStream(input.getBytes()));
+        //Task 4 in main
+        try {
+            String input = "4" + L_S + n;
+            setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
         } catch (IncorrectArgumentException e) {
             //correct behavior
         }
+    }
+
+    private ByteArrayOutputStream setInAndOut(String input) {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output));
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        return output;
     }
 }

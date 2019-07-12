@@ -1,12 +1,12 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.Main;
+import com.implemica.bormashenko.Task3;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static java.lang.System.lineSeparator;
 import static org.junit.jupiter.api.Assertions.*;
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
@@ -17,6 +17,11 @@ import static java.lang.Integer.MIN_VALUE;
  * @author Mykhailo Bormashenko
  */
 class Task3Test {
+
+    /**
+     * Constant for lineSeparator.
+     */
+    private static final String L_S = System.lineSeparator();
 
     /**
      * Tests with valid args for task3 (gcd).
@@ -677,18 +682,21 @@ class Task3Test {
      * @param expected expected result of gcd for inputted args.
      */
     void check(int a, int b, int c, int d, int expected) {
-        String input = "3" + lineSeparator() + a + lineSeparator() +
-                b + lineSeparator() + c + lineSeparator() + d;
-        String expectedOutput = "Input number of task from 1 to 5." + lineSeparator() +
-                "Task 3: gcd." + lineSeparator() +
-                "Input 4 integer numbers." + lineSeparator() +
-                expected + lineSeparator();
+        //Task 3 by itself
+        int actual = Task3.nod4args(a, b, c, d);
+        assertEquals(expected, actual);
 
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(output));
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        //Task 3 in main
+        String input = "3" + L_S + a + L_S + b + L_S + c + L_S + d;
+        String expectedMain =
+                "Input number of task from 1 to 5." + L_S +
+                "Task 3: gcd." + L_S +
+                "Input 4 integer numbers." + L_S +
+                expected + L_S;
+
+        ByteArrayOutputStream output = setInAndOut(input);
         Main.main();
-        assertEquals(expectedOutput, output.toString());
+        assertEquals(expectedMain, output.toString());
     }
 
     /**
@@ -703,17 +711,29 @@ class Task3Test {
      * @see IncorrectArgumentException
      */
     void checkException(int a, int b, int c, int d) {
+        //Task 3 by itself
         try {
-            String input = "3" + lineSeparator() + a + lineSeparator() +
-                    b + lineSeparator() + c + lineSeparator() + d;
+            Task3.nod4args(a, b, c, d);
+            fail("Exception was not thrown");
+        } catch (IncorrectArgumentException e) {
+            //correct behavior
+        }
 
-            ByteArrayOutputStream output = new ByteArrayOutputStream();
-            System.setOut(new PrintStream(output));
-            System.setIn(new ByteArrayInputStream(input.getBytes()));
+        //Task 3 in main
+        try {
+            String input = "3" + L_S + a + L_S + b + L_S + c + L_S + d;
+            setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
         } catch (IncorrectArgumentException e) {
             //correct behavior
         }
+    }
+
+    private ByteArrayOutputStream setInAndOut(String input) {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output));
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        return output;
     }
 }

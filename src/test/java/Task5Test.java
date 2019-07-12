@@ -1,12 +1,12 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.Main;
+import com.implemica.bormashenko.Task5;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static java.lang.System.lineSeparator;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -15,6 +15,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Mykhailo Bormashenko
  */
 class Task5Test {
+
+    /**
+     * Constant for lineSeparator.
+     */
+    private static final String L_S = System.lineSeparator();
 
     /**
      * Max amount of days in 28-day month.
@@ -811,18 +816,21 @@ class Task5Test {
      * @param expected     expected day of week.
      */
     void check(int dayOfNewYear, int dayToFind, int monthToFind, String expected) {
-        String input = "5" + lineSeparator() + dayOfNewYear + lineSeparator() +
-                dayToFind + lineSeparator() + monthToFind;
-        expected = "Input number of task from 1 to 5." + lineSeparator() +
-                "Task 5: day of week." + lineSeparator() +
-                "Input day of New Year, day to find, month to find." + lineSeparator() +
-                expected + lineSeparator();
+        //Task 5 by itself
+        String actual = Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
+        assertEquals(expected, actual);
 
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(output));
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        //Task 5 in main
+        String input = "5" + L_S + dayOfNewYear + L_S + dayToFind + L_S + monthToFind;
+        String expectedMain =
+                "Input number of task from 1 to 5." + L_S +
+                "Task 5: day of week." + L_S +
+                "Input day of New Year, day to find, month to find." + L_S +
+                expected + L_S;
+
+        ByteArrayOutputStream output = setInAndOut(input);
         Main.main();
-        assertEquals(expected, output.toString());
+        assertEquals(expectedMain, output.toString());
     }
 
     /**
@@ -836,17 +844,29 @@ class Task5Test {
      * @see IncorrectArgumentException
      */
     void checkException(int dayOfNewYear, int dayToFind, int monthToFind) {
+        //Task 5 by itself
         try {
-            String input = "5" + lineSeparator() + dayOfNewYear + lineSeparator() +
-                    dayToFind + lineSeparator() + monthToFind;
+            Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
+            fail("Exception was not thrown");
+        } catch (IncorrectArgumentException e) {
+            //correct behavior
+        }
 
-            ByteArrayOutputStream output = new ByteArrayOutputStream();
-            System.setOut(new PrintStream(output));
-            System.setIn(new ByteArrayInputStream(input.getBytes()));
+        //Task 5 in main
+        try {
+            String input = "5" + L_S + dayOfNewYear + L_S + dayToFind + L_S + monthToFind;
+            setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
         } catch (IncorrectArgumentException e) {
             //correct behavior
         }
+    }
+
+    private ByteArrayOutputStream setInAndOut(String input) {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output));
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        return output;
     }
 }

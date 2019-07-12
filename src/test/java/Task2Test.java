@@ -1,6 +1,7 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.IntegerOverflowException;
 import com.implemica.bormashenko.Main;
+import com.implemica.bormashenko.Task2;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -10,7 +11,6 @@ import java.io.PrintStream;
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
 import static java.lang.String.valueOf;
-import static java.lang.System.lineSeparator;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -19,6 +19,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Mykhailo Bormashenko
  */
 class Task2Test {
+
+    /**
+     * Constant for lineSeparator.
+     */
+    private static final String L_S = System.lineSeparator();
 
     /**
      * Value of sqrt of Integer.MAX_VALUE, converted to int.
@@ -996,18 +1001,22 @@ class Task2Test {
      */
     void check(int floorsInHouse, int flatsOnFloor, int numberOfFlat,
                String expectedHouse, String expectedFloor) {
-        String input = "2" + lineSeparator() + floorsInHouse + lineSeparator() +
-                flatsOnFloor + lineSeparator() + numberOfFlat;
-        String expected = "Input number of task from 1 to 5." + lineSeparator() +
-                "Task 2: flat." + lineSeparator() +
-                "Input number of floors in house, number of flats on floor and number of flat." + lineSeparator() +
-                numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house" + lineSeparator();
+        //Task 2 by itself
+        String expected = numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house";
+        String actual = new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
+        assertEquals(expected, actual);
 
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(output));
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        //Task 2 in main
+        String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
+        String expectedMain =
+                "Input number of task from 1 to 5." + L_S +
+                "Task 2: flat." + L_S +
+                "Input number of floors in house, number of flats on floor and number of flat." + L_S +
+                numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house" + L_S;
+
+        ByteArrayOutputStream output = setInAndOut(input);
         Main.main();
-        assertEquals(expected, output.toString());
+        assertEquals(expectedMain, output.toString());
     }
 
     /**
@@ -1023,17 +1032,29 @@ class Task2Test {
      * @see IntegerOverflowException
      */
     void checkException(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
+        //Task 2 by itself
         try {
-            String input = "2" + lineSeparator() + floorsInHouse + lineSeparator() +
-                    flatsOnFloor + lineSeparator() + numberOfFlat;
+            new Task2(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
+            fail("Exception was not thrown");
+        } catch (IncorrectArgumentException | IntegerOverflowException e) {
+            //correct behavior
+        }
 
-            ByteArrayOutputStream output = new ByteArrayOutputStream();
-            System.setOut(new PrintStream(output));
-            System.setIn(new ByteArrayInputStream(input.getBytes()));
+        //Task 2 in main
+        try {
+            String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
+            setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
         } catch (IncorrectArgumentException | IntegerOverflowException e) {
             //correct behavior
         }
+    }
+
+    private ByteArrayOutputStream setInAndOut(String input) {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output));
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        return output;
     }
 }

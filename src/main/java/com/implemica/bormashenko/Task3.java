@@ -33,9 +33,9 @@ public class Task3 {
 
         while (x != 0 && y != 0) {
             if (x > y) {
-                x %= y;
+                x = x % y;
             } else {
-                y %= x;
+                y = y % x;
             }
         }
         return x + y;
@@ -51,7 +51,7 @@ public class Task3 {
      *
      * @throws IncorrectArgumentException if at least one number is Integer.MIN_VALUE.
      */
-    static int nod4args(int a, int b, int c, int d) {
+    public static int nod4args(int a, int b, int c, int d) {
         int nodAB = nod2args(a, b);
         int nodCD = nod2args(c, d);
         return nod2args(nodAB, nodCD);

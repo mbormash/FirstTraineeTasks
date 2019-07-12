@@ -16,7 +16,7 @@ public class Task4 {
      *
      * @throws IncorrectArgumentException if n is negative.
      */
-    static BigInteger genNFib(int n) {
+    public static BigInteger genNFib(int n) {
         if (n < 0) {
             throw new IncorrectArgumentException("Number should be non-negative.");
         }

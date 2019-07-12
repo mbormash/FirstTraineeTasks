@@ -56,7 +56,7 @@ public class Task2 {
      *
      * @throws IncorrectArgumentException if number of flat is non-positive.
      */
-    String defineHouseAndFloor(int flat) {
+    public String defineHouseAndFloor(int flat) {
         if (flat <= 0) {
             throw new IncorrectArgumentException("Number should be positive.");
         }
