@@ -55,6 +55,7 @@ public class Main {
         System.out.println("Input 2 integer numbers.");
         int a = in.nextInt();
         int b = in.nextInt();
+
         Task1 task1 = new Task1();
         task1.setA(a);
         task1.setB(b);
@@ -75,6 +76,7 @@ public class Main {
         int floorsInHouse = in.nextInt();
         int flatsOnFloor = in.nextInt();
         int flat = in.nextInt();
+
         Task2 task2 = new Task2(floorsInHouse, flatsOnFloor);
         System.out.println(task2.defineHouseAndFloor(flat));
     }
@@ -94,6 +96,7 @@ public class Main {
         int b = in.nextInt();
         int c = in.nextInt();
         int d = in.nextInt();
+
         System.out.println(Task3.nod4args(a, b, c, d));
     }
 
@@ -109,6 +112,7 @@ public class Main {
         System.out.println("Task 4: fibonacci.");
         System.out.println("Input integer number.");
         int n = in.nextInt();
+
         System.out.println(Task4.genNFib(n));
     }
 
@@ -126,6 +130,7 @@ public class Main {
         int dayOfNewYear = in.nextInt();
         int dayToFind = in.nextInt();
         int monthToFind = in.nextInt();
+
         System.out.println(Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind));
     }
 }

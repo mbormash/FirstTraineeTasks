@@ -8,6 +8,12 @@ package com.implemica.bormashenko;
  */
 public class Task5 {
 
+    private static final int DAYS_IN_MONTH_28 = 28;
+    private static final int DAYS_IN_MONTH_30 = 30;
+    private static final int DAYS_IN_MONTH_31 = 31;
+    private static final int DAYS_IN_WEEK = 7;
+    private static final int MONTHS_IN_YEAR = 12;
+
     /**
      * Defines day of week for inputted month and day.
      * @param dayOfNewYear day of week of New Year.
@@ -21,37 +27,41 @@ public class Task5 {
         if (!validation(dayOfNewYear, dayToFind, monthToFind)) {
             throw new IncorrectArgumentException("Wrong date for " + dayToFind + " day of " + monthToFind + " month");
         }
+
         int days = 0;
+
         switch (monthToFind) {
             case 12:
-                days += 30; //november
+                days += DAYS_IN_MONTH_30; //november
             case 11:
-                days += 31; //october
+                days += DAYS_IN_MONTH_31; //october
             case 10:
-                days += 30; //september
+                days += DAYS_IN_MONTH_30; //september
             case 9:
-                days += 31; //august
+                days += DAYS_IN_MONTH_31; //august
             case 8:
-                days += 31; //july
+                days += DAYS_IN_MONTH_31; //july
             case 7:
-                days += 30; //june
+                days += DAYS_IN_MONTH_30; //june
             case 6:
-                days += 31; //may
+                days += DAYS_IN_MONTH_31; //may
             case 5:
-                days += 30; //april
+                days += DAYS_IN_MONTH_30; //april
             case 4:
-                days += 31; //march
+                days += DAYS_IN_MONTH_31; //march
             case 3:
-                days += 28; //february
+                days += DAYS_IN_MONTH_28; //february
             case 2:
-                days += 31; //january
+                days += DAYS_IN_MONTH_31; //january
             default:
                 days += dayToFind;
-                days += dayOfNewYear - 1;
+                days += dayOfNewYear;
+                days--;
         }
 
-        days %= 7;
+        days %= DAYS_IN_WEEK;
         String day;
+
         switch (days) {
             case 1:
                 day = "Monday";
@@ -85,19 +95,23 @@ public class Task5 {
      * @return true if validation passed or false if validation not passed.
      */
     private static boolean validation(int dayOfNewYear, int dayToFind, int monthToFind) {
-        if (dayOfNewYear > 7 || dayOfNewYear < 1) {
+        if (dayOfNewYear > DAYS_IN_WEEK || dayOfNewYear < 1) {
             return false;
         }
-        if (monthToFind > 12 || monthToFind < 1) {
+
+        if (monthToFind > MONTHS_IN_YEAR || monthToFind < 1) {
             return false;
         }
-        if (dayToFind <= 0) {
+
+        if (dayToFind < 1) {
             return false;
         }
+
         int maxDay;
+
         switch (monthToFind) {
             case 2:
-                maxDay = 28;
+                maxDay = DAYS_IN_MONTH_28;
                 break;
             case 1:
             case 3:
@@ -106,11 +120,12 @@ public class Task5 {
             case 8:
             case 10:
             case 12:
-                maxDay = 31;
+                maxDay = DAYS_IN_MONTH_31;
                 break;
             default:
-                maxDay = 30;
+                maxDay = DAYS_IN_MONTH_30;
         }
+
         return !(dayToFind > maxDay);
     }
 }

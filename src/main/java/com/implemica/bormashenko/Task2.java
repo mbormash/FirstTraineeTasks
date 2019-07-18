@@ -63,27 +63,29 @@ public class Task2 {
 
         this.flat = flat;
         int flatsInHome = flatsOnFloor * floorsInHouse;
-        int house = 0;
+        int house = 1;
 
         if (flat > flatsInHome) {
-            house = flat / flatsInHome;
+            house += flat / flatsInHome;
             flat = flat % flatsInHome;
             if (flat == 0) {
+                --house;
                 this.house = house;
                 this.floor = floorsInHouse;
-                return this.toString();
+                return toString();
             }
         }
 
-        this.house = ++house;
-
+        this.house = house;
         int floor = 1;
+
         if (flat > flatsOnFloor) {
             floor = flat / flatsOnFloor;
             if (flat % flatsOnFloor != 0) {
                 floor++;
             }
         }
+
         this.floor = floor;
         return toString();
     }

@@ -1,4 +1,5 @@
 package com.implemica.bormashenko;
+
 import static java.lang.Integer.MIN_VALUE;
 
 /**
@@ -18,15 +19,18 @@ public class Task3 {
         if (a == MIN_VALUE || b == MIN_VALUE) {
             throw new IncorrectArgumentException("Number should be not less than " + (MIN_VALUE + 1));
         }
+
         int x = Math.abs(a);
         int y = Math.abs(b);
 
         if (x == 0 || y == 0) {
             return 0;
         }
+
         if (x == 1 || y == 1) {
             return 1;
         }
+
         if (x == y) {
             return x;
         }
@@ -38,6 +42,7 @@ public class Task3 {
                 y = y % x;
             }
         }
+
         return x + y;
     }
 

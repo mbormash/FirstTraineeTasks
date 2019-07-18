@@ -20,9 +20,11 @@ public class Task4 {
         if (n < 0) {
             throw new IncorrectArgumentException("Number should be non-negative.");
         }
+
         if (n == 0) {
             return BigInteger.ZERO;
         }
+
         if (n == 1) {
             return BigInteger.ONE;
         }
@@ -30,11 +32,13 @@ public class Task4 {
         BigInteger fib1 = BigInteger.ZERO;
         BigInteger fib2 = BigInteger.ONE;
         BigInteger fib3 = BigInteger.ZERO;
+
         for (int i = 2; i <= n; i++) {
             fib3 = fib1.add(fib2);
             fib1 = fib2;
             fib2 = fib3;
         }
+
         return fib3;
     }
 }
