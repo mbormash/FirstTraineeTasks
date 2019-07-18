@@ -26,6 +26,7 @@ public class Task4 {
         if (n == 1) {
             return BigInteger.ONE;
         }
+
         BigInteger fib1 = BigInteger.ZERO;
         BigInteger fib2 = BigInteger.ONE;
         BigInteger fib3 = BigInteger.ZERO;

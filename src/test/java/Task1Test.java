@@ -2,7 +2,6 @@ import com.implemica.bormashenko.Main;
 import com.implemica.bormashenko.Task1;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -240,12 +239,12 @@ class Task1Test {
         String input = "1" + L_S + aBefore + L_S + bBefore;
         String expected =
                 "Input number of task from 1 to 5." + L_S +
-                "Task 1: swap." + L_S +
-                "Input 2 integer numbers." + L_S +
-                "Before reversing:" + L_S +
-                "a: " + aBefore + ", b: " + bBefore + L_S +
-                "After reversing:" + L_S +
-                "a: " + bBefore + ", b: " + aBefore + L_S;
+                        "Task 1: swap." + L_S +
+                        "Input 2 integer numbers." + L_S +
+                        "Before reversing:" + L_S +
+                        "a: " + aBefore + ", b: " + bBefore + L_S +
+                        "After reversing:" + L_S +
+                        "a: " + bBefore + ", b: " + aBefore + L_S;
 
         ByteArrayOutputStream output = setInAndOut(input);
         Main.main();

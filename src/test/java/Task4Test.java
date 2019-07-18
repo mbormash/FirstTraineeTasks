@@ -2,7 +2,6 @@ import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.Main;
 import com.implemica.bormashenko.Task4;
 import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -219,6 +218,12 @@ class Task4Test {
         }
     }
 
+    /**
+     * Overrides System.in and System.out.
+     *
+     * @param input string that should be converted to System.in.
+     * @return System.out that should be converted to ByteArrayOutputStream.
+     */
     private ByteArrayOutputStream setInAndOut(String input) {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         System.setOut(new PrintStream(output));

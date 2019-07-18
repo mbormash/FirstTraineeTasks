@@ -2,7 +2,6 @@ import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.Main;
 import com.implemica.bormashenko.Task3;
 import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -690,9 +689,9 @@ class Task3Test {
         String input = "3" + L_S + a + L_S + b + L_S + c + L_S + d;
         String expectedMain =
                 "Input number of task from 1 to 5." + L_S +
-                "Task 3: gcd." + L_S +
-                "Input 4 integer numbers." + L_S +
-                expected + L_S;
+                        "Task 3: gcd." + L_S +
+                        "Input 4 integer numbers." + L_S +
+                        expected + L_S;
 
         ByteArrayOutputStream output = setInAndOut(input);
         Main.main();
@@ -730,6 +729,12 @@ class Task3Test {
         }
     }
 
+    /**
+     * Overrides System.in and System.out.
+     *
+     * @param input string that should be converted to System.in.
+     * @return System.out that should be converted to ByteArrayOutputStream.
+     */
     private ByteArrayOutputStream setInAndOut(String input) {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         System.setOut(new PrintStream(output));

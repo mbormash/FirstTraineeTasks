@@ -60,9 +60,11 @@ public class Task2 {
         if (flat <= 0) {
             throw new IncorrectArgumentException("Number should be positive.");
         }
+
         this.flat = flat;
         int flatsInHome = flatsOnFloor * floorsInHouse;
         int house = 0;
+
         if (flat > flatsInHome) {
             house = flat / flatsInHome;
             flat = flat % flatsInHome;
@@ -72,6 +74,7 @@ public class Task2 {
                 return this.toString();
             }
         }
+
         this.house = ++house;
 
         int floor = 1;
@@ -82,7 +85,7 @@ public class Task2 {
             }
         }
         this.floor = floor;
-        return this.toString();
+        return toString();
     }
 
     /**

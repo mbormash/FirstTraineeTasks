@@ -1,6 +1,5 @@
 import com.implemica.bormashenko.*;
 import org.junit.jupiter.api.Test;
-
 import java.io.*;
 import java.util.NoSuchElementException;
 

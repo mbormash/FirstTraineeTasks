@@ -3,7 +3,6 @@ import com.implemica.bormashenko.IntegerOverflowException;
 import com.implemica.bormashenko.Main;
 import com.implemica.bormashenko.Task2;
 import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -293,44 +292,59 @@ class Task2Test {
         //1 flat on floor
         //1st house expected
         check(1, 1, 1, "1", "1");
+
         check(2, 1, 1, "1", "1");
         check(2, 1, 2, "1", "2");
+
         check(3, 1, 1, "1", "1");
         check(3, 1, 2, "1", "2");
         check(3, 1, 3, "1", "3");
+
         check(4, 1, 1, "1", "1");
         check(4, 1, 2, "1", "2");
         check(4, 1, 3, "1", "3");
         check(4, 1, 4, "1", "4");
+
         //2nd house expected
         check(1, 1, 2, "2", "1");
+
         check(2, 1, 3, "2", "1");
         check(2, 1, 4, "2", "2");
+
         check(3, 1, 4, "2", "1");
         check(3, 1, 5, "2", "2");
         check(3, 1, 6, "2", "3");
+
         check(4, 1, 5, "2", "1");
         check(4, 1, 6, "2", "2");
         check(4, 1, 7, "2", "3");
         check(4, 1, 8, "2", "4");
+
         //3rd house expected
         check(1, 1, 3, "3", "1");
+
         check(2, 1, 5, "3", "1");
         check(2, 1, 6, "3", "2");
+
         check(3, 1, 7, "3", "1");
         check(3, 1, 8, "3", "2");
         check(3, 1, 9, "3", "3");
+
         check(4, 1, 9, "3", "1");
         check(4, 1, 10, "3", "2");
         check(4, 1, 11, "3", "3");
         check(4, 1, 12, "3", "4");
+
         //4th house expected
         check(1, 1, 4, "4", "1");
+
         check(2, 1, 7, "4", "1");
         check(2, 1, 8, "4", "2");
+
         check(3, 1, 10, "4", "1");
         check(3, 1, 11, "4", "2");
         check(3, 1, 12, "4", "3");
+
         check(4, 1, 13, "4", "1");
         check(4, 1, 14, "4", "2");
         check(4, 1, 15, "4", "3");
@@ -340,16 +354,19 @@ class Task2Test {
         //1st house expected
         check(1, 2, 1, "1", "1");
         check(1, 2, 2, "1", "1");
+
         check(2, 2, 1, "1", "1");
         check(2, 2, 2, "1", "1");
         check(2, 2, 3, "1", "2");
         check(2, 2, 4, "1", "2");
+
         check(3, 2, 1, "1", "1");
         check(3, 2, 2, "1", "1");
         check(3, 2, 3, "1", "2");
         check(3, 2, 4, "1", "2");
         check(3, 2, 5, "1", "3");
         check(3, 2, 6, "1", "3");
+
         check(4, 2, 1, "1", "1");
         check(4, 2, 2, "1", "1");
         check(4, 2, 3, "1", "2");
@@ -358,19 +375,23 @@ class Task2Test {
         check(4, 2, 6, "1", "3");
         check(4, 2, 7, "1", "4");
         check(4, 2, 8, "1", "4");
+
         //2nd house expected
         check(1, 2, 3, "2", "1");
         check(1, 2, 4, "2", "1");
+
         check(2, 2, 5, "2", "1");
         check(2, 2, 6, "2", "1");
         check(2, 2, 7, "2", "2");
         check(2, 2, 8, "2", "2");
+
         check(3, 2, 7, "2", "1");
         check(3, 2, 8, "2", "1");
         check(3, 2, 9, "2", "2");
         check(3, 2, 10, "2", "2");
         check(3, 2, 11, "2", "3");
         check(3, 2, 12, "2", "3");
+
         check(4, 2, 9, "2", "1");
         check(4, 2, 10, "2", "1");
         check(4, 2, 11, "2", "2");
@@ -379,19 +400,23 @@ class Task2Test {
         check(4, 2, 14, "2", "3");
         check(4, 2, 15, "2", "4");
         check(4, 2, 16, "2", "4");
+
         //3rd house expected
         check(1, 2, 5, "3", "1");
         check(1, 2, 6, "3", "1");
+
         check(2, 2, 9, "3", "1");
         check(2, 2, 10, "3", "1");
         check(2, 2, 11, "3", "2");
         check(2, 2, 12, "3", "2");
+
         check(3, 2, 13, "3", "1");
         check(3, 2, 14, "3", "1");
         check(3, 2, 15, "3", "2");
         check(3, 2, 16, "3", "2");
         check(3, 2, 17, "3", "3");
         check(3, 2, 18, "3", "3");
+
         check(4, 2, 17, "3", "1");
         check(4, 2, 18, "3", "1");
         check(4, 2, 19, "3", "2");
@@ -400,19 +425,23 @@ class Task2Test {
         check(4, 2, 22, "3", "3");
         check(4, 2, 23, "3", "4");
         check(4, 2, 24, "3", "4");
+
         //4th house expected
         check(1, 2, 7, "4", "1");
         check(1, 2, 8, "4", "1");
+
         check(2, 2, 13, "4", "1");
         check(2, 2, 14, "4", "1");
         check(2, 2, 15, "4", "2");
         check(2, 2, 16, "4", "2");
+
         check(3, 2, 19, "4", "1");
         check(3, 2, 20, "4", "1");
         check(3, 2, 21, "4", "2");
         check(3, 2, 22, "4", "2");
         check(3, 2, 23, "4", "3");
         check(3, 2, 24, "4", "3");
+
         check(4, 2, 25, "4", "1");
         check(4, 2, 26, "4", "1");
         check(4, 2, 27, "4", "2");
@@ -427,12 +456,14 @@ class Task2Test {
         check(1, 3, 1, "1", "1");
         check(1, 3, 2, "1", "1");
         check(1, 3, 3, "1", "1");
+
         check(2, 3, 1, "1", "1");
         check(2, 3, 2, "1", "1");
         check(2, 3, 3, "1", "1");
         check(2, 3, 4, "1", "2");
         check(2, 3, 5, "1", "2");
         check(2, 3, 6, "1", "2");
+
         check(3, 3, 1, "1", "1");
         check(3, 3, 2, "1", "1");
         check(3, 3, 3, "1", "1");
@@ -442,6 +473,7 @@ class Task2Test {
         check(3, 3, 7, "1", "3");
         check(3, 3, 8, "1", "3");
         check(3, 3, 9, "1", "3");
+
         check(4, 3, 1, "1", "1");
         check(4, 3, 2, "1", "1");
         check(4, 3, 3, "1", "1");
@@ -454,16 +486,19 @@ class Task2Test {
         check(4, 3, 10, "1", "4");
         check(4, 3, 11, "1", "4");
         check(4, 3, 12, "1", "4");
+
         //2nd house expected
         check(1, 3, 4, "2", "1");
         check(1, 3, 5, "2", "1");
         check(1, 3, 6, "2", "1");
+
         check(2, 3, 7, "2", "1");
         check(2, 3, 8, "2", "1");
         check(2, 3, 9, "2", "1");
         check(2, 3, 10, "2", "2");
         check(2, 3, 11, "2", "2");
         check(2, 3, 12, "2", "2");
+
         check(3, 3, 10, "2", "1");
         check(3, 3, 11, "2", "1");
         check(3, 3, 12, "2", "1");
@@ -473,6 +508,7 @@ class Task2Test {
         check(3, 3, 16, "2", "3");
         check(3, 3, 17, "2", "3");
         check(3, 3, 18, "2", "3");
+
         check(4, 3, 13, "2", "1");
         check(4, 3, 14, "2", "1");
         check(4, 3, 15, "2", "1");
@@ -485,16 +521,19 @@ class Task2Test {
         check(4, 3, 22, "2", "4");
         check(4, 3, 23, "2", "4");
         check(4, 3, 24, "2", "4");
+
         //3rd house expected
         check(1, 3, 7, "3", "1");
         check(1, 3, 8, "3", "1");
         check(1, 3, 9, "3", "1");
+
         check(2, 3, 13, "3", "1");
         check(2, 3, 14, "3", "1");
         check(2, 3, 15, "3", "1");
         check(2, 3, 16, "3", "2");
         check(2, 3, 17, "3", "2");
         check(2, 3, 18, "3", "2");
+
         check(3, 3, 19, "3", "1");
         check(3, 3, 20, "3", "1");
         check(3, 3, 21, "3", "1");
@@ -504,6 +543,7 @@ class Task2Test {
         check(3, 3, 25, "3", "3");
         check(3, 3, 26, "3", "3");
         check(3, 3, 27, "3", "3");
+
         check(4, 3, 25, "3", "1");
         check(4, 3, 26, "3", "1");
         check(4, 3, 27, "3", "1");
@@ -516,16 +556,19 @@ class Task2Test {
         check(4, 3, 34, "3", "4");
         check(4, 3, 35, "3", "4");
         check(4, 3, 36, "3", "4");
+
         //4th house expected
         check(1, 3, 10, "4", "1");
         check(1, 3, 11, "4", "1");
         check(1, 3, 12, "4", "1");
+
         check(2, 3, 19, "4", "1");
         check(2, 3, 20, "4", "1");
         check(2, 3, 21, "4", "1");
         check(2, 3, 22, "4", "2");
         check(2, 3, 23, "4", "2");
         check(2, 3, 24, "4", "2");
+
         check(3, 3, 28, "4", "1");
         check(3, 3, 29, "4", "1");
         check(3, 3, 30, "4", "1");
@@ -535,6 +578,7 @@ class Task2Test {
         check(3, 3, 34, "4", "3");
         check(3, 3, 35, "4", "3");
         check(3, 3, 36, "4", "3");
+
         check(4, 3, 37, "4", "1");
         check(4, 3, 38, "4", "1");
         check(4, 3, 39, "4", "1");
@@ -554,6 +598,7 @@ class Task2Test {
         check(1, 4, 2, "1", "1");
         check(1, 4, 3, "1", "1");
         check(1, 4, 4, "1", "1");
+
         check(2, 4, 1, "1", "1");
         check(2, 4, 2, "1", "1");
         check(2, 4, 3, "1", "1");
@@ -562,6 +607,7 @@ class Task2Test {
         check(2, 4, 6, "1", "2");
         check(2, 4, 7, "1", "2");
         check(2, 4, 8, "1", "2");
+
         check(3, 4, 1, "1", "1");
         check(3, 4, 2, "1", "1");
         check(3, 4, 3, "1", "1");
@@ -574,6 +620,7 @@ class Task2Test {
         check(3, 4, 10, "1", "3");
         check(3, 4, 11, "1", "3");
         check(3, 4, 12, "1", "3");
+
         check(4, 4, 1, "1", "1");
         check(4, 4, 2, "1", "1");
         check(4, 4, 3, "1", "1");
@@ -590,11 +637,13 @@ class Task2Test {
         check(4, 4, 14, "1", "4");
         check(4, 4, 15, "1", "4");
         check(4, 4, 16, "1", "4");
+
         //2nd house expected
         check(1, 4, 5, "2", "1");
         check(1, 4, 6, "2", "1");
         check(1, 4, 7, "2", "1");
         check(1, 4, 8, "2", "1");
+
         check(2, 4, 9, "2", "1");
         check(2, 4, 10, "2", "1");
         check(2, 4, 11, "2", "1");
@@ -603,6 +652,7 @@ class Task2Test {
         check(2, 4, 14, "2", "2");
         check(2, 4, 15, "2", "2");
         check(2, 4, 16, "2", "2");
+
         check(3, 4, 13, "2", "1");
         check(3, 4, 14, "2", "1");
         check(3, 4, 15, "2", "1");
@@ -615,6 +665,7 @@ class Task2Test {
         check(3, 4, 22, "2", "3");
         check(3, 4, 23, "2", "3");
         check(3, 4, 24, "2", "3");
+
         check(4, 4, 17, "2", "1");
         check(4, 4, 18, "2", "1");
         check(4, 4, 19, "2", "1");
@@ -631,11 +682,13 @@ class Task2Test {
         check(4, 4, 30, "2", "4");
         check(4, 4, 31, "2", "4");
         check(4, 4, 32, "2", "4");
+
         //3rd house expected
         check(1, 4, 9, "3", "1");
         check(1, 4, 10, "3", "1");
         check(1, 4, 11, "3", "1");
         check(1, 4, 12, "3", "1");
+
         check(2, 4, 17, "3", "1");
         check(2, 4, 18, "3", "1");
         check(2, 4, 19, "3", "1");
@@ -644,6 +697,7 @@ class Task2Test {
         check(2, 4, 22, "3", "2");
         check(2, 4, 23, "3", "2");
         check(2, 4, 24, "3", "2");
+
         check(3, 4, 25, "3", "1");
         check(3, 4, 26, "3", "1");
         check(3, 4, 27, "3", "1");
@@ -656,6 +710,7 @@ class Task2Test {
         check(3, 4, 34, "3", "3");
         check(3, 4, 35, "3", "3");
         check(3, 4, 36, "3", "3");
+
         check(4, 4, 33, "3", "1");
         check(4, 4, 34, "3", "1");
         check(4, 4, 35, "3", "1");
@@ -672,11 +727,13 @@ class Task2Test {
         check(4, 4, 46, "3", "4");
         check(4, 4, 47, "3", "4");
         check(4, 4, 48, "3", "4");
+
         //4th house expected
         check(1, 4, 13, "4", "1");
         check(1, 4, 14, "4", "1");
         check(1, 4, 15, "4", "1");
         check(1, 4, 16, "4", "1");
+
         check(2, 4, 25, "4", "1");
         check(2, 4, 26, "4", "1");
         check(2, 4, 27, "4", "1");
@@ -685,6 +742,7 @@ class Task2Test {
         check(2, 4, 30, "4", "2");
         check(2, 4, 31, "4", "2");
         check(2, 4, 32, "4", "2");
+
         check(3, 4, 37, "4", "1");
         check(3, 4, 38, "4", "1");
         check(3, 4, 39, "4", "1");
@@ -697,6 +755,7 @@ class Task2Test {
         check(3, 4, 46, "4", "3");
         check(3, 4, 47, "4", "3");
         check(3, 4, 48, "4", "3");
+
         check(4, 4, 49, "4", "1");
         check(4, 4, 50, "4", "1");
         check(4, 4, 51, "4", "1");
@@ -1010,9 +1069,9 @@ class Task2Test {
         String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
         String expectedMain =
                 "Input number of task from 1 to 5." + L_S +
-                "Task 2: flat." + L_S +
-                "Input number of floors in house, number of flats on floor and number of flat." + L_S +
-                numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house" + L_S;
+                        "Task 2: flat." + L_S +
+                        "Input number of floors in house, number of flats on floor and number of flat." + L_S +
+                        numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house" + L_S;
 
         ByteArrayOutputStream output = setInAndOut(input);
         Main.main();
@@ -1051,6 +1110,12 @@ class Task2Test {
         }
     }
 
+    /**
+     * Overrides System.in and System.out.
+     *
+     * @param input string that should be converted to System.in.
+     * @return System.out that should be converted to ByteArrayOutputStream.
+     */
     private ByteArrayOutputStream setInAndOut(String input) {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         System.setOut(new PrintStream(output));
