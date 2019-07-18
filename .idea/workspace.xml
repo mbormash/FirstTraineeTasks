@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a985dfb-d202-474b-a364-f23dfd434018" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DaysOfWeek.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Months.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MainClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainClassTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Task5Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Task5Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/MainClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MainClassTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Task5Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Task5Test.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,33 +38,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-              <folding>
-                <element signature="e#365#366#0" expanded="true" />
-                <element signature="e#395#396#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="229">
+              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IntegerOverflowException.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Months.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="348">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DaysOfWeek.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="136">
+              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="518" column="50" selection-start-line="518" selection-start-column="50" selection-end-line="518" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,46 +78,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task1.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+            <state relative-caret-position="314">
+              <caret line="136" column="112" selection-start-line="136" selection-start-column="112" selection-end-line="136" selection-end-column="112" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Task5Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="42" lean-forward="true" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task4.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task5.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+            <state relative-caret-position="150">
+              <caret line="819" column="8" selection-start-line="819" selection-start-column="8" selection-end-line="819" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,6 +108,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -157,13 +146,16 @@
         <option value="$PROJECT_DIR$/src/test/java/Task1Test.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task3Test.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task4Test.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Task5Test.java" />
-        <option value="$PROJECT_DIR$/src/test/java/MainClassTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task2Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task4.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DaysOfWeek.java" />
+        <option value="$PROJECT_DIR$/src/test/java/MainClassTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Task5Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Months.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task5.java" />
       </list>
     </option>
@@ -187,7 +179,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -238,7 +230,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -435,38 +427,45 @@
       <option name="project" value="LOCAL" />
       <updated>1563466476888</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Improving code style.">
+      <created>1563467835151</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1563467835151</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_FirstTasks - 2019.07.18 at 19h 18m 21s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.18 at 23h 06m 11s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.18 at 19h 19m 03s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.18 at 23h 06m 53s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.18 at 19h 20m 55s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.18 at 23h 08m 50s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.18 at 19h 21m 11s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.18 at 23h 12m 39s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.18 at 19h 21m 29s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.18 at 23h 13m 16s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.18 at 19h 22m 01s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.18 at 23h 14m 05s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.18 at 19h 22m 41s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.18 at 23h 15m 05s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.18 at 19h 23m 46s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.18 at 23h 15m 37s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.18 at 19h 24m 00s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.18 at 23h 15m 47s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.18 at 19h 24m 28s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.18 at 23h 17m 06s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -488,7 +487,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.502008" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49799198" visible="true" weight="0.2622108" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49799198" visible="true" weight="0.26542416" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4993573" weight="0.32974428" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50064266" side_tool="true" weight="0.32974428" />
@@ -496,7 +495,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32974428" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32974428" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -568,14 +567,15 @@
     <MESSAGE value="Adding new tests for task 2" />
     <MESSAGE value="Adding description for number of tests in javadoc" />
     <MESSAGE value="Changing condition for IntegerOverflowException being thrown in Task2." />
-    <MESSAGE value="Improving code style." />
     <MESSAGE value="Changing logic of Main.class" />
     <MESSAGE value="Making tests for main by overriding other tests." />
     <MESSAGE value="Creating javadoc for new methods. Improving OOP." />
     <MESSAGE value="Simplification for main tests." />
     <MESSAGE value="Merging tests for tasks and tests for main." />
     <MESSAGE value="Improving code style in test classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improving code style in test classes." />
+    <MESSAGE value="Improving code style." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improving code style." />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -650,27 +650,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Task5Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14510">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Task2Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18241">
           <caret line="1073" column="64" selection-start-line="1073" selection-start-column="64" selection-end-line="1073" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -692,16 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -733,10 +706,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DaysOfWeek.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/Task5Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="819" column="8" selection-start-line="819" selection-start-column="8" selection-end-line="819" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="136" column="112" selection-start-line="136" selection-start-column="112" selection-end-line="136" selection-end-column="112" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DaysOfWeek.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="518" column="50" selection-start-line="518" selection-start-column="50" selection-end-line="518" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Months.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+        <state relative-caret-position="229">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
         </state>
       </provider>
     </entry>

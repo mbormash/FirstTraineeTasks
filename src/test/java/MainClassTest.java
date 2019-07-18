@@ -516,7 +516,7 @@ class MainClassTest {
             System.setIn(new ByteArrayInputStream(input.toString().getBytes()));
             Main.main();
             fail("Exception was not thrown.");
-        } catch (NoSuchElementException | IncorrectArgumentException e) {
+        } catch (ArrayIndexOutOfBoundsException | NoSuchElementException | IncorrectArgumentException e) {
             //correct behavior
         }
     }

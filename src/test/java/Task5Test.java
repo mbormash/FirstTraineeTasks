@@ -1,6 +1,4 @@
-import com.implemica.bormashenko.IncorrectArgumentException;
-import com.implemica.bormashenko.Main;
-import com.implemica.bormashenko.Task5;
+import com.implemica.bormashenko.*;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -816,7 +814,9 @@ class Task5Test {
      */
     void check(int dayOfNewYear, int dayToFind, int monthToFind, String expected) {
         //Task 5 by itself
-        String actual = Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
+        DaysOfWeek[] daysOfWeeks = DaysOfWeek.values();
+        Months[] months = Months.values();
+        String actual = Task5.defineDayOfWeek(daysOfWeeks[dayOfNewYear - 1], dayToFind, months[monthToFind - 1]);
         assertEquals(expected, actual);
 
         //Task 5 in main
@@ -845,9 +845,11 @@ class Task5Test {
     void checkException(int dayOfNewYear, int dayToFind, int monthToFind) {
         //Task 5 by itself
         try {
-            Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind);
+            DaysOfWeek[] daysOfWeeks = DaysOfWeek.values();
+            Months[] months = Months.values();
+            Task5.defineDayOfWeek(daysOfWeeks[dayOfNewYear - 1], dayToFind, months[monthToFind - 1]);
             fail("Exception was not thrown");
-        } catch (IncorrectArgumentException e) {
+        } catch (ArrayIndexOutOfBoundsException | IncorrectArgumentException e) {
             //correct behavior
         }
 
@@ -857,7 +859,7 @@ class Task5Test {
             setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
-        } catch (IncorrectArgumentException e) {
+        } catch (ArrayIndexOutOfBoundsException | IncorrectArgumentException e) {
             //correct behavior
         }
     }

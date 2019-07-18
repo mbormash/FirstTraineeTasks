@@ -16,7 +16,8 @@ public class Main {
      * @param args command line args.
      */
     public static void main(String... args) throws IncorrectArgumentException, NumberFormatException,
-                                                   NoSuchElementException, IntegerOverflowException {
+                                                   NoSuchElementException, IntegerOverflowException,
+                                                   ArrayIndexOutOfBoundsException {
         try (Scanner in = new Scanner(System.in)) {
             System.out.println("Input number of task from 1 to 5.");
             int task;
@@ -70,7 +71,7 @@ public class Main {
      * @throws NumberFormatException      if user have not inputted an integer numbers.
      */
     private static void task2(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-                                                 NoSuchElementException {
+            NoSuchElementException {
         System.out.println("Task 2: flat.");
         System.out.println("Input number of floors in house, number of flats on floor and number of flat.");
         int floorsInHouse = in.nextInt();
@@ -89,7 +90,7 @@ public class Main {
      * @throws NumberFormatException      if user have not inputted an integer numbers.
      */
     private static void task3(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-                                                 NoSuchElementException, IntegerOverflowException {
+            NoSuchElementException, IntegerOverflowException {
         System.out.println("Task 3: gcd.");
         System.out.println("Input 4 integer numbers.");
         int a = in.nextInt();
@@ -108,7 +109,7 @@ public class Main {
      * @throws NumberFormatException      if user have not inputted an integer number.
      */
     private static void task4(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-                                                 NoSuchElementException {
+            NoSuchElementException {
         System.out.println("Task 4: fibonacci.");
         System.out.println("Input integer number.");
         int n = in.nextInt();
@@ -124,13 +125,15 @@ public class Main {
      * @throws NumberFormatException      if user have not inputted an integer numbers.
      */
     private static void task5(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-                                                 NoSuchElementException {
+            NoSuchElementException, ArrayIndexOutOfBoundsException {
         System.out.println("Task 5: day of week.");
         System.out.println("Input day of New Year, day to find, month to find.");
         int dayOfNewYear = in.nextInt();
         int dayToFind = in.nextInt();
         int monthToFind = in.nextInt();
 
-        System.out.println(Task5.defineDayOfWeek(dayOfNewYear, dayToFind, monthToFind));
+        DaysOfWeek[] daysOfWeek = DaysOfWeek.values();
+        Months[] months = Months.values();
+        System.out.println(Task5.defineDayOfWeek(daysOfWeek[dayOfNewYear - 1], dayToFind, months[monthToFind - 1]));
     }
 }
