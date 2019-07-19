@@ -1,5 +1,11 @@
 package com.implemica.bormashenko;
 
+/**
+ * Enum contains months, number of days in each month
+ * and number of days passed from New Year for each month.
+ *
+ * @author Mykhailo Bormashenko
+ */
 public enum Months {
 
     JANUARY(31, 0),

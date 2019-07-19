@@ -9,13 +9,6 @@ import java.math.BigInteger;
  */
 public class Task4 {
 
-    /**
-     * Generates n'th fibonacci's number.
-     * @param n 'th fibonacci's number to generate.
-     * @return value of n'th fibonacci's number.
-     *
-     * @throws IncorrectArgumentException if n is negative.
-     */
     public static BigInteger genNFib(int n) {
         if (n < 0) {
             throw new IncorrectArgumentException("Number should be non-negative.");
