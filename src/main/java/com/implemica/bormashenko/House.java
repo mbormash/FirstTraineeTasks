@@ -6,7 +6,7 @@ package com.implemica.bormashenko;
  *
  * @author Mykhailo Bormashenko
  */
-public class Task2 {
+public class House {
 
     /**
      * Number of floors in house.
@@ -41,7 +41,7 @@ public class Task2 {
      * @throws IncorrectArgumentException if any argument is non-positive.
      * @throws IntegerOverflowException   if result of multiplying these parameters is larger than Integer.MAX_VALUE.
      */
-    public Task2(int floorsInHouse, int flatsOnFloor) {
+    public House(int floorsInHouse, int flatsOnFloor) {
         if (floorsInHouse <= 0) {
             throw new IncorrectArgumentException("For number of floors in house " + floorsInHouse +
                     ": number should be positive.");

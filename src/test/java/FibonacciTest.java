@@ -1,6 +1,6 @@
+import com.implemica.bormashenko.Fibonacci;
 import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.Main;
-import com.implemica.bormashenko.Task4;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -10,11 +10,11 @@ import java.math.BigInteger;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test class for Task4 (fibonacci).
+ * Test class for Fibonacci (fibonacci).
  *
  * @author Mykhailo Bormashenko
  */
-class Task4Test {
+class FibonacciTest {
 
     /**
      * Constant for lineSeparator.
@@ -175,7 +175,7 @@ class Task4Test {
      */
     void check(int n, String expected) {
         //Task 4 by itself
-        assertEquals(new BigInteger(expected), Task4.genNFib(n), "genNFib(" + n + "):");
+        assertEquals(new BigInteger(expected), Fibonacci.genNFib(n), "genNFib(" + n + "):");
 
         //Task 4 in main
         String input = "4" + L_S + n;
@@ -201,7 +201,7 @@ class Task4Test {
     void checkException(int n) {
         //Task 4 by itself
         try {
-            Task4.genNFib(n);
+            Fibonacci.genNFib(n);
             fail("Exception was not thrown");
         } catch (IncorrectArgumentException e) {
             //correct behavior

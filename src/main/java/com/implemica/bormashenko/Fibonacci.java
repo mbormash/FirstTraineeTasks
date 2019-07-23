@@ -7,7 +7,7 @@ import java.math.BigInteger;
  *
  * @author Mykhailo Bormashenko
  */
-public class Task4 {
+public class Fibonacci {
 
     /**
      * Generates n'th fibonacci's number.

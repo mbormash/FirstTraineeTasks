@@ -6,7 +6,7 @@ package com.implemica.bormashenko;
  *
  * @author Mykhailo Bormashenko
  */
-public class Task1 {
+public class Swap {
 
     /**
      * First parameter.

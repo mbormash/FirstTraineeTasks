@@ -1,5 +1,5 @@
 import com.implemica.bormashenko.Main;
-import com.implemica.bormashenko.Task1;
+import com.implemica.bormashenko.Swap;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -12,11 +12,11 @@ import static java.lang.Integer.MAX_VALUE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test class for Task1 (swap).
+ * Test class for Swap (swap).
  *
  * @author Mykhailo Bormashenko
  */
-class Task1Test {
+class SwapTest {
 
     /**
      * Constant for lineSeparator.
@@ -24,16 +24,16 @@ class Task1Test {
     private static final String L_S = System.lineSeparator();
 
     /**
-     * Object of Task1.
+     * Object of Swap.
      */
-    private static Task1 obj;
+    private static Swap obj;
 
     /**
      * Setting up an object.
      */
     @BeforeAll
     static void setupObject() {
-        obj = new Task1();
+        obj = new Swap();
     }
 
     /**

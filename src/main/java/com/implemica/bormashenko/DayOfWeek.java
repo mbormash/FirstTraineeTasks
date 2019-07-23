@@ -6,7 +6,7 @@ package com.implemica.bormashenko;
  *
  * @author Mykhailo Bormashenko
  */
-public class Task5 {
+public class DayOfWeek {
 
     /**
      * Amount of days in week.

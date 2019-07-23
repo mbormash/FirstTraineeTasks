@@ -7,7 +7,7 @@ import static java.lang.Integer.MIN_VALUE;
  *
  * @author Mykhailo Bormashenko
  */
-public class Task3 {
+public class GreatestCommonDivisor {
 
     /**
      * Defines greatest common divisor for two numbers.

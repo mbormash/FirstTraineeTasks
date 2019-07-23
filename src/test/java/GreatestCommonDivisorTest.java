@@ -1,6 +1,6 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.Main;
-import com.implemica.bormashenko.Task3;
+import com.implemica.bormashenko.GreatestCommonDivisor;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -11,11 +11,11 @@ import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
 
 /**
- * Test class for Task3 (gcd).
+ * Test class for GreatestCommonDivisor (gcd).
  *
  * @author Mykhailo Bormashenko
  */
-class Task3Test {
+class GreatestCommonDivisorTest {
 
     /**
      * Constant for lineSeparator.
@@ -682,7 +682,7 @@ class Task3Test {
      */
     void check(int a, int b, int c, int d, int expected) {
         //Task 3 by itself
-        int actual = Task3.nod4args(a, b, c, d);
+        int actual = GreatestCommonDivisor.nod4args(a, b, c, d);
         assertEquals(expected, actual);
 
         //Task 3 in main
@@ -712,7 +712,7 @@ class Task3Test {
     void checkException(int a, int b, int c, int d) {
         //Task 3 by itself
         try {
-            Task3.nod4args(a, b, c, d);
+            GreatestCommonDivisor.nod4args(a, b, c, d);
             fail("Exception was not thrown");
         } catch (IncorrectArgumentException e) {
             //correct behavior
