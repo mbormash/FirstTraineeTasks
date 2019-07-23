@@ -7,6 +7,11 @@ package com.implemica.bormashenko;
  */
 public class IntegerOverflowException extends RuntimeException {
 
+    /**
+     * Constructor of exception with message.
+     *
+     * @param message message to show in exception.
+     */
     IntegerOverflowException(String message) {
         super(message);
     }

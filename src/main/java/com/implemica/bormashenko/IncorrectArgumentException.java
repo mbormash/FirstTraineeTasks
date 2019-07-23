@@ -7,6 +7,11 @@ package com.implemica.bormashenko;
  */
 public class IncorrectArgumentException extends RuntimeException {
 
+    /**
+     * Constructor of exception with message.
+     *
+     * @param message message to show in exception.
+     */
     IncorrectArgumentException(String message) {
         super(message);
     }

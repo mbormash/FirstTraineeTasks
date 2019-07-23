@@ -2,6 +2,7 @@ import com.implemica.bormashenko.Main;
 import com.implemica.bormashenko.Task1;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -229,7 +230,7 @@ class Task1Test {
         //Task 1 by itself
         obj.setA(aBefore);
         obj.setB(bBefore);
-        obj.swap();
+        obj.showSwapping();
         int aAfter = obj.getA();
         int bAfter = obj.getB();
         assertEquals(bBefore, aAfter);

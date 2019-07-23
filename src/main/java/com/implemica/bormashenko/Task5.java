@@ -8,8 +8,20 @@ package com.implemica.bormashenko;
  */
 public class Task5 {
 
+    /**
+     * Amount of days in week.
+     */
     private static final int DAYS_IN_WEEK = 7;
 
+    /**
+     * Defines day of week for inputted args.
+     *
+     * @param dayOfNewYear name of day from which the year started.
+     * @param dayToFind    number of day on month to find.
+     * @param monthToFind  name month to find.
+     * @return name day of week for inputted args.
+     * @throws IncorrectArgumentException if number of day to find is incorrect for inputted month.
+     */
     public static String defineDayOfWeek(DaysOfWeek dayOfNewYear, int dayToFind, Months monthToFind) {
         if (!validation(dayToFind, monthToFind)) {
             throw new IncorrectArgumentException("Wrong date for " + dayToFind + " day of " + monthToFind + " month");
@@ -27,10 +39,23 @@ public class Task5 {
         return firstUpperCase(day);
     }
 
+    /**
+     * Validation for inputted day and month.
+     *
+     * @param dayToFind   number of day.
+     * @param monthToFind name of month.
+     * @return true if number of day is not more than days in the month.
+     */
     private static boolean validation(int dayToFind, Months monthToFind) {
         return dayToFind > 0 && dayToFind <= monthToFind.daysInMonth;
     }
 
+    /**
+     * Shows how many days passed from the New Year to 1st day of requested month.
+     *
+     * @param month name of month.
+     * @return number of days passed from the New Year.
+     */
     private static int daysPassedFromNewYear(Months month) {
         int days = 0;
         Months[] months = Months.values();
@@ -40,6 +65,12 @@ public class Task5 {
         return days;
     }
 
+    /**
+     * Makes first symbol in string in upped case and other in lower case.
+     *
+     * @param word string to change.
+     * @return changed string with first symbol in upper case and other in lower case.
+     */
     private static String firstUpperCase(String word) {
         if (word == null || word.isEmpty()) {
             return word;

@@ -8,7 +8,14 @@ package com.implemica.bormashenko;
  */
 public class Task1 {
 
+    /**
+     * First parameter.
+     */
     private int a;
+
+    /**
+     * Second parameter.
+     */
     private int b;
 
     public void setA(int a) {
@@ -27,13 +34,19 @@ public class Task1 {
         return b;
     }
 
-    public void swap() {
+    /**
+     * Swaps values of two parameters without using the third one.
+     */
+    private void swap() {
         a += b;
         b = a - b;
         a -= b;
     }
 
-    void showSwapping() {
+    /**
+     * Shows the process of swapping.
+     */
+    public void showSwapping() {
         System.out.println("Before reversing:" + System.lineSeparator() +
                 "a: " + a + ", b: " + b);
         swap();
