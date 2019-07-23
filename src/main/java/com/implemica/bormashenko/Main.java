@@ -3,6 +3,9 @@ package com.implemica.bormashenko;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import static com.implemica.bormashenko.Task5.DaysOfWeek;
+import static com.implemica.bormashenko.Task5.Months;
+
 /**
  * Main class for first tasks.
  *

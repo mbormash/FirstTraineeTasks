@@ -5,6 +5,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static com.implemica.bormashenko.Task5.DaysOfWeek;
+import static com.implemica.bormashenko.Task5.Months;
 
 /**
  * Test class for Task5 (day of week).
