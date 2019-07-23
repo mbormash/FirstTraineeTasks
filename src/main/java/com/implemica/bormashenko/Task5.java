@@ -47,6 +47,7 @@ public class Task5 {
      * @return true if number of day is not more than days in the month.
      */
     private static boolean validation(int dayToFind, Months monthToFind) {
+        //Months.FEBRUARY.daysInMonth = 3;
         return dayToFind > 0 && dayToFind <= monthToFind.daysInMonth;
     }
 
@@ -76,6 +77,7 @@ public class Task5 {
             return word;
         }
 
+        //use apache commons //StringUtils, Nmbr utils, collection utils
         return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
     }
 

@@ -74,7 +74,7 @@ public class Task2 {
             house += flat / flatsInHome;
             flat = flat % flatsInHome;
             if (flat == 0) {
-                --house;
+                house--;
                 this.house = house;
                 this.floor = floorsInHouse;
                 return toString();
