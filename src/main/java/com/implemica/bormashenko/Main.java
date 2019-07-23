@@ -42,7 +42,7 @@ public class Main {
             } else if (task == 5) {
                 task5(in);
             } else {
-                throw new IncorrectArgumentException("Number should be from 1 to 5");
+                throw new IncorrectArgumentException("For number of task " + task + ": number should be from 1 to 5");
             }
         }
     }

@@ -8,27 +8,8 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 import static com.implemica.bormashenko.Task5.DaysOfWeek;
 import static com.implemica.bormashenko.Task5.Months;
-
-import static com.implemica.bormashenko.Task5.DaysOfWeek.MONDAY;
-import static com.implemica.bormashenko.Task5.DaysOfWeek.TUESDAY;
-import static com.implemica.bormashenko.Task5.DaysOfWeek.WEDNESDAY;
-import static com.implemica.bormashenko.Task5.DaysOfWeek.THURSDAY;
-import static com.implemica.bormashenko.Task5.DaysOfWeek.FRIDAY;
-import static com.implemica.bormashenko.Task5.DaysOfWeek.SATURDAY;
-import static com.implemica.bormashenko.Task5.DaysOfWeek.SUNDAY;
-
-import static com.implemica.bormashenko.Task5.Months.JANUARY;
-import static com.implemica.bormashenko.Task5.Months.FEBRUARY;
-import static com.implemica.bormashenko.Task5.Months.MARCH;
-import static com.implemica.bormashenko.Task5.Months.APRIL;
-import static com.implemica.bormashenko.Task5.Months.MAY;
-import static com.implemica.bormashenko.Task5.Months.JUNE;
-import static com.implemica.bormashenko.Task5.Months.JULY;
-import static com.implemica.bormashenko.Task5.Months.AUGUST;
-import static com.implemica.bormashenko.Task5.Months.SEPTEMBER;
-import static com.implemica.bormashenko.Task5.Months.OCTOBER;
-import static com.implemica.bormashenko.Task5.Months.NOVEMBER;
-import static com.implemica.bormashenko.Task5.Months.DECEMBER;
+import static com.implemica.bormashenko.Task5.DaysOfWeek.*;
+import static com.implemica.bormashenko.Task5.Months.*;
 
 /**
  * Test class for Task5 (day of week).

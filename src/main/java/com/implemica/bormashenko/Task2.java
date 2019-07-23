@@ -42,12 +42,19 @@ public class Task2 {
      * @throws IntegerOverflowException   if result of multiplying these parameters is larger than Integer.MAX_VALUE.
      */
     public Task2(int floorsInHouse, int flatsOnFloor) {
-        if (floorsInHouse <= 0 || flatsOnFloor <= 0) {
-            throw new IncorrectArgumentException("Number should be positive.");
+        if (floorsInHouse <= 0) {
+            throw new IncorrectArgumentException("For number of floors in house " + floorsInHouse +
+                    ": number should be positive.");
+        }
+
+        if (flatsOnFloor <= 0) {
+            throw new IncorrectArgumentException("For number of flats on floor " + flatsOnFloor +
+                    ": number should be positive.");
         }
 
         if (Integer.MAX_VALUE / floorsInHouse < flatsOnFloor) {
-            throw new IntegerOverflowException("Numbers are too large.");
+            throw new IntegerOverflowException("For numbers of floors in house and flats on floor " +
+                    floorsInHouse + ", " + flatsOnFloor + ": numbers are too large.");
         }
 
         this.floorsInHouse = floorsInHouse;
@@ -63,7 +70,7 @@ public class Task2 {
      */
     public String defineHouseAndFloor(int flat) {
         if (flat <= 0) {
-            throw new IncorrectArgumentException("Number should be positive.");
+            throw new IncorrectArgumentException("For number of flat " + flat + " : number should be positive.");
         }
 
         this.flat = flat;

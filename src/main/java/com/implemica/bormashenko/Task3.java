@@ -19,7 +19,8 @@ public class Task3 {
      */
     private static int nod2args(int a, int b) {
         if (a == MIN_VALUE || b == MIN_VALUE) {
-            throw new IncorrectArgumentException("Number should be not less than " + (MIN_VALUE + 1));
+            throw new IncorrectArgumentException("For numbers " + a + ", " + b +
+                    ": number should be not less than " + (MIN_VALUE + 1));
         }
 
         int x = Math.abs(a);
