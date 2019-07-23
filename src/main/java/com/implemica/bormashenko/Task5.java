@@ -80,8 +80,7 @@ public class Task5 {
     }
 
     /**
-     * Enum contains months, number of days in each month
-     * and number of days passed from New Year for each month.
+     * Enum contains months and number of days in each month.
      */
     public enum Months {
 
