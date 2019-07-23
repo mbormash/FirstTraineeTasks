@@ -8,24 +8,22 @@ package com.implemica.bormashenko;
  */
 public enum Months {
 
-    JANUARY(31, 0),
-    FEBRUARY(28, 31),
-    MARCH(31, 59),
-    APRIL(30, 90),
-    MAY(31, 120),
-    JUNE(30, 151),
-    JULY(31, 181),
-    AUGUST(31, 212),
-    SEPTEMBER(30, 243),
-    OCTOBER(31, 273),
-    NOVEMBER(30, 304),
-    DECEMBER(31, 334);
+    JANUARY(31),
+    FEBRUARY(28),
+    MARCH(31),
+    APRIL(30),
+    MAY(31),
+    JUNE(30),
+    JULY(31),
+    AUGUST(31),
+    SEPTEMBER(30),
+    OCTOBER(31),
+    NOVEMBER(30),
+    DECEMBER(31);
 
     int daysInMonth;
-    int daysPassedFromNewYear;
 
-    Months(int daysInMonth, int daysPassedFromNewYear) {
+    Months(int daysInMonth) {
         this.daysInMonth = daysInMonth;
-        this.daysPassedFromNewYear = daysPassedFromNewYear;
     }
 }

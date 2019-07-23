@@ -16,17 +16,35 @@ public class Task5 {
         }
 
         int numberOfDayOfNewYear = dayOfNewYear.ordinal();
-        int days = monthToFind.daysPassedFromNewYear + numberOfDayOfNewYear + dayToFind;
+        int days = daysPassedFromNewYear(monthToFind) + numberOfDayOfNewYear + dayToFind;
         days %= DAYS_IN_WEEK;
+
         if (days == 0) {
             days = 7;
         }
 
         String day = DaysOfWeek.values()[days - 1].name();
-        return day.charAt(0) + day.substring(1).toLowerCase();
-}
+        return firstUpperCase(day);
+    }
 
     private static boolean validation(int dayToFind, Months monthToFind) {
         return dayToFind > 0 && dayToFind <= monthToFind.daysInMonth;
+    }
+
+    private static int daysPassedFromNewYear(Months month) {
+        int days = 0;
+        Months[] months = Months.values();
+        for (int i = 0; i < month.ordinal(); i++) {
+            days += months[i].daysInMonth;
+        }
+        return days;
+    }
+
+    private static String firstUpperCase(String word) {
+        if (word == null || word.isEmpty()) {
+            return word;
+        }
+
+        return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
     }
 }
