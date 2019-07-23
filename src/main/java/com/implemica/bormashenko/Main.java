@@ -14,10 +14,10 @@ import static com.implemica.bormashenko.Task5.Months;
 public class Main {
 
     public static void main(String... args) throws IncorrectArgumentException, NumberFormatException,
-            NoSuchElementException, IntegerOverflowException,
-            ArrayIndexOutOfBoundsException {
+            NoSuchElementException, IntegerOverflowException, ArrayIndexOutOfBoundsException {
+        System.out.println("Input number of task from 1 to 5.");
+
         try (Scanner in = new Scanner(System.in)) {
-            System.out.println("Input number of task from 1 to 5.");
             int task;
             task = in.nextInt();
 
@@ -50,7 +50,7 @@ public class Main {
     }
 
     private static void task2(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-                                                 NoSuchElementException {
+            NoSuchElementException {
         System.out.println("Task 2: flat.");
         System.out.println("Input number of floors in house, number of flats on floor and number of flat.");
         int floorsInHouse = in.nextInt();
@@ -62,7 +62,7 @@ public class Main {
     }
 
     private static void task3(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-                                                 NoSuchElementException, IntegerOverflowException {
+            NoSuchElementException, IntegerOverflowException {
         System.out.println("Task 3: gcd.");
         System.out.println("Input 4 integer numbers.");
         int a = in.nextInt();
@@ -74,7 +74,7 @@ public class Main {
     }
 
     private static void task4(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-                                                 NoSuchElementException {
+            NoSuchElementException {
         System.out.println("Task 4: fibonacci.");
         System.out.println("Input integer number.");
         int n = in.nextInt();
@@ -83,7 +83,7 @@ public class Main {
     }
 
     private static void task5(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-                                                 NoSuchElementException, ArrayIndexOutOfBoundsException {
+            NoSuchElementException, ArrayIndexOutOfBoundsException {
         System.out.println("Task 5: day of week.");
         System.out.println("Input day of New Year, day to find, month to find.");
         int dayOfNewYear = in.nextInt();
