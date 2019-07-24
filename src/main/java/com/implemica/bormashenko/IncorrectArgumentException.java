@@ -13,7 +13,7 @@ public class IncorrectArgumentException extends RuntimeException {
      *
      * @param message message to show in exception.
      */
-    IncorrectArgumentException(String message) {
+    public IncorrectArgumentException(String message) {
         super(message);
     }
 }

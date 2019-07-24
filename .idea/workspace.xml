@@ -7,12 +7,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FibonacciTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FibonacciTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HouseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HouseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MainClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainClassTest.java" afterDir="false" />
     </list>
     <list id="f9591f48-e10a-4606-b9c1-1ae11a0a2706" name="Revert &quot;Adding JavaDoc.&quot;" comment="Revert &quot;Adding JavaDoc.&quot;&#10;&#10;This reverts commit 507ca828">
       <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/IncorrectArgumentException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/IncorrectArgumentException.class" afterDir="false" />
@@ -33,7 +30,7 @@
     <SUITE FILE_PATH="coverage/FirstTasks$All_in_FirstTasks.ic" NAME="All in FirstTasks Coverage Results" MODIFIED="1562678474480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="225" />
+    <option name="myElementSize" value="233" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -42,7 +39,65 @@
     <favorites_list name="FirstTasks" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-515">
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-736">
+              <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IntegerOverflowException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,6 +129,12 @@
       <find>AUGUST</find>
       <find>AUGUST)</find>
       <find>throw new</find>
+      <find>, 4);</find>
+      <find>, 9);</find>
+      <find>, 1);</find>
+      <find>, 3);</find>
+      <find>, 5);</find>
+      <find>, 10);</find>
     </findStrings>
     <replaceStrings>
       <replace>SQRT_MAX</replace>
@@ -98,6 +159,12 @@
       <replace>12)</replace>
       <replace>8,</replace>
       <replace>8)</replace>
+      <replace>, 6);</replace>
+      <replace>, 11);</replace>
+      <replace>, 3);</replace>
+      <replace>, 5);</replace>
+      <replace>, 7);</replace>
+      <replace>, 12);</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -125,19 +192,19 @@
         <option value="$PROJECT_DIR$/com/implemica/bormashenko/Task1.html" />
         <option value="$PROJECT_DIR$/src/test/java/SwapTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IntegerOverflowException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Swap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" />
         <option value="$PROJECT_DIR$/src/test/java/HouseTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/FibonacciTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/MainClassTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java" />
         <option value="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" />
       </list>
     </option>
   </component>
@@ -245,7 +312,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in FirstTasks">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.implemica.bormashenko.Main" />
       <module name="FirstTasks" />
@@ -531,22 +598,24 @@
       <option name="project" value="LOCAL" />
       <updated>1563971230906</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Changing messages in exceptions. &#10;Changing try-catch blocks.&#10;Changing tests in DayOfWeek and Main.">
+      <created>1563974450385</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1563974450385</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Adding new tests for DayOfWeek.">
+      <created>1563977422660</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1563977422661</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HouseTest - 2019.07.24 at 15h 25m 48s.xml">
-      <configuration name="HouseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HouseTest - 2019.07.24 at 15h 26m 21s.xml">
-      <configuration name="HouseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HouseTest - 2019.07.24 at 15h 38m 14s.xml">
-      <configuration name="HouseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DayOfWeekTest - 2019.07.24 at 15h 38m 21s.xml">
-      <configuration name="DayOfWeekTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DayOfWeekTest - 2019.07.24 at 15h 40m 17s.xml">
       <configuration name="DayOfWeekTest" configurationId="JUnit" />
     </history-entry>
@@ -565,6 +634,18 @@
     <history-entry file="All_in_FirstTasks - 2019.07.24 at 16h 08m 13s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_FirstTasks - 2019.07.24 at 16h 22m 14s.xml">
+      <configuration name="All in FirstTasks" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_FirstTasks - 2019.07.24 at 16h 23m 31s.xml">
+      <configuration name="All in FirstTasks" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_FirstTasks - 2019.07.24 at 18h 07m 38s.xml">
+      <configuration name="All in FirstTasks" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_FirstTasks - 2019.07.24 at 18h 38m 23s.xml">
+      <configuration name="All in FirstTasks" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -577,13 +658,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.502008" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49799198" visible="true" weight="0.2718509" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49799198" visible="true" weight="0.2718509" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4993573" weight="0.32974428" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50064266" side_tool="true" weight="0.32974428" />
@@ -591,7 +673,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.4993573" weight="0.32974428" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32974428" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.34724092" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.34724092" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -606,6 +688,35 @@
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="right" id="Maven" order="8" weight="0.32969153" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" sideWeight="0.502008" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="4" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49799198" weight="0.2718509" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4993573" weight="0.32974428" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50064266" side_tool="true" weight="0.32974428" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.32974428" />
+      <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.4993573" weight="0.32974428" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32974428" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.34724092" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.32974428" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32969153" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="8" weight="0.32969153" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -658,8 +769,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding IntegerOverflowException class.&#10;Note that tests had not been changed." />
-    <MESSAGE value="Adding new tests for task 2" />
     <MESSAGE value="Adding description for number of tests in javadoc" />
     <MESSAGE value="Changing condition for IntegerOverflowException being thrown in Task2." />
     <MESSAGE value="Changing logic of Main.class" />
@@ -683,7 +792,9 @@
     <MESSAGE value="Using StringUtils in DayOfWeek." />
     <MESSAGE value="Changing javadoc." />
     <MESSAGE value="Splitting method in House.class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Splitting method in House.class." />
+    <MESSAGE value="Changing messages in exceptions. &#10;Changing try-catch blocks.&#10;Changing tests in DayOfWeek and Main." />
+    <MESSAGE value="Adding new tests for DayOfWeek." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding new tests for DayOfWeek." />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -691,7 +802,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/FirstTasks$All_in_FirstTasks.ic" NAME="All in FirstTasks Coverage Results" MODIFIED="1562960212920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/FirstTasks$All_in_FirstTasks.ic" NAME="All in FirstTasks Coverage Results" MODIFIED="1563974465549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Java/jdk/src.zip!/java/util/ArrayList.java">
@@ -770,65 +881,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="125" column="22" lean-forward="true" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="28" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Swap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
           <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DayOfWeekTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="780" column="46" selection-start-line="780" selection-start-column="46" selection-end-line="780" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="167" column="12" lean-forward="true" selection-start-line="167" selection-start-column="12" selection-end-line="169" selection-end-column="99" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -839,13 +895,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IntegerOverflowException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -869,20 +918,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/SwapTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <caret line="231" column="26" selection-start-line="231" selection-start-column="26" selection-end-line="231" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/SwapTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/DayOfWeekTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="231" column="26" selection-start-line="231" selection-start-column="26" selection-end-line="231" selection-end-column="26" />
+        <state relative-caret-position="165">
+          <caret line="1741" column="12" lean-forward="true" selection-start-line="1741" selection-start-column="12" selection-end-line="1742" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="566" column="40" selection-start-line="566" selection-start-column="40" selection-end-line="566" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="27" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-515">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-736">
+          <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IntegerOverflowException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -28,6 +28,8 @@ public class Main {
      * @throws NumberFormatException          if inputted args do not contain requested type.
      * @throws NoSuchElementException         if inputted args do not contain enough parameters.
      * @throws IntegerOverflowException       while using {@code House} or {@code GCD} with incorrect args.
+     * 
+     * @// TODO: 24-Jul-19 commit, new method for main, show message 
      */
     public static void main(String... args) throws IncorrectArgumentException, NumberFormatException,
             NoSuchElementException, IntegerOverflowException {
@@ -48,7 +50,9 @@ public class Main {
             } else if (task == 5) {
                 task5(in);
             } else {
-                throw new IncorrectArgumentException("For number of task " + task + ": number should be from 1 to 5");
+                String message = "Expected: number of task from 1 to 5." + System.lineSeparator() +
+                        "Got: " + task + " number of task";
+                throw new IncorrectArgumentException(message);
             }
         }
     }
@@ -165,8 +169,7 @@ public class Main {
             System.out.println(DayOfWeek.defineDayOfWeek(daysOfWeeks[dayOfNewYear - 1],
                     dayToFind, months[monthToFind - 1]));
         } catch (ArrayIndexOutOfBoundsException e) {
-            String message = System.lineSeparator() +
-                    "Expected: day of week of New Year from 1 to 7, month from 1 to 12." + System.lineSeparator() +
+            String message = "Expected: day of week of New Year from 1 to 7, month from 1 to 12." + System.lineSeparator() +
                     "Got: " + dayOfNewYear + " day of week of New Year, " + monthToFind + " month";
             throw new IncorrectArgumentException(message);
         }

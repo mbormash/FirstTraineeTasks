@@ -23,8 +23,7 @@ public class Fibonacci {
      */
     public static BigInteger genNFib(int n) {
         if (n < 0) {
-            String message = System.lineSeparator() +
-                    "Expected: non-negative number." + System.lineSeparator() +
+            String message = "Expected: non-negative number." + System.lineSeparator() +
                     "Got: " + n;
             throw new IncorrectArgumentException(message);
         }

@@ -44,22 +44,19 @@ public class House {
      */
     public House(int floorsInHouse, int flatsOnFloor) {
         if (floorsInHouse <= 0) {
-            String message = System.lineSeparator() +
-                    "Expected: positive number of floors in house" + System.lineSeparator() +
+            String message = "Expected: positive number of floors in house" + System.lineSeparator() +
                     "Got: " + floorsInHouse;
             throw new IncorrectArgumentException(message);
         }
 
         if (flatsOnFloor <= 0) {
-            String message = System.lineSeparator() +
-                    "Expected: positive number of flats on floor" + System.lineSeparator() +
+            String message = "Expected: positive number of flats on floor" + System.lineSeparator() +
                     "Got: " + flatsOnFloor;
             throw new IncorrectArgumentException(message);
         }
 
         if (Integer.MAX_VALUE / floorsInHouse < flatsOnFloor) {
-            String message = System.lineSeparator() +
-                    "Expected: numbers of floors in house and flats on floor so that result of" +
+            String message = "Expected: numbers of floors in house and flats on floor so that result of" +
                     " multiplying them is not more than " + Integer.MAX_VALUE + System.lineSeparator() +
                     "Got: " + floorsInHouse + ", " + flatsOnFloor;
             throw new IntegerOverflowException(message);
@@ -78,16 +75,16 @@ public class House {
      */
     public String defineHouseAndFloor(int flat) {
         if (flat <= 0) {
-            String message = System.lineSeparator() +
-                    "Expected: positive number of flat " + System.lineSeparator() +
+            String message = "Expected: positive number of flat " + System.lineSeparator() +
                     "Got: " + flat;
             throw new IncorrectArgumentException(message);
         }
 
         this.flat = flat;
 
-        defineHouse(flat);
-        defineFloor(flat);
+        int flatsInHome = flatsOnFloor * floorsInHouse;
+        defineHouse(flat, flatsInHome);
+        defineFloor(flat, flatsInHome);
 
         return toString();
     }
@@ -96,8 +93,7 @@ public class House {
      * Finds number of house for flat.
      * @param flat number of flat to search.
      */
-    private void defineHouse(int flat) {
-        int flatsInHome = flatsOnFloor * floorsInHouse;
+    private void defineHouse(int flat, int flatsInHome) {
         int house = 1;
 
         if (flat > flatsInHome) {
@@ -114,9 +110,7 @@ public class House {
      * Finds number of floor for flat.
      * @param flat number of flat to search.
      */
-    private void defineFloor(int flat) {
-        int flatsInHome = flatsOnFloor * floorsInHouse;
-
+    private void defineFloor(int flat, int flatsInHome) {
         if (flat % flatsInHome == 0) {
             this.floor = floorsInHouse;
             return;

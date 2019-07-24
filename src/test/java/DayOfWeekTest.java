@@ -1736,11 +1736,11 @@ class DayOfWeekTest {
             //correct behavior
         }
 
-        //Task 5 in main
-        String input = "5" + L_S + dayOfNewYear + L_S + dayToFind + L_S + monthToFind;
-        setInAndOut(input);
 
         try {
+            //Task 5 in main
+            String input = "5" + L_S + dayOfNewYear + L_S + dayToFind + L_S + monthToFind;
+            setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
         } catch (IncorrectArgumentException e) {
@@ -1755,6 +1755,7 @@ class DayOfWeekTest {
      * @return System.out that should be converted to ByteArrayOutputStream.
      */
     private ByteArrayOutputStream setInAndOut(String input) {
+        if(true)throw new IncorrectArgumentException("");
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         System.setOut(new PrintStream(output));
         System.setIn(new ByteArrayInputStream(input.getBytes()));
