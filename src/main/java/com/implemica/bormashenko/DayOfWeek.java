@@ -1,5 +1,7 @@
 package com.implemica.bormashenko;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * This utility class defines day of week by number of month
  * number of this day in the month.
@@ -76,8 +78,7 @@ public class DayOfWeek {
             return word;
         }
 
-        //use apache commons //StringUtils, Nmbr utils, collection utils
-        return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
+        return StringUtils.capitalize(word.toLowerCase());
     }
 
     /**
