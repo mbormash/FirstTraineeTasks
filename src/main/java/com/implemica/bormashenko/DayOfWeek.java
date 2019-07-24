@@ -47,7 +47,6 @@ public class DayOfWeek {
      * @return true if number of day is not more than days in the month.
      */
     private static boolean validation(int dayToFind, Months monthToFind) {
-        //Months.FEBRUARY.daysInMonth = 3;
         return dayToFind > 0 && dayToFind <= monthToFind.daysInMonth;
     }
 
@@ -99,7 +98,7 @@ public class DayOfWeek {
         NOVEMBER(30),
         DECEMBER(31);
 
-        int daysInMonth;
+        final int daysInMonth;
 
         Months(int daysInMonth) {
             this.daysInMonth = daysInMonth;
