@@ -27,7 +27,7 @@ public class Main {
      * @throws ArrayIndexOutOfBoundsException while using {@code DayOfWeek} with incorrect args.
      */
     public static void main(String... args) throws IncorrectArgumentException, NumberFormatException,
-            NoSuchElementException, IntegerOverflowException {
+            NoSuchElementException, IntegerOverflowException, ArrayIndexOutOfBoundsException {
         System.out.println("Input number of task from 1 to 5.");
 
         try (Scanner in = new Scanner(System.in)) {
