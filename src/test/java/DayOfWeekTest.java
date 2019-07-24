@@ -740,45 +740,948 @@ class DayOfWeekTest {
 
     /**
      * Tests with non-valid args for task5 (day of week).
-     * 9 tests for non-valid day of month for February;
-     * 9 tests for non-valid day of month for 30-days months;
-     * 9 tests for non-valid day of month for 31-days months;
-     * 27 tests at all.
+     * 9 tests for non-valid day of month for each month for each day of week of New Year;
+     * 9 * 12 * 7 = 756 tests at all.
      */
     @Test
     void nonValidArgsTests() {
         //non valid day of month (for February)
+        //day of week is 1
         checkException(1, Integer.MIN_VALUE, 2);
-        checkException(2, Integer.MIN_VALUE + 1, 2);
-        checkException(3, Integer.MIN_VALUE / 2, 2);
-        checkException(4, -1, 2);
-        checkException(5, 0, 2);
-        checkException(6, MAX_DAY_OF_MONTH_28 + 1, 2);
-        checkException(7, Integer.MAX_VALUE / 2, 2);
+        checkException(1, Integer.MIN_VALUE + 1, 2);
+        checkException(1, Integer.MIN_VALUE / 2, 2);
+        checkException(1, -1, 2);
+        checkException(1, 0, 2);
+        checkException(1, MAX_DAY_OF_MONTH_28 + 1, 2);
+        checkException(1, Integer.MAX_VALUE / 2, 2);
         checkException(1, Integer.MAX_VALUE - 1, 2);
+        checkException(1, Integer.MAX_VALUE, 2);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 2);
+        checkException(2, Integer.MIN_VALUE + 1, 2);
+        checkException(2, Integer.MIN_VALUE / 2, 2);
+        checkException(2, -1, 2);
+        checkException(2, 0, 2);
+        checkException(2, MAX_DAY_OF_MONTH_28 + 1, 2);
+        checkException(2, Integer.MAX_VALUE / 2, 2);
+        checkException(2, Integer.MAX_VALUE - 1, 2);
         checkException(2, Integer.MAX_VALUE, 2);
 
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 2);
+        checkException(3, Integer.MIN_VALUE + 1, 2);
+        checkException(3, Integer.MIN_VALUE / 2, 2);
+        checkException(3, -1, 2);
+        checkException(3, 0, 2);
+        checkException(3, MAX_DAY_OF_MONTH_28 + 1, 2);
+        checkException(3, Integer.MAX_VALUE / 2, 2);
+        checkException(3, Integer.MAX_VALUE - 1, 2);
+        checkException(3, Integer.MAX_VALUE, 2);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 2);
+        checkException(4, Integer.MIN_VALUE + 1, 2);
+        checkException(4, Integer.MIN_VALUE / 2, 2);
+        checkException(4, -1, 2);
+        checkException(4, 0, 2);
+        checkException(4, MAX_DAY_OF_MONTH_28 + 1, 2);
+        checkException(4, Integer.MAX_VALUE / 2, 2);
+        checkException(4, Integer.MAX_VALUE - 1, 2);
+        checkException(4, Integer.MAX_VALUE, 2);
+
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 2);
+        checkException(5, Integer.MIN_VALUE + 1, 2);
+        checkException(5, Integer.MIN_VALUE / 2, 2);
+        checkException(5, -1, 2);
+        checkException(5, 0, 2);
+        checkException(5, MAX_DAY_OF_MONTH_28 + 1, 2);
+        checkException(5, Integer.MAX_VALUE / 2, 2);
+        checkException(5, Integer.MAX_VALUE - 1, 2);
+        checkException(5, Integer.MAX_VALUE, 2);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 2);
+        checkException(6, Integer.MIN_VALUE + 1, 2);
+        checkException(6, Integer.MIN_VALUE / 2, 2);
+        checkException(6, -1, 2);
+        checkException(6, 0, 2);
+        checkException(6, MAX_DAY_OF_MONTH_28 + 1, 2);
+        checkException(6, Integer.MAX_VALUE / 2, 2);
+        checkException(6, Integer.MAX_VALUE - 1, 2);
+        checkException(6, Integer.MAX_VALUE, 2);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 2);
+        checkException(7, Integer.MIN_VALUE + 1, 2);
+        checkException(7, Integer.MIN_VALUE / 2, 2);
+        checkException(7, -1, 2);
+        checkException(7, 0, 2);
+        checkException(7, MAX_DAY_OF_MONTH_28 + 1, 2);
+        checkException(7, Integer.MAX_VALUE / 2, 2);
+        checkException(7, Integer.MAX_VALUE - 1, 2);
+        checkException(7, Integer.MAX_VALUE, 2);
+
         //non valid day of month (for 30-days months)
+        //month is 4
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 4);
+        checkException(1, Integer.MIN_VALUE + 1, 4);
+        checkException(1, Integer.MIN_VALUE / 2, 4);
+        checkException(1, -1, 4);
+        checkException(1, 0, 4);
+        checkException(1, MAX_DAY_OF_MONTH_30 + 1, 4);
+        checkException(1, Integer.MAX_VALUE / 2, 4);
+        checkException(1, Integer.MAX_VALUE - 1, 4);
+        checkException(1, Integer.MAX_VALUE, 4);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 4);
+        checkException(2, Integer.MIN_VALUE + 1, 4);
+        checkException(2, Integer.MIN_VALUE / 2, 4);
+        checkException(2, -1, 4);
+        checkException(2, 0, 4);
+        checkException(2, MAX_DAY_OF_MONTH_30 + 1, 4);
+        checkException(2, Integer.MAX_VALUE / 2, 4);
+        checkException(2, Integer.MAX_VALUE - 1, 4);
+        checkException(2, Integer.MAX_VALUE, 4);
+
+        //day of week is 3
         checkException(3, Integer.MIN_VALUE, 4);
-        checkException(4, Integer.MIN_VALUE + 1, 6);
-        checkException(5, Integer.MIN_VALUE / 2, 9);
-        checkException(6, -1, 11);
-        checkException(7, 0, 4);
-        checkException(1, MAX_DAY_OF_MONTH_30 + 1, 6);
-        checkException(2, Integer.MAX_VALUE / 2, 9);
-        checkException(3, Integer.MAX_VALUE - 1, 11);
+        checkException(3, Integer.MIN_VALUE + 1, 4);
+        checkException(3, Integer.MIN_VALUE / 2, 4);
+        checkException(3, -1, 4);
+        checkException(3, 0, 4);
+        checkException(3, MAX_DAY_OF_MONTH_30 + 1, 4);
+        checkException(3, Integer.MAX_VALUE / 2, 4);
+        checkException(3, Integer.MAX_VALUE - 1, 4);
+        checkException(3, Integer.MAX_VALUE, 4);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 4);
+        checkException(4, Integer.MIN_VALUE + 1, 4);
+        checkException(4, Integer.MIN_VALUE / 2, 4);
+        checkException(4, -1, 4);
+        checkException(4, 0, 4);
+        checkException(4, MAX_DAY_OF_MONTH_30 + 1, 4);
+        checkException(4, Integer.MAX_VALUE / 2, 4);
+        checkException(4, Integer.MAX_VALUE - 1, 4);
         checkException(4, Integer.MAX_VALUE, 4);
 
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 4);
+        checkException(5, Integer.MIN_VALUE + 1, 4);
+        checkException(5, Integer.MIN_VALUE / 2, 4);
+        checkException(5, -1, 4);
+        checkException(5, 0, 4);
+        checkException(5, MAX_DAY_OF_MONTH_30 + 1, 4);
+        checkException(5, Integer.MAX_VALUE / 2, 4);
+        checkException(5, Integer.MAX_VALUE - 1, 4);
+        checkException(5, Integer.MAX_VALUE, 4);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 4);
+        checkException(6, Integer.MIN_VALUE + 1, 4);
+        checkException(6, Integer.MIN_VALUE / 2, 4);
+        checkException(6, -1, 4);
+        checkException(6, 0, 4);
+        checkException(6, MAX_DAY_OF_MONTH_30 + 1, 4);
+        checkException(6, Integer.MAX_VALUE / 2, 4);
+        checkException(6, Integer.MAX_VALUE - 1, 4);
+        checkException(6, Integer.MAX_VALUE, 4);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 4);
+        checkException(7, Integer.MIN_VALUE + 1, 4);
+        checkException(7, Integer.MIN_VALUE / 2, 4);
+        checkException(7, -1, 4);
+        checkException(7, 0, 4);
+        checkException(7, MAX_DAY_OF_MONTH_30 + 1, 4);
+        checkException(7, Integer.MAX_VALUE / 2, 4);
+        checkException(7, Integer.MAX_VALUE - 1, 4);
+        checkException(7, Integer.MAX_VALUE, 4);
+
+        //month is 6
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 6);
+        checkException(1, Integer.MIN_VALUE + 1, 6);
+        checkException(1, Integer.MIN_VALUE / 2, 6);
+        checkException(1, -1, 6);
+        checkException(1, 0, 6);
+        checkException(1, MAX_DAY_OF_MONTH_30 + 1, 6);
+        checkException(1, Integer.MAX_VALUE / 2, 6);
+        checkException(1, Integer.MAX_VALUE - 1, 6);
+        checkException(1, Integer.MAX_VALUE, 6);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 6);
+        checkException(2, Integer.MIN_VALUE + 1, 6);
+        checkException(2, Integer.MIN_VALUE / 2, 6);
+        checkException(2, -1, 6);
+        checkException(2, 0, 6);
+        checkException(2, MAX_DAY_OF_MONTH_30 + 1, 6);
+        checkException(2, Integer.MAX_VALUE / 2, 6);
+        checkException(2, Integer.MAX_VALUE - 1, 6);
+        checkException(2, Integer.MAX_VALUE, 6);
+
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 6);
+        checkException(3, Integer.MIN_VALUE + 1, 6);
+        checkException(3, Integer.MIN_VALUE / 2, 6);
+        checkException(3, -1, 6);
+        checkException(3, 0, 6);
+        checkException(3, MAX_DAY_OF_MONTH_30 + 1, 6);
+        checkException(3, Integer.MAX_VALUE / 2, 6);
+        checkException(3, Integer.MAX_VALUE - 1, 6);
+        checkException(3, Integer.MAX_VALUE, 6);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 6);
+        checkException(4, Integer.MIN_VALUE + 1, 6);
+        checkException(4, Integer.MIN_VALUE / 2, 6);
+        checkException(4, -1, 6);
+        checkException(4, 0, 6);
+        checkException(4, MAX_DAY_OF_MONTH_30 + 1, 6);
+        checkException(4, Integer.MAX_VALUE / 2, 6);
+        checkException(4, Integer.MAX_VALUE - 1, 6);
+        checkException(4, Integer.MAX_VALUE, 6);
+
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 6);
+        checkException(5, Integer.MIN_VALUE + 1, 6);
+        checkException(5, Integer.MIN_VALUE / 2, 6);
+        checkException(5, -1, 6);
+        checkException(5, 0, 6);
+        checkException(5, MAX_DAY_OF_MONTH_30 + 1, 6);
+        checkException(5, Integer.MAX_VALUE / 2, 6);
+        checkException(5, Integer.MAX_VALUE - 1, 6);
+        checkException(5, Integer.MAX_VALUE, 6);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 6);
+        checkException(6, Integer.MIN_VALUE + 1, 6);
+        checkException(6, Integer.MIN_VALUE / 2, 6);
+        checkException(6, -1, 6);
+        checkException(6, 0, 6);
+        checkException(6, MAX_DAY_OF_MONTH_30 + 1, 6);
+        checkException(6, Integer.MAX_VALUE / 2, 6);
+        checkException(6, Integer.MAX_VALUE - 1, 6);
+        checkException(6, Integer.MAX_VALUE, 6);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 6);
+        checkException(7, Integer.MIN_VALUE + 1, 6);
+        checkException(7, Integer.MIN_VALUE / 2, 6);
+        checkException(7, -1, 6);
+        checkException(7, 0, 6);
+        checkException(7, MAX_DAY_OF_MONTH_30 + 1, 6);
+        checkException(7, Integer.MAX_VALUE / 2, 6);
+        checkException(7, Integer.MAX_VALUE - 1, 6);
+        checkException(7, Integer.MAX_VALUE, 6);
+
+        //month is 9
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 9);
+        checkException(1, Integer.MIN_VALUE + 1, 9);
+        checkException(1, Integer.MIN_VALUE / 2, 9);
+        checkException(1, -1, 9);
+        checkException(1, 0, 9);
+        checkException(1, MAX_DAY_OF_MONTH_30 + 1, 9);
+        checkException(1, Integer.MAX_VALUE / 2, 9);
+        checkException(1, Integer.MAX_VALUE - 1, 9);
+        checkException(1, Integer.MAX_VALUE, 9);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 9);
+        checkException(2, Integer.MIN_VALUE + 1, 9);
+        checkException(2, Integer.MIN_VALUE / 2, 9);
+        checkException(2, -1, 9);
+        checkException(2, 0, 9);
+        checkException(2, MAX_DAY_OF_MONTH_30 + 1, 9);
+        checkException(2, Integer.MAX_VALUE / 2, 9);
+        checkException(2, Integer.MAX_VALUE - 1, 9);
+        checkException(2, Integer.MAX_VALUE, 9);
+
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 9);
+        checkException(3, Integer.MIN_VALUE + 1, 9);
+        checkException(3, Integer.MIN_VALUE / 2, 9);
+        checkException(3, -1, 9);
+        checkException(3, 0, 9);
+        checkException(3, MAX_DAY_OF_MONTH_30 + 1, 9);
+        checkException(3, Integer.MAX_VALUE / 2, 9);
+        checkException(3, Integer.MAX_VALUE - 1, 9);
+        checkException(3, Integer.MAX_VALUE, 9);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 9);
+        checkException(4, Integer.MIN_VALUE + 1, 9);
+        checkException(4, Integer.MIN_VALUE / 2, 9);
+        checkException(4, -1, 9);
+        checkException(4, 0, 9);
+        checkException(4, MAX_DAY_OF_MONTH_30 + 1, 9);
+        checkException(4, Integer.MAX_VALUE / 2, 9);
+        checkException(4, Integer.MAX_VALUE - 1, 9);
+        checkException(4, Integer.MAX_VALUE, 9);
+
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 9);
+        checkException(5, Integer.MIN_VALUE + 1, 9);
+        checkException(5, Integer.MIN_VALUE / 2, 9);
+        checkException(5, -1, 9);
+        checkException(5, 0, 9);
+        checkException(5, MAX_DAY_OF_MONTH_30 + 1, 9);
+        checkException(5, Integer.MAX_VALUE / 2, 9);
+        checkException(5, Integer.MAX_VALUE - 1, 9);
+        checkException(5, Integer.MAX_VALUE, 9);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 9);
+        checkException(6, Integer.MIN_VALUE + 1, 9);
+        checkException(6, Integer.MIN_VALUE / 2, 9);
+        checkException(6, -1, 9);
+        checkException(6, 0, 9);
+        checkException(6, MAX_DAY_OF_MONTH_30 + 1, 9);
+        checkException(6, Integer.MAX_VALUE / 2, 9);
+        checkException(6, Integer.MAX_VALUE - 1, 9);
+        checkException(6, Integer.MAX_VALUE, 9);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 9);
+        checkException(7, Integer.MIN_VALUE + 1, 9);
+        checkException(7, Integer.MIN_VALUE / 2, 9);
+        checkException(7, -1, 9);
+        checkException(7, 0, 9);
+        checkException(7, MAX_DAY_OF_MONTH_30 + 1, 9);
+        checkException(7, Integer.MAX_VALUE / 2, 9);
+        checkException(7, Integer.MAX_VALUE - 1, 9);
+        checkException(7, Integer.MAX_VALUE, 9);
+        
+        //month is 11
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 11);
+        checkException(1, Integer.MIN_VALUE + 1, 11);
+        checkException(1, Integer.MIN_VALUE / 2, 11);
+        checkException(1, -1, 11);
+        checkException(1, 0, 11);
+        checkException(1, MAX_DAY_OF_MONTH_30 + 1, 11);
+        checkException(1, Integer.MAX_VALUE / 2, 11);
+        checkException(1, Integer.MAX_VALUE - 1, 11);
+        checkException(1, Integer.MAX_VALUE, 11);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 11);
+        checkException(2, Integer.MIN_VALUE + 1, 11);
+        checkException(2, Integer.MIN_VALUE / 2, 11);
+        checkException(2, -1, 11);
+        checkException(2, 0, 11);
+        checkException(2, MAX_DAY_OF_MONTH_30 + 1, 11);
+        checkException(2, Integer.MAX_VALUE / 2, 11);
+        checkException(2, Integer.MAX_VALUE - 1, 11);
+        checkException(2, Integer.MAX_VALUE, 11);
+
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 11);
+        checkException(3, Integer.MIN_VALUE + 1, 11);
+        checkException(3, Integer.MIN_VALUE / 2, 11);
+        checkException(3, -1, 11);
+        checkException(3, 0, 11);
+        checkException(3, MAX_DAY_OF_MONTH_30 + 1, 11);
+        checkException(3, Integer.MAX_VALUE / 2, 11);
+        checkException(3, Integer.MAX_VALUE - 1, 11);
+        checkException(3, Integer.MAX_VALUE, 11);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 11);
+        checkException(4, Integer.MIN_VALUE + 1, 11);
+        checkException(4, Integer.MIN_VALUE / 2, 11);
+        checkException(4, -1, 11);
+        checkException(4, 0, 11);
+        checkException(4, MAX_DAY_OF_MONTH_30 + 1, 11);
+        checkException(4, Integer.MAX_VALUE / 2, 11);
+        checkException(4, Integer.MAX_VALUE - 1, 11);
+        checkException(4, Integer.MAX_VALUE, 11);
+
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 11);
+        checkException(5, Integer.MIN_VALUE + 1, 11);
+        checkException(5, Integer.MIN_VALUE / 2, 11);
+        checkException(5, -1, 11);
+        checkException(5, 0, 11);
+        checkException(5, MAX_DAY_OF_MONTH_30 + 1, 11);
+        checkException(5, Integer.MAX_VALUE / 2, 11);
+        checkException(5, Integer.MAX_VALUE - 1, 11);
+        checkException(5, Integer.MAX_VALUE, 11);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 11);
+        checkException(6, Integer.MIN_VALUE + 1, 11);
+        checkException(6, Integer.MIN_VALUE / 2, 11);
+        checkException(6, -1, 11);
+        checkException(6, 0, 11);
+        checkException(6, MAX_DAY_OF_MONTH_30 + 1, 11);
+        checkException(6, Integer.MAX_VALUE / 2, 11);
+        checkException(6, Integer.MAX_VALUE - 1, 11);
+        checkException(6, Integer.MAX_VALUE, 11);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 11);
+        checkException(7, Integer.MIN_VALUE + 1, 11);
+        checkException(7, Integer.MIN_VALUE / 2, 11);
+        checkException(7, -1, 11);
+        checkException(7, 0, 11);
+        checkException(7, MAX_DAY_OF_MONTH_30 + 1, 11);
+        checkException(7, Integer.MAX_VALUE / 2, 11);
+        checkException(7, Integer.MAX_VALUE - 1, 11);
+        checkException(7, Integer.MAX_VALUE, 11);
+
         //non valid day of month (for 31-days months)
+        //month is 1
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 1);
+        checkException(1, Integer.MIN_VALUE + 1, 1);
+        checkException(1, Integer.MIN_VALUE / 2, 1);
+        checkException(1, -1, 1);
+        checkException(1, 0, 1);
+        checkException(1, MAX_DAY_OF_MONTH_31 + 1, 1);
+        checkException(1, Integer.MAX_VALUE / 2, 1);
+        checkException(1, Integer.MAX_VALUE - 1, 1);
+        checkException(1, Integer.MAX_VALUE, 1);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 1);
+        checkException(2, Integer.MIN_VALUE + 1, 1);
+        checkException(2, Integer.MIN_VALUE / 2, 1);
+        checkException(2, -1, 1);
+        checkException(2, 0, 1);
+        checkException(2, MAX_DAY_OF_MONTH_31 + 1, 1);
+        checkException(2, Integer.MAX_VALUE / 2, 1);
+        checkException(2, Integer.MAX_VALUE - 1, 1);
+        checkException(2, Integer.MAX_VALUE, 1);
+
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 1);
+        checkException(3, Integer.MIN_VALUE + 1, 1);
+        checkException(3, Integer.MIN_VALUE / 2, 1);
+        checkException(3, -1, 1);
+        checkException(3, 0, 1);
+        checkException(3, MAX_DAY_OF_MONTH_31 + 1, 1);
+        checkException(3, Integer.MAX_VALUE / 2, 1);
+        checkException(3, Integer.MAX_VALUE - 1, 1);
+        checkException(3, Integer.MAX_VALUE, 1);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 1);
+        checkException(4, Integer.MIN_VALUE + 1, 1);
+        checkException(4, Integer.MIN_VALUE / 2, 1);
+        checkException(4, -1, 1);
+        checkException(4, 0, 1);
+        checkException(4, MAX_DAY_OF_MONTH_31 + 1, 1);
+        checkException(4, Integer.MAX_VALUE / 2, 1);
+        checkException(4, Integer.MAX_VALUE - 1, 1);
+        checkException(4, Integer.MAX_VALUE, 1);
+
+        //day of week is 5
         checkException(5, Integer.MIN_VALUE, 1);
-        checkException(6, Integer.MIN_VALUE + 1, 3);
-        checkException(7, Integer.MIN_VALUE / 2, 5);
-        checkException(1, -1, 7);
-        checkException(2, 0, 8);
-        checkException(3, MAX_DAY_OF_MONTH_31 + 1, 10);
-        checkException(4, Integer.MAX_VALUE / 2, 12);
+        checkException(5, Integer.MIN_VALUE + 1, 1);
+        checkException(5, Integer.MIN_VALUE / 2, 1);
+        checkException(5, -1, 1);
+        checkException(5, 0, 1);
+        checkException(5, MAX_DAY_OF_MONTH_31 + 1, 1);
+        checkException(5, Integer.MAX_VALUE / 2, 1);
         checkException(5, Integer.MAX_VALUE - 1, 1);
+        checkException(5, Integer.MAX_VALUE, 1);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 1);
+        checkException(6, Integer.MIN_VALUE + 1, 1);
+        checkException(6, Integer.MIN_VALUE / 2, 1);
+        checkException(6, -1, 1);
+        checkException(6, 0, 1);
+        checkException(6, MAX_DAY_OF_MONTH_31 + 1, 1);
+        checkException(6, Integer.MAX_VALUE / 2, 1);
+        checkException(6, Integer.MAX_VALUE - 1, 1);
+        checkException(6, Integer.MAX_VALUE, 1);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 1);
+        checkException(7, Integer.MIN_VALUE + 1, 1);
+        checkException(7, Integer.MIN_VALUE / 2, 1);
+        checkException(7, -1, 1);
+        checkException(7, 0, 1);
+        checkException(7, MAX_DAY_OF_MONTH_31 + 1, 1);
+        checkException(7, Integer.MAX_VALUE / 2, 1);
+        checkException(7, Integer.MAX_VALUE - 1, 1);
+        checkException(7, Integer.MAX_VALUE, 1);
+
+        //month is 3
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 3);
+        checkException(1, Integer.MIN_VALUE + 1, 3);
+        checkException(1, Integer.MIN_VALUE / 2, 3);
+        checkException(1, -1, 3);
+        checkException(1, 0, 3);
+        checkException(1, MAX_DAY_OF_MONTH_31 + 1, 3);
+        checkException(1, Integer.MAX_VALUE / 2, 3);
+        checkException(1, Integer.MAX_VALUE - 1, 3);
+        checkException(1, Integer.MAX_VALUE, 3);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 3);
+        checkException(2, Integer.MIN_VALUE + 1, 3);
+        checkException(2, Integer.MIN_VALUE / 2, 3);
+        checkException(2, -1, 3);
+        checkException(2, 0, 3);
+        checkException(2, MAX_DAY_OF_MONTH_31 + 1, 3);
+        checkException(2, Integer.MAX_VALUE / 2, 3);
+        checkException(2, Integer.MAX_VALUE - 1, 3);
+        checkException(2, Integer.MAX_VALUE, 3);
+
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 3);
+        checkException(3, Integer.MIN_VALUE + 1, 3);
+        checkException(3, Integer.MIN_VALUE / 2, 3);
+        checkException(3, -1, 3);
+        checkException(3, 0, 3);
+        checkException(3, MAX_DAY_OF_MONTH_31 + 1, 3);
+        checkException(3, Integer.MAX_VALUE / 2, 3);
+        checkException(3, Integer.MAX_VALUE - 1, 3);
+        checkException(3, Integer.MAX_VALUE, 3);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 3);
+        checkException(4, Integer.MIN_VALUE + 1, 3);
+        checkException(4, Integer.MIN_VALUE / 2, 3);
+        checkException(4, -1, 3);
+        checkException(4, 0, 3);
+        checkException(4, MAX_DAY_OF_MONTH_31 + 1, 3);
+        checkException(4, Integer.MAX_VALUE / 2, 3);
+        checkException(4, Integer.MAX_VALUE - 1, 3);
+        checkException(4, Integer.MAX_VALUE, 3);
+
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 3);
+        checkException(5, Integer.MIN_VALUE + 1, 3);
+        checkException(5, Integer.MIN_VALUE / 2, 3);
+        checkException(5, -1, 3);
+        checkException(5, 0, 3);
+        checkException(5, MAX_DAY_OF_MONTH_31 + 1, 3);
+        checkException(5, Integer.MAX_VALUE / 2, 3);
+        checkException(5, Integer.MAX_VALUE - 1, 3);
+        checkException(5, Integer.MAX_VALUE, 3);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 3);
+        checkException(6, Integer.MIN_VALUE + 1, 3);
+        checkException(6, Integer.MIN_VALUE / 2, 3);
+        checkException(6, -1, 3);
+        checkException(6, 0, 3);
+        checkException(6, MAX_DAY_OF_MONTH_31 + 1, 3);
+        checkException(6, Integer.MAX_VALUE / 2, 3);
+        checkException(6, Integer.MAX_VALUE - 1, 3);
         checkException(6, Integer.MAX_VALUE, 3);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 3);
+        checkException(7, Integer.MIN_VALUE + 1, 3);
+        checkException(7, Integer.MIN_VALUE / 2, 3);
+        checkException(7, -1, 3);
+        checkException(7, 0, 3);
+        checkException(7, MAX_DAY_OF_MONTH_31 + 1, 3);
+        checkException(7, Integer.MAX_VALUE / 2, 3);
+        checkException(7, Integer.MAX_VALUE - 1, 3);
+        checkException(7, Integer.MAX_VALUE, 3);
+
+        //month is 5
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 5);
+        checkException(1, Integer.MIN_VALUE + 1, 5);
+        checkException(1, Integer.MIN_VALUE / 2, 5);
+        checkException(1, -1, 5);
+        checkException(1, 0, 5);
+        checkException(1, MAX_DAY_OF_MONTH_31 + 1, 5);
+        checkException(1, Integer.MAX_VALUE / 2, 5);
+        checkException(1, Integer.MAX_VALUE - 1, 5);
+        checkException(1, Integer.MAX_VALUE, 5);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 5);
+        checkException(2, Integer.MIN_VALUE + 1, 5);
+        checkException(2, Integer.MIN_VALUE / 2, 5);
+        checkException(2, -1, 5);
+        checkException(2, 0, 5);
+        checkException(2, MAX_DAY_OF_MONTH_31 + 1, 5);
+        checkException(2, Integer.MAX_VALUE / 2, 5);
+        checkException(2, Integer.MAX_VALUE - 1, 5);
+        checkException(2, Integer.MAX_VALUE, 5);
+
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 5);
+        checkException(3, Integer.MIN_VALUE + 1, 5);
+        checkException(3, Integer.MIN_VALUE / 2, 5);
+        checkException(3, -1, 5);
+        checkException(3, 0, 5);
+        checkException(3, MAX_DAY_OF_MONTH_31 + 1, 5);
+        checkException(3, Integer.MAX_VALUE / 2, 5);
+        checkException(3, Integer.MAX_VALUE - 1, 5);
+        checkException(3, Integer.MAX_VALUE, 5);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 5);
+        checkException(4, Integer.MIN_VALUE + 1, 5);
+        checkException(4, Integer.MIN_VALUE / 2, 5);
+        checkException(4, -1, 5);
+        checkException(4, 0, 5);
+        checkException(4, MAX_DAY_OF_MONTH_31 + 1, 5);
+        checkException(4, Integer.MAX_VALUE / 2, 5);
+        checkException(4, Integer.MAX_VALUE - 1, 5);
+        checkException(4, Integer.MAX_VALUE, 5);
+
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 5);
+        checkException(5, Integer.MIN_VALUE + 1, 5);
+        checkException(5, Integer.MIN_VALUE / 2, 5);
+        checkException(5, -1, 5);
+        checkException(5, 0, 5);
+        checkException(5, MAX_DAY_OF_MONTH_31 + 1, 5);
+        checkException(5, Integer.MAX_VALUE / 2, 5);
+        checkException(5, Integer.MAX_VALUE - 1, 5);
+        checkException(5, Integer.MAX_VALUE, 5);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 5);
+        checkException(6, Integer.MIN_VALUE + 1, 5);
+        checkException(6, Integer.MIN_VALUE / 2, 5);
+        checkException(6, -1, 5);
+        checkException(6, 0, 5);
+        checkException(6, MAX_DAY_OF_MONTH_31 + 1, 5);
+        checkException(6, Integer.MAX_VALUE / 2, 5);
+        checkException(6, Integer.MAX_VALUE - 1, 5);
+        checkException(6, Integer.MAX_VALUE, 5);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 5);
+        checkException(7, Integer.MIN_VALUE + 1, 5);
+        checkException(7, Integer.MIN_VALUE / 2, 5);
+        checkException(7, -1, 5);
+        checkException(7, 0, 5);
+        checkException(7, MAX_DAY_OF_MONTH_31 + 1, 5);
+        checkException(7, Integer.MAX_VALUE / 2, 5);
+        checkException(7, Integer.MAX_VALUE - 1, 5);
+        checkException(7, Integer.MAX_VALUE, 5);
+
+        //month is 7
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 7);
+        checkException(1, Integer.MIN_VALUE + 1, 7);
+        checkException(1, Integer.MIN_VALUE / 2, 7);
+        checkException(1, -1, 7);
+        checkException(1, 0, 7);
+        checkException(1, MAX_DAY_OF_MONTH_31 + 1, 7);
+        checkException(1, Integer.MAX_VALUE / 2, 7);
+        checkException(1, Integer.MAX_VALUE - 1, 7);
+        checkException(1, Integer.MAX_VALUE, 7);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 7);
+        checkException(2, Integer.MIN_VALUE + 1, 7);
+        checkException(2, Integer.MIN_VALUE / 2, 7);
+        checkException(2, -1, 7);
+        checkException(2, 0, 7);
+        checkException(2, MAX_DAY_OF_MONTH_31 + 1, 7);
+        checkException(2, Integer.MAX_VALUE / 2, 7);
+        checkException(2, Integer.MAX_VALUE - 1, 7);
+        checkException(2, Integer.MAX_VALUE, 7);
+
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 7);
+        checkException(3, Integer.MIN_VALUE + 1, 7);
+        checkException(3, Integer.MIN_VALUE / 2, 7);
+        checkException(3, -1, 7);
+        checkException(3, 0, 7);
+        checkException(3, MAX_DAY_OF_MONTH_31 + 1, 7);
+        checkException(3, Integer.MAX_VALUE / 2, 7);
+        checkException(3, Integer.MAX_VALUE - 1, 7);
+        checkException(3, Integer.MAX_VALUE, 7);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 7);
+        checkException(4, Integer.MIN_VALUE + 1, 7);
+        checkException(4, Integer.MIN_VALUE / 2, 7);
+        checkException(4, -1, 7);
+        checkException(4, 0, 7);
+        checkException(4, MAX_DAY_OF_MONTH_31 + 1, 7);
+        checkException(4, Integer.MAX_VALUE / 2, 7);
+        checkException(4, Integer.MAX_VALUE - 1, 7);
+        checkException(4, Integer.MAX_VALUE, 7);
+
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 7);
+        checkException(5, Integer.MIN_VALUE + 1, 7);
+        checkException(5, Integer.MIN_VALUE / 2, 7);
+        checkException(5, -1, 7);
+        checkException(5, 0, 7);
+        checkException(5, MAX_DAY_OF_MONTH_31 + 1, 7);
+        checkException(5, Integer.MAX_VALUE / 2, 7);
+        checkException(5, Integer.MAX_VALUE - 1, 7);
+        checkException(5, Integer.MAX_VALUE, 7);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 7);
+        checkException(6, Integer.MIN_VALUE + 1, 7);
+        checkException(6, Integer.MIN_VALUE / 2, 7);
+        checkException(6, -1, 7);
+        checkException(6, 0, 7);
+        checkException(6, MAX_DAY_OF_MONTH_31 + 1, 7);
+        checkException(6, Integer.MAX_VALUE / 2, 7);
+        checkException(6, Integer.MAX_VALUE - 1, 7);
+        checkException(6, Integer.MAX_VALUE, 7);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 7);
+        checkException(7, Integer.MIN_VALUE + 1, 7);
+        checkException(7, Integer.MIN_VALUE / 2, 7);
+        checkException(7, -1, 7);
+        checkException(7, 0, 7);
+        checkException(7, MAX_DAY_OF_MONTH_31 + 1, 7);
+        checkException(7, Integer.MAX_VALUE / 2, 7);
+        checkException(7, Integer.MAX_VALUE - 1, 7);
+        checkException(7, Integer.MAX_VALUE, 7);
+
+        //month is 8
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 8);
+        checkException(1, Integer.MIN_VALUE + 1, 8);
+        checkException(1, Integer.MIN_VALUE / 2, 8);
+        checkException(1, -1, 8);
+        checkException(1, 0, 8);
+        checkException(1, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(1, Integer.MAX_VALUE / 2, 8);
+        checkException(1, Integer.MAX_VALUE - 1, 8);
+        checkException(1, Integer.MAX_VALUE, 8);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 8);
+        checkException(2, Integer.MIN_VALUE + 1, 8);
+        checkException(2, Integer.MIN_VALUE / 2, 8);
+        checkException(2, -1, 8);
+        checkException(2, 0, 8);
+        checkException(2, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(2, Integer.MAX_VALUE / 2, 8);
+        checkException(2, Integer.MAX_VALUE - 1, 8);
+        checkException(2, Integer.MAX_VALUE, 8);
+
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 8);
+        checkException(3, Integer.MIN_VALUE + 1, 8);
+        checkException(3, Integer.MIN_VALUE / 2, 8);
+        checkException(3, -1, 8);
+        checkException(3, 0, 8);
+        checkException(3, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(3, Integer.MAX_VALUE / 2, 8);
+        checkException(3, Integer.MAX_VALUE - 1, 8);
+        checkException(3, Integer.MAX_VALUE, 8);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 8);
+        checkException(4, Integer.MIN_VALUE + 1, 8);
+        checkException(4, Integer.MIN_VALUE / 2, 8);
+        checkException(4, -1, 8);
+        checkException(4, 0, 8);
+        checkException(4, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(4, Integer.MAX_VALUE / 2, 8);
+        checkException(4, Integer.MAX_VALUE - 1, 8);
+        checkException(4, Integer.MAX_VALUE, 8);
+
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 8);
+        checkException(5, Integer.MIN_VALUE + 1, 8);
+        checkException(5, Integer.MIN_VALUE / 2, 8);
+        checkException(5, -1, 8);
+        checkException(5, 0, 8);
+        checkException(5, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(5, Integer.MAX_VALUE / 2, 8);
+        checkException(5, Integer.MAX_VALUE - 1, 8);
+        checkException(5, Integer.MAX_VALUE, 8);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 8);
+        checkException(6, Integer.MIN_VALUE + 1, 8);
+        checkException(6, Integer.MIN_VALUE / 2, 8);
+        checkException(6, -1, 8);
+        checkException(6, 0, 8);
+        checkException(6, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(6, Integer.MAX_VALUE / 2, 8);
+        checkException(6, Integer.MAX_VALUE - 1, 8);
+        checkException(6, Integer.MAX_VALUE, 8);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 8);
+        checkException(7, Integer.MIN_VALUE + 1, 8);
+        checkException(7, Integer.MIN_VALUE / 2, 8);
+        checkException(7, -1, 8);
+        checkException(7, 0, 8);
+        checkException(7, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(7, Integer.MAX_VALUE / 2, 8);
+        checkException(7, Integer.MAX_VALUE - 1, 8);
+        checkException(7, Integer.MAX_VALUE, 8);
+
+        //month is 12
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 12);
+        checkException(1, Integer.MIN_VALUE + 1, 12);
+        checkException(1, Integer.MIN_VALUE / 2, 12);
+        checkException(1, -1, 12);
+        checkException(1, 0, 12);
+        checkException(1, MAX_DAY_OF_MONTH_31 + 1, 12);
+        checkException(1, Integer.MAX_VALUE / 2, 12);
+        checkException(1, Integer.MAX_VALUE - 1, 12);
+        checkException(1, Integer.MAX_VALUE, 12);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 12);
+        checkException(2, Integer.MIN_VALUE + 1, 12);
+        checkException(2, Integer.MIN_VALUE / 2, 12);
+        checkException(2, -1, 12);
+        checkException(2, 0, 12);
+        checkException(2, MAX_DAY_OF_MONTH_31 + 1, 12);
+        checkException(2, Integer.MAX_VALUE / 2, 12);
+        checkException(2, Integer.MAX_VALUE - 1, 12);
+        checkException(2, Integer.MAX_VALUE, 12);
+
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 12);
+        checkException(3, Integer.MIN_VALUE + 1, 12);
+        checkException(3, Integer.MIN_VALUE / 2, 12);
+        checkException(3, -1, 12);
+        checkException(3, 0, 12);
+        checkException(3, MAX_DAY_OF_MONTH_31 + 1, 12);
+        checkException(3, Integer.MAX_VALUE / 2, 12);
+        checkException(3, Integer.MAX_VALUE - 1, 12);
+        checkException(3, Integer.MAX_VALUE, 12);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 12);
+        checkException(4, Integer.MIN_VALUE + 1, 12);
+        checkException(4, Integer.MIN_VALUE / 2, 12);
+        checkException(4, -1, 12);
+        checkException(4, 0, 12);
+        checkException(4, MAX_DAY_OF_MONTH_31 + 1, 12);
+        checkException(4, Integer.MAX_VALUE / 2, 12);
+        checkException(4, Integer.MAX_VALUE - 1, 12);
+        checkException(4, Integer.MAX_VALUE, 12);
+
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 12);
+        checkException(5, Integer.MIN_VALUE + 1, 12);
+        checkException(5, Integer.MIN_VALUE / 2, 12);
+        checkException(5, -1, 12);
+        checkException(5, 0, 12);
+        checkException(5, MAX_DAY_OF_MONTH_31 + 1, 12);
+        checkException(5, Integer.MAX_VALUE / 2, 12);
+        checkException(5, Integer.MAX_VALUE - 1, 12);
+        checkException(5, Integer.MAX_VALUE, 12);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 12);
+        checkException(6, Integer.MIN_VALUE + 1, 12);
+        checkException(6, Integer.MIN_VALUE / 2, 12);
+        checkException(6, -1, 12);
+        checkException(6, 0, 12);
+        checkException(6, MAX_DAY_OF_MONTH_31 + 1, 12);
+        checkException(6, Integer.MAX_VALUE / 2, 12);
+        checkException(6, Integer.MAX_VALUE - 1, 12);
+        checkException(6, Integer.MAX_VALUE, 12);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 12);
+        checkException(7, Integer.MIN_VALUE + 1, 12);
+        checkException(7, Integer.MIN_VALUE / 2, 12);
+        checkException(7, -1, 12);
+        checkException(7, 0, 12);
+        checkException(7, MAX_DAY_OF_MONTH_31 + 1, 12);
+        checkException(7, Integer.MAX_VALUE / 2, 12);
+        checkException(7, Integer.MAX_VALUE - 1, 12);
+        checkException(7, Integer.MAX_VALUE, 12);
+
+        //month is 8
+        //day of week is 1
+        checkException(1, Integer.MIN_VALUE, 8);
+        checkException(1, Integer.MIN_VALUE + 1, 8);
+        checkException(1, Integer.MIN_VALUE / 2, 8);
+        checkException(1, -1, 8);
+        checkException(1, 0, 8);
+        checkException(1, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(1, Integer.MAX_VALUE / 2, 8);
+        checkException(1, Integer.MAX_VALUE - 1, 8);
+        checkException(1, Integer.MAX_VALUE, 8);
+
+        //day of week is 2
+        checkException(2, Integer.MIN_VALUE, 8);
+        checkException(2, Integer.MIN_VALUE + 1, 8);
+        checkException(2, Integer.MIN_VALUE / 2, 8);
+        checkException(2, -1, 8);
+        checkException(2, 0, 8);
+        checkException(2, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(2, Integer.MAX_VALUE / 2, 8);
+        checkException(2, Integer.MAX_VALUE - 1, 8);
+        checkException(2, Integer.MAX_VALUE, 8);
+
+        //day of week is 3
+        checkException(3, Integer.MIN_VALUE, 8);
+        checkException(3, Integer.MIN_VALUE + 1, 8);
+        checkException(3, Integer.MIN_VALUE / 2, 8);
+        checkException(3, -1, 8);
+        checkException(3, 0, 8);
+        checkException(3, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(3, Integer.MAX_VALUE / 2, 8);
+        checkException(3, Integer.MAX_VALUE - 1, 8);
+        checkException(3, Integer.MAX_VALUE, 8);
+
+        //day of week is 4
+        checkException(4, Integer.MIN_VALUE, 8);
+        checkException(4, Integer.MIN_VALUE + 1, 8);
+        checkException(4, Integer.MIN_VALUE / 2, 8);
+        checkException(4, -1, 8);
+        checkException(4, 0, 8);
+        checkException(4, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(4, Integer.MAX_VALUE / 2, 8);
+        checkException(4, Integer.MAX_VALUE - 1, 8);
+        checkException(4, Integer.MAX_VALUE, 8);
+
+        //day of week is 5
+        checkException(5, Integer.MIN_VALUE, 8);
+        checkException(5, Integer.MIN_VALUE + 1, 8);
+        checkException(5, Integer.MIN_VALUE / 2, 8);
+        checkException(5, -1, 8);
+        checkException(5, 0, 8);
+        checkException(5, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(5, Integer.MAX_VALUE / 2, 8);
+        checkException(5, Integer.MAX_VALUE - 1, 8);
+        checkException(5, Integer.MAX_VALUE, 8);
+
+        //day of week is 6
+        checkException(6, Integer.MIN_VALUE, 8);
+        checkException(6, Integer.MIN_VALUE + 1, 8);
+        checkException(6, Integer.MIN_VALUE / 2, 8);
+        checkException(6, -1, 8);
+        checkException(6, 0, 8);
+        checkException(6, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(6, Integer.MAX_VALUE / 2, 8);
+        checkException(6, Integer.MAX_VALUE - 1, 8);
+        checkException(6, Integer.MAX_VALUE, 8);
+
+        //day of week is 7
+        checkException(7, Integer.MIN_VALUE, 8);
+        checkException(7, Integer.MIN_VALUE + 1, 8);
+        checkException(7, Integer.MIN_VALUE / 2, 8);
+        checkException(7, -1, 8);
+        checkException(7, 0, 8);
+        checkException(7, MAX_DAY_OF_MONTH_31 + 1, 8);
+        checkException(7, Integer.MAX_VALUE / 2, 8);
+        checkException(7, Integer.MAX_VALUE - 1, 8);
+        checkException(7, Integer.MAX_VALUE, 8);
     }
 
     /**
