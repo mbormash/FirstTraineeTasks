@@ -10,8 +10,6 @@ import static com.implemica.bormashenko.DayOfWeek.Months;
  * Main class for first tasks.
  *
  * @author Mykhailo Bormashenko
- *
- * @todo remove throws from main
  */
 public class Main {
 
@@ -68,7 +66,8 @@ public class Main {
         Swap swap = new Swap();
         swap.setA(a);
         swap.setB(b);
-        swap.showSwapping();
+
+        System.out.println(swap.showSwapping());
     }
 
     /**
@@ -91,6 +90,7 @@ public class Main {
         int flat = in.nextInt();
 
         House house = new House(floorsInHouse, flatsOnFloor);
+
         System.out.println(house.defineHouseAndFloor(flat));
     }
 

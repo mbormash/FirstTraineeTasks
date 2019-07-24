@@ -46,11 +46,15 @@ public class Swap {
     /**
      * Shows the process of swapping.
      */
-    public void showSwapping() {
-        System.out.println("Before reversing:" + System.lineSeparator() +
-                "a: " + a + ", b: " + b);
+    public String showSwapping() {
+        String ls = System.lineSeparator();
+
+        String before = "Before reversing:" + ls +
+                "a: " + a + ", b: " + b;
         swap();
-        System.out.println("After reversing:" + System.lineSeparator() +
-                "a: " + a + ", b: " + b);
+        String after = "After reversing:" + ls +
+                "a: " + a + ", b: " + b;
+
+        return before + ls + after;
     }
 }

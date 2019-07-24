@@ -13,8 +13,6 @@ import static com.implemica.bormashenko.DayOfWeek.Months;
  * Test class for DayOfWeek (day of week).
  *
  * @author Mykhailo Bormashenko
- * 
- * @// TODO: 24-Jul-19 check words 
  */
 class DayOfWeekTest {
 
