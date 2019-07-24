@@ -75,22 +75,45 @@ public class House {
         }
 
         this.flat = flat;
+
+        defineHouse(flat);
+        defineFloor(flat);
+
+        return toString();
+    }
+
+    /**
+     * Finds number of house for flat.
+     * @param flat number of flat to search.
+     */
+    private void defineHouse(int flat) {
         int flatsInHome = flatsOnFloor * floorsInHouse;
         int house = 1;
-        int floor = 1;
 
         if (flat > flatsInHome) {
             house += flat / flatsInHome;
-            flat = flat % flatsInHome;
-            if (flat == 0) {
+            if (flat % flatsInHome == 0) {
                 house--;
-                this.house = house;
-                this.floor = floorsInHouse;
-                return toString();
             }
         }
 
         this.house = house;
+    }
+
+    /**
+     * Finds number of floor for flat.
+     * @param flat number of flat to search.
+     */
+    private void defineFloor(int flat) {
+        int flatsInHome = flatsOnFloor * floorsInHouse;
+
+        if (flat % flatsInHome == 0) {
+            this.floor = floorsInHouse;
+            return;
+        }
+
+        flat = flat % flatsInHome;
+        int floor = 1;
 
         if (flat > flatsOnFloor) {
             floor = flat / flatsOnFloor;
@@ -100,7 +123,6 @@ public class House {
         }
 
         this.floor = floor;
-        return toString();
     }
 
     /**
