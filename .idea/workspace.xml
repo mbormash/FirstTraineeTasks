@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="4a985dfb-d202-474b-a364-f23dfd434018" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FibonacciTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FibonacciTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HouseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HouseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MainClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainClassTest.java" afterDir="false" />
     </list>
     <list id="f9591f48-e10a-4606-b9c1-1ae11a0a2706" name="Revert &quot;Adding JavaDoc.&quot;" comment="Revert &quot;Adding JavaDoc.&quot;&#10;&#10;This reverts commit 507ca828">
       <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/IncorrectArgumentException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/IncorrectArgumentException.class" afterDir="false" />
@@ -34,50 +42,7 @@
     <favorites_list name="FirstTasks" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Swap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/SwapTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="231" column="26" selection-start-line="231" selection-start-column="26" selection-end-line="231" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -108,6 +73,7 @@
       <find>AUGUST,</find>
       <find>AUGUST</find>
       <find>AUGUST)</find>
+      <find>throw new</find>
     </findStrings>
     <replaceStrings>
       <replace>SQRT_MAX</replace>
@@ -147,12 +113,9 @@
         <option value="$PROJECT_DIR$/src/test/java/Task3Test.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task4Test.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task2Test.java" />
-        <option value="$PROJECT_DIR$/src/test/java/MainClassTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DaysOfWeek.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Months.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IntegerOverflowException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task1Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task5.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task2.java" />
@@ -160,13 +123,21 @@
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Task4.java" />
         <option value="$PROJECT_DIR$/src/test/java/Task5Test.java" />
         <option value="$PROJECT_DIR$/com/implemica/bormashenko/Task1.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" />
-        <option value="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Swap.java" />
         <option value="$PROJECT_DIR$/src/test/java/SwapTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IntegerOverflowException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Swap.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" />
+        <option value="$PROJECT_DIR$/src/test/java/HouseTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/FibonacciTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/MainClassTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" />
       </list>
     </option>
   </component>
@@ -257,9 +228,9 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562924346044" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
@@ -299,6 +270,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DayOfWeekTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FirstTasks" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DayOfWeekTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DayOfWeekTest.validArgsTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FirstTasks" />
       <option name="PACKAGE_NAME" value="" />
@@ -318,19 +298,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HouseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FirstTasks" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainClassTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SwapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FirstTasks" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SwapTest" />
+      <option name="MAIN_CLASS_NAME" value="HouseTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -338,11 +309,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DayOfWeekTest.validArgsTests" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.DayOfWeekTest" />
+        <item itemvalue="JUnit.HouseTest" />
+        <item itemvalue="JUnit.DayOfWeekTest.validArgsTests" />
         <item itemvalue="JUnit.GreatestCommonDivisorTest" />
-        <item itemvalue="JUnit.SwapTest" />
-        <item itemvalue="JUnit.MainClassTest" />
       </list>
     </recent_temporary>
   </component>
@@ -539,38 +510,59 @@
       <option name="project" value="LOCAL" />
       <updated>1563960644060</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Using StringUtils in DayOfWeek.">
+      <created>1563961509260</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1563961509261</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Changing javadoc.">
+      <created>1563965851255</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1563965851255</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Splitting method in House.class.">
+      <created>1563971230905</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1563971230906</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_FirstTasks - 2019.07.24 at 12h 15m 48s.xml">
+    <history-entry file="HouseTest - 2019.07.24 at 15h 25m 48s.xml">
+      <configuration name="HouseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HouseTest - 2019.07.24 at 15h 26m 21s.xml">
+      <configuration name="HouseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HouseTest - 2019.07.24 at 15h 38m 14s.xml">
+      <configuration name="HouseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DayOfWeekTest - 2019.07.24 at 15h 38m 21s.xml">
+      <configuration name="DayOfWeekTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DayOfWeekTest - 2019.07.24 at 15h 40m 17s.xml">
+      <configuration name="DayOfWeekTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_FirstTasks - 2019.07.24 at 15h 45m 16s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.24 at 12h 16m 14s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.24 at 16h 01m 21s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.24 at 12h 16m 37s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.24 at 16h 01m 53s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.24 at 12h 18m 03s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.24 at 16h 02m 17s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.24 at 12h 21m 17s.xml">
-      <configuration name="All in FirstTasks" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.24 at 12h 22m 22s.xml">
-      <configuration name="All in FirstTasks" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.24 at 12h 26m 27s.xml">
-      <configuration name="All in FirstTasks" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.24 at 12h 30m 00s.xml">
-      <configuration name="All in FirstTasks" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.24 at 12h 40m 39s.xml">
-      <configuration name="All in FirstTasks" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_FirstTasks - 2019.07.24 at 12h 41m 01s.xml">
+    <history-entry file="All_in_FirstTasks - 2019.07.24 at 16h 08m 13s.xml">
       <configuration name="All in FirstTasks" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -585,7 +577,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -667,7 +658,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changing type of flat in task 2 from long to int.&#10;Note that tests had not been changed." />
     <MESSAGE value="Adding IntegerOverflowException class.&#10;Note that tests had not been changed." />
     <MESSAGE value="Adding new tests for task 2" />
     <MESSAGE value="Adding description for number of tests in javadoc" />
@@ -690,7 +680,10 @@
     <MESSAGE value="Changing non-valid tests in DayOfWeekTest." />
     <MESSAGE value="Refactoring Swap." />
     <MESSAGE value="Making fields in Enum final." />
-    <option name="LAST_COMMIT_MESSAGE" value="Making fields in Enum final." />
+    <MESSAGE value="Using StringUtils in DayOfWeek." />
+    <MESSAGE value="Changing javadoc." />
+    <MESSAGE value="Splitting method in House.class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Splitting method in House.class." />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -735,20 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/FibonacciTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Months.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -763,20 +742,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
+    <entry file="file://$PROJECT_DIR$/com/implemica/bormashenko/Task1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="157">
+          <caret line="100" column="35" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/HouseTest.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="1059" column="7" lean-forward="true" selection-start-line="1059" selection-start-column="7" selection-end-line="1059" selection-end-column="7" />
+        <state relative-caret-position="1020">
+          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7-sources.jar!/org/apache/commons/lang3/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="6707" column="25" selection-start-line="6707" selection-start-column="25" selection-end-line="6707" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar!/org/apache/commons/lang3/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="2216" column="25" selection-start-line="2216" selection-start-column="25" selection-end-line="2216" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="125" column="22" lean-forward="true" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="28" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Swap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DayOfWeekTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="780" column="46" selection-start-line="780" selection-start-column="46" selection-end-line="780" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -786,7 +818,27 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="167" column="12" lean-forward="true" selection-start-line="167" selection-start-column="12" selection-end-line="169" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/FibonacciTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="212" selection-start-line="212" selection-end-line="212" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -797,92 +849,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/implemica/bormashenko/Task1.html">
+    <entry file="file://$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="100" column="35" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DayOfWeekTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        <state relative-caret-position="284">
+          <caret line="724" selection-start-line="724" selection-end-line="724" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/HouseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="284">
+          <caret line="1104" selection-start-line="1104" selection-end-line="1104" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+        <state relative-caret-position="17">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SwapTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="17">
           <caret line="231" column="26" selection-start-line="231" selection-start-column="26" selection-end-line="231" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Swap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar!/org/apache/commons/lang3/StringUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3094">
-          <caret line="138" column="41" selection-start-line="138" selection-start-column="41" selection-end-line="138" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
         </state>
       </provider>
     </entry>

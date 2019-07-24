@@ -1100,9 +1100,10 @@ class HouseTest {
         }
 
         //Task 2 in main
+        String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
+        setInAndOut(input);
+
         try {
-            String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
-            setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
         } catch (IncorrectArgumentException | IntegerOverflowException e) {

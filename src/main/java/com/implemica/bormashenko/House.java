@@ -44,18 +44,25 @@ public class House {
      */
     public House(int floorsInHouse, int flatsOnFloor) {
         if (floorsInHouse <= 0) {
-            throw new IncorrectArgumentException("For number of floors in house " + floorsInHouse +
-                    ": number should be positive.");
+            String message = System.lineSeparator() +
+                    "Expected: positive number of floors in house" + System.lineSeparator() +
+                    "Got: " + floorsInHouse;
+            throw new IncorrectArgumentException(message);
         }
 
         if (flatsOnFloor <= 0) {
-            throw new IncorrectArgumentException("For number of flats on floor " + flatsOnFloor +
-                    ": number should be positive.");
+            String message = System.lineSeparator() +
+                    "Expected: positive number of flats on floor" + System.lineSeparator() +
+                    "Got: " + flatsOnFloor;
+            throw new IncorrectArgumentException(message);
         }
 
         if (Integer.MAX_VALUE / floorsInHouse < flatsOnFloor) {
-            throw new IntegerOverflowException("For numbers of floors in house and flats on floor " +
-                    floorsInHouse + ", " + flatsOnFloor + ": numbers are too large.");
+            String message = System.lineSeparator() +
+                    "Expected: numbers of floors in house and flats on floor so that result of" +
+                    " multiplying them is not more than " + Integer.MAX_VALUE + System.lineSeparator() +
+                    "Got: " + floorsInHouse + ", " + flatsOnFloor;
+            throw new IntegerOverflowException(message);
         }
 
         this.floorsInHouse = floorsInHouse;
@@ -71,7 +78,10 @@ public class House {
      */
     public String defineHouseAndFloor(int flat) {
         if (flat <= 0) {
-            throw new IncorrectArgumentException("For number of flat " + flat + " : number should be positive.");
+            String message = System.lineSeparator() +
+                    "Expected: positive number of flat " + System.lineSeparator() +
+                    "Got: " + flat;
+            throw new IncorrectArgumentException(message);
         }
 
         this.flat = flat;

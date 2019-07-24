@@ -24,8 +24,10 @@ public class GreatestCommonDivisor {
      */
     private static int nod2args(int a, int b) {
         if (a == MIN_VALUE || b == MIN_VALUE) {
-            throw new IntegerOverflowException("For numbers " + a + ", " + b +
-                    ": number should be not less than " + (MIN_VALUE + 1));
+            String message = System.lineSeparator() +
+                    "Expected: numbers not less than " + MIN_VALUE + System.lineSeparator() +
+                    "Got: " + a + ", " + b;
+            throw new IntegerOverflowException(message);
         }
 
         int x = Math.abs(a);

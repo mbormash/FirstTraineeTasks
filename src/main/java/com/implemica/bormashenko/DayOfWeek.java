@@ -39,7 +39,7 @@ public class DayOfWeek {
         searchDay %= DAYS_IN_WEEK;
 
         if (searchDay == 0) {
-            searchDay = 7;
+            searchDay = DAYS_IN_WEEK;
         }
 
         String day = DaysOfWeek.values()[searchDay - 1].name();

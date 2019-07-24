@@ -720,9 +720,10 @@ class GreatestCommonDivisorTest {
         }
 
         //Task 3 in main
+        String input = "3" + L_S + a + L_S + b + L_S + c + L_S + d;
+        setInAndOut(input);
+
         try {
-            String input = "3" + L_S + a + L_S + b + L_S + c + L_S + d;
-            setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
         } catch (IntegerOverflowException e) {

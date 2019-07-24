@@ -22,8 +22,8 @@ class MainClassTest {
      * 75 tests for task2;
      * 112 tests for task3;
      * 19 tests for task4;
-     * 75 tests for task5;
-     * 386 tests at all.
+     * 115 tests for task5;
+     * 426 tests at all.
      */
     @Test
     void nonValidInputTests() {
@@ -492,6 +492,53 @@ class MainClassTest {
         checkException("5", "2", "10", "adads21341");
         checkException("5", "3", "11", "asdsf3241aca");
         checkException("5", "4", "12", "asdas3q4ad");
+
+        //ArrayIndexOfBoundException
+        //for day of week
+        checkException("5", "0", "1", "2");
+        checkException("5", "-1", "3", "4");
+        checkException("5", String.valueOf(Integer.MIN_VALUE - 1L), "5", "6");
+        checkException("5", String.valueOf(Long.MIN_VALUE / 2), "7", "8");
+        checkException("5", String.valueOf(Long.MIN_VALUE + 1), "9", "10");
+        checkException("5", String.valueOf(Long.MIN_VALUE), "11", "12");
+        checkException("5", "-9999999999999999999", "1", "2");
+        checkException("5", "-1000000000000000000", "3", "4");
+        checkException("5", "-419872198571957195781", "5", "6");
+        checkException("5", "-15281759178295719571124", "7", "8");
+
+        checkException("5", "8", "9", "10");
+        checkException("5", "9", "11", "12");
+        checkException("5", String.valueOf(Integer.MAX_VALUE + 1L), "1", "2");
+        checkException("5", String.valueOf(Long.MAX_VALUE / 2), "3", "4");
+        checkException("5", String.valueOf(Long.MAX_VALUE - 1), "5", "6");
+        checkException("5", String.valueOf(Long.MAX_VALUE), "7", "8");
+        checkException("5", "9999999999999999999", "9", "10");
+        checkException("5", "1000000000000000000", "11", "12");
+        checkException("5", "7657654567652352528", "1", "2");
+        checkException("5", "876324823654736363", "3", "4");
+
+        //for month
+        checkException("5", "5", "6", "0");
+        checkException("5", "7", "1", "-1");
+        checkException("5", "2", "3", String.valueOf(Integer.MIN_VALUE - 1L));
+        checkException("5", "4", "5", String.valueOf(Long.MIN_VALUE / 2));
+        checkException("5", "6", "7", String.valueOf(Long.MIN_VALUE + 1));
+        checkException("5", "1", "2", String.valueOf(Long.MIN_VALUE));
+        checkException("5", "3", "4", "-9999999999999999999");
+        checkException("5", "5", "6", "-1000000000000000000");
+        checkException("5", "7", "1", "-419872198571957195781");
+        checkException("5", "2", "3", "-15281759178295719571124");
+
+        checkException("5", "4", "5", "13");
+        checkException("5", "6", "7", "14");
+        checkException("5", "1", "2", String.valueOf(Integer.MAX_VALUE + 1L));
+        checkException("5", "3", "4", String.valueOf(Long.MAX_VALUE / 2));
+        checkException("5", "5", "6", String.valueOf(Long.MAX_VALUE - 1));
+        checkException("5", "7", "1", String.valueOf(Long.MAX_VALUE));
+        checkException("5", "2", "3", "9999999999999999999");
+        checkException("5", "4", "5", "1000000000000000000");
+        checkException("5", "6", "7", "7657654567652352528");
+        checkException("5", "1", "2", "876324823654736363");
     }
 
     /**
@@ -505,19 +552,33 @@ class MainClassTest {
      * @see NoSuchElementException
      */
     private void checkException(String... args) {
+        StringBuilder input = new StringBuilder();
+
+        for (String s : args) {
+            input.append(s);
+            input.append(lineSeparator());
+        }
+
+        setInAndOut(input.toString());
+
         try {
-            StringBuilder input = new StringBuilder();
-            for (String s : args) {
-                input.append(s);
-                input.append(lineSeparator());
-            }
-            ByteArrayOutputStream output = new ByteArrayOutputStream();
-            System.setOut(new PrintStream(output));
-            System.setIn(new ByteArrayInputStream(input.toString().getBytes()));
             Main.main();
             fail("Exception was not thrown.");
         } catch (ArrayIndexOutOfBoundsException | NoSuchElementException | IncorrectArgumentException e) {
             //correct behavior
         }
+    }
+
+    /**
+     * Overrides System.in and System.out.
+     *
+     * @param input string that should be converted to System.in.
+     * @return System.out that should be converted to ByteArrayOutputStream.
+     */
+    private ByteArrayOutputStream setInAndOut(String input) {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output));
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        return output;
     }
 }

@@ -28,10 +28,9 @@ public class Main {
      * @throws NumberFormatException          if inputted args do not contain requested type.
      * @throws NoSuchElementException         if inputted args do not contain enough parameters.
      * @throws IntegerOverflowException       while using {@code House} or {@code GCD} with incorrect args.
-     * @throws ArrayIndexOutOfBoundsException while using {@code DayOfWeek} with incorrect args.
      */
     public static void main(String... args) throws IncorrectArgumentException, NumberFormatException,
-            NoSuchElementException, IntegerOverflowException, ArrayIndexOutOfBoundsException {
+            NoSuchElementException, IntegerOverflowException {
         System.out.println("Input number of task from 1 to 5.");
 
         try (Scanner in = new Scanner(System.in)) {
@@ -148,11 +147,10 @@ public class Main {
      * @throws IncorrectArgumentException     if inputted args are non-valid for this task.
      * @throws NumberFormatException          if inputted args do not contain requested type (Integer).
      * @throws NoSuchElementException         if inputted args do not contain enough parameters.
-     * @throws ArrayIndexOutOfBoundsException if inputted number of day of week is non-valid.
      * @see DayOfWeek for more information.
      */
     private static void task5(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-            NoSuchElementException, ArrayIndexOutOfBoundsException {
+            NoSuchElementException {
         System.out.println("Task 5: day of week.");
         System.out.println("Input day of New Year, day to find, month to find.");
 
@@ -163,6 +161,14 @@ public class Main {
         DaysOfWeek[] daysOfWeeks = DaysOfWeek.values();
         Months[] months = Months.values();
 
-        System.out.println(DayOfWeek.defineDayOfWeek(daysOfWeeks[dayOfNewYear - 1], dayToFind, months[monthToFind - 1]));
+        try {
+            System.out.println(DayOfWeek.defineDayOfWeek(daysOfWeeks[dayOfNewYear - 1],
+                    dayToFind, months[monthToFind - 1]));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            String message = System.lineSeparator() +
+                    "Expected: day of week of New Year from 1 to 7, month from 1 to 12." + System.lineSeparator() +
+                    "Got: " + dayOfNewYear + " day of week of New Year, " + monthToFind + " month";
+            throw new IncorrectArgumentException(message);
+        }
     }
 }

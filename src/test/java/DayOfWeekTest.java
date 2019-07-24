@@ -740,69 +740,45 @@ class DayOfWeekTest {
 
     /**
      * Tests with non-valid args for task5 (day of week).
-     * 9 tests for non-valid day of week;
      * 9 tests for non-valid day of month for February;
      * 9 tests for non-valid day of month for 30-days months;
      * 9 tests for non-valid day of month for 31-days months;
-     * 9 tests for non-valid month;
-     * 45 tests at all.
+     * 27 tests at all.
      */
     @Test
-    void nonValidArgsTests() { //45
-        //non valid day of week
-        checkException(Integer.MIN_VALUE, 6, 6);
-        checkException(Integer.MIN_VALUE + 1, 6, 6);
-        checkException(Integer.MIN_VALUE / 2, 6, 6);
-        checkException(-1, 5, 6);
-        checkException(0, 6, 6);
-        checkException(8, 6, 6);
-        checkException(Integer.MAX_VALUE / 2, 6, 6);
-        checkException(Integer.MAX_VALUE - 1, 6, 6);
-        checkException(Integer.MAX_VALUE, 6, 6);
-
+    void nonValidArgsTests() {
         //non valid day of month (for February)
-        checkException(6, Integer.MIN_VALUE, 2);
-        checkException(6, Integer.MIN_VALUE + 1, 2);
-        checkException(6, Integer.MIN_VALUE / 2, 2);
-        checkException(6, -1, 2);
-        checkException(6, 0, 2);
+        checkException(1, Integer.MIN_VALUE, 2);
+        checkException(2, Integer.MIN_VALUE + 1, 2);
+        checkException(3, Integer.MIN_VALUE / 2, 2);
+        checkException(4, -1, 2);
+        checkException(5, 0, 2);
         checkException(6, MAX_DAY_OF_MONTH_28 + 1, 2);
-        checkException(6, Integer.MAX_VALUE / 2, 2);
-        checkException(6, Integer.MAX_VALUE - 1, 2);
-        checkException(6, Integer.MAX_VALUE, 2);
+        checkException(7, Integer.MAX_VALUE / 2, 2);
+        checkException(1, Integer.MAX_VALUE - 1, 2);
+        checkException(2, Integer.MAX_VALUE, 2);
 
         //non valid day of month (for 30-days months)
-        checkException(6, Integer.MIN_VALUE, 4);
-        checkException(6, Integer.MIN_VALUE + 1, 4);
-        checkException(6, Integer.MIN_VALUE / 2, 4);
-        checkException(6, -1, 4);
-        checkException(6, 0, 4);
-        checkException(6, MAX_DAY_OF_MONTH_30 + 1, 4);
-        checkException(6, Integer.MAX_VALUE / 2, 4);
-        checkException(6, Integer.MAX_VALUE - 1, 4);
-        checkException(6, Integer.MAX_VALUE, 4);
+        checkException(3, Integer.MIN_VALUE, 4);
+        checkException(4, Integer.MIN_VALUE + 1, 6);
+        checkException(5, Integer.MIN_VALUE / 2, 9);
+        checkException(6, -1, 11);
+        checkException(7, 0, 4);
+        checkException(1, MAX_DAY_OF_MONTH_30 + 1, 6);
+        checkException(2, Integer.MAX_VALUE / 2, 9);
+        checkException(3, Integer.MAX_VALUE - 1, 11);
+        checkException(4, Integer.MAX_VALUE, 4);
 
         //non valid day of month (for 31-days months)
-        checkException(6, Integer.MIN_VALUE, 3);
+        checkException(5, Integer.MIN_VALUE, 1);
         checkException(6, Integer.MIN_VALUE + 1, 3);
-        checkException(6, Integer.MIN_VALUE / 2, 3);
-        checkException(6, -1, 3);
-        checkException(6, 0, 3);
-        checkException(6, MAX_DAY_OF_MONTH_31 + 1, 3);
-        checkException(6, Integer.MAX_VALUE / 2, 3);
-        checkException(6, Integer.MAX_VALUE - 1, 3);
+        checkException(7, Integer.MIN_VALUE / 2, 5);
+        checkException(1, -1, 7);
+        checkException(2, 0, 8);
+        checkException(3, MAX_DAY_OF_MONTH_31 + 1, 10);
+        checkException(4, Integer.MAX_VALUE / 2, 12);
+        checkException(5, Integer.MAX_VALUE - 1, 1);
         checkException(6, Integer.MAX_VALUE, 3);
-
-        //non valid month
-        checkException(6, 6, Integer.MIN_VALUE);
-        checkException(6, 6, Integer.MIN_VALUE + 1);
-        checkException(6, 6, Integer.MIN_VALUE / 2);
-        checkException(6, 6, -1);
-        checkException(6, 6, 0);
-        checkException(6, 6, 12 + 1);
-        checkException(6, 6, Integer.MAX_VALUE / 2);
-        checkException(6, 6, Integer.MAX_VALUE - 1);
-        checkException(6, 6, Integer.MAX_VALUE);
     }
 
     /**
@@ -847,22 +823,24 @@ class DayOfWeekTest {
      */
     void checkException(int dayOfNewYear, int dayToFind, int monthToFind) {
         //Task 5 by itself
+        DaysOfWeek[] daysOfWeeks = DaysOfWeek.values();
+        Months[] months = Months.values();
+
         try {
-            DaysOfWeek[] daysOfWeeks = DaysOfWeek.values();
-            Months[] months = Months.values();
             DayOfWeek.defineDayOfWeek(daysOfWeeks[dayOfNewYear - 1], dayToFind, months[monthToFind - 1]);
             fail("Exception was not thrown");
-        } catch (IncorrectArgumentException | ArrayIndexOutOfBoundsException e) {
+        } catch (IncorrectArgumentException e) {
             //correct behavior
         }
 
         //Task 5 in main
+        String input = "5" + L_S + dayOfNewYear + L_S + dayToFind + L_S + monthToFind;
+        setInAndOut(input);
+
         try {
-            String input = "5" + L_S + dayOfNewYear + L_S + dayToFind + L_S + monthToFind;
-            setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
-        } catch (IncorrectArgumentException | ArrayIndexOutOfBoundsException e) {
+        } catch (IncorrectArgumentException e) {
             //correct behavior
         }
     }

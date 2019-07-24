@@ -208,9 +208,10 @@ class FibonacciTest {
         }
 
         //Task 4 in main
+        String input = "4" + L_S + n;
+        setInAndOut(input);
+
         try {
-            String input = "4" + L_S + n;
-            setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
         } catch (IncorrectArgumentException e) {
