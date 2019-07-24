@@ -1,20 +1,21 @@
 package com.implemica.bormashenko;
 
 /**
- * This class allows user to define number of floor
+ * This class allows user to find number of floor
  * and house by number of flat.
  *
  * @author Mykhailo Bormashenko
+ * @since 1.8
  */
 public class House {
 
     /**
-     * Number of floors in house.
+     * Number of floors in house in which the search flat located.
      */
     private int floorsInHouse;
 
     /**
-     * Number of flats on floor.
+     * Number of flats on floor in house in which the search flat located.
      */
     private int flatsOnFloor;
 
@@ -24,20 +25,20 @@ public class House {
     private int flat;
 
     /**
-     * Number of house where flat is located.
+     * Number of house in which search flat is located.
      */
     private int house;
 
     /**
-     * Number of floor where flat is located.
+     * Number of floor on which search flat is located.
      */
     private int floor;
 
     /**
-     * Constructor with parameters.
+     * Constructor with parameters that defines house.
      *
-     * @param floorsInHouse value of floors in house.
-     * @param flatsOnFloor  value of flats on floor.
+     * @param floorsInHouse number of floors in house.
+     * @param flatsOnFloor  number of flats on floor.
      * @throws IncorrectArgumentException if any argument is non-positive.
      * @throws IntegerOverflowException   if result of multiplying these parameters is larger than Integer.MAX_VALUE.
      */
@@ -62,9 +63,9 @@ public class House {
     }
 
     /**
-     * Defines number of house and floor for flat.
+     * Finds number of house and floor for flat.
      *
-     * @param flat number of flat to define.
+     * @param flat number of flat to search
      * @return string contains number of flat, house and floor where the flat located.
      * @throws IncorrectArgumentException if number of flat is non-positive.
      */
@@ -76,6 +77,7 @@ public class House {
         this.flat = flat;
         int flatsInHome = flatsOnFloor * floorsInHouse;
         int house = 1;
+        int floor = 1;
 
         if (flat > flatsInHome) {
             house += flat / flatsInHome;
@@ -89,7 +91,6 @@ public class House {
         }
 
         this.house = house;
-        int floor = 1;
 
         if (flat > flatsOnFloor) {
             floor = flat / flatsOnFloor;

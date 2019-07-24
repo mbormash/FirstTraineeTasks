@@ -10,18 +10,24 @@ import static com.implemica.bormashenko.DayOfWeek.Months;
  * Main class for first tasks.
  *
  * @author Mykhailo Bormashenko
+ * @since 1.8.
  */
 public class Main {
 
     /**
      * Entry point for program.
      * Allows user to choose number of task to work with.
+     * 1st task is Swap;
+     * 2nd task is House;
+     * 3rd task is GCD;
+     * 4th task is Fibonacci;
+     * 5th task is DayOfWeek.
      *
      * @param args command line args.
      * @throws IncorrectArgumentException     if inputted number of task or args for tasks are incorrect.
      * @throws NumberFormatException          if inputted args do not contain requested type.
      * @throws NoSuchElementException         if inputted args do not contain enough parameters.
-     * @throws IntegerOverflowException       while using {@code House} with incorrect args.
+     * @throws IntegerOverflowException       while using {@code House} or {@code GCD} with incorrect args.
      * @throws ArrayIndexOutOfBoundsException while using {@code DayOfWeek} with incorrect args.
      */
     public static void main(String... args) throws IncorrectArgumentException, NumberFormatException,

@@ -3,16 +3,21 @@ package com.implemica.bormashenko;
 import java.math.BigInteger;
 
 /**
- * This utility class contains method that generates fibonacci's number.
+ * This utility class contains method that generates
+ * required fibonacci's number.
  *
  * @author Mykhailo Bormashenko
+ * @since 1.8
  */
 public class Fibonacci {
 
     /**
-     * Generates n'th fibonacci's number.
+     * Generates n'th non-negative fibonacci's number.
+     * Fibonacci's numbers are numbers from fibonacci sequence such that each
+     * number is the sum of the two preceding ones, starting from 0 and 1.
+     * Note that this method is not optimized for huge numbers and may work slowly.
      *
-     * @param n 'th fibonacci's number to generate.
+     * @param n fibonacci's number to generate.
      * @return value of n'th fibonacci's number.
      * @throws IncorrectArgumentException if n is negative.
      */

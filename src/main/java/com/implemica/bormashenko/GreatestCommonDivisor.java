@@ -3,23 +3,28 @@ package com.implemica.bormashenko;
 import static java.lang.Integer.MIN_VALUE;
 
 /**
- * This utility class finds gcd of 4 numbers.
+ * This utility class contains method that
+ * finds gcd of 4 numbers.
  *
  * @author Mykhailo Bormashenko
+ * @since 1.8
  */
 public class GreatestCommonDivisor {
 
     /**
-     * Defines greatest common divisor for two numbers.
+     * Finds greatest common divisor for two numbers.
+     * Greatest common divisor (gcd) of two or more integers is the
+     * largest positive integer that divides each of the integers.
+     * Note that for two zero numbers gcd in this realisation is 0.
      *
      * @param a first number.
      * @param b second number.
      * @return greatest common divisor for these numbers.
-     * @throws IncorrectArgumentException if at least one number is Integer.MIN_VALUE.
+     * @throws IntegerOverflowException if at least one number is Integer.MIN_VALUE.
      */
     private static int nod2args(int a, int b) {
         if (a == MIN_VALUE || b == MIN_VALUE) {
-            throw new IncorrectArgumentException("For numbers " + a + ", " + b +
+            throw new IntegerOverflowException("For numbers " + a + ", " + b +
                     ": number should be not less than " + (MIN_VALUE + 1));
         }
 
@@ -50,14 +55,17 @@ public class GreatestCommonDivisor {
     }
 
     /**
-     * Defines greatest common divisor for 4 numbers.
+     * Finds greatest common divisor for 4 numbers.
+     * Greatest common divisor (gcd) of two or more integers is the
+     * largest positive integer that divides each of the integers.
+     * Note that for 4 zero numbers gcd in this realisation is 0.
      *
      * @param a first number.
      * @param b second number.
      * @param c third number.
      * @param d fourth number.
      * @return greatest common divisor for these numbers.
-     * @throws IncorrectArgumentException if at least one number is Integer.MIN_VALUE.
+     * @throws IntegerOverflowException if at least one number is Integer.MIN_VALUE.
      */
     public static int nod4args(int a, int b, int c, int d) {
         int nodAB = nod2args(a, b);

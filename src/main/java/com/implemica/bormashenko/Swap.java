@@ -5,16 +5,17 @@ package com.implemica.bormashenko;
  * without using third variable.
  *
  * @author Mykhailo Bormashenko
+ * @since 1.8
  */
 public class Swap {
 
     /**
-     * First parameter.
+     * First parameter to swap.
      */
     private int a;
 
     /**
-     * Second parameter.
+     * Second parameter to swap.
      */
     private int b;
 

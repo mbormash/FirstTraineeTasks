@@ -4,6 +4,7 @@ package com.implemica.bormashenko;
  * This class describes an Exception for incorrect args.
  *
  * @author Mykhailo Bormashenko
+ * @since 1.8
  */
 public class IncorrectArgumentException extends RuntimeException {
 

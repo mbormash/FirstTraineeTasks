@@ -1,4 +1,5 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
+import com.implemica.bormashenko.IntegerOverflowException;
 import com.implemica.bormashenko.Main;
 import com.implemica.bormashenko.GreatestCommonDivisor;
 import org.junit.jupiter.api.Test;
@@ -707,14 +708,14 @@ class GreatestCommonDivisorTest {
      * @param b second parameter.
      * @param c third parameter.
      * @param d fourth parameter.
-     * @see IncorrectArgumentException
+     * @see IntegerOverflowException
      */
     void checkException(int a, int b, int c, int d) {
         //Task 3 by itself
         try {
             GreatestCommonDivisor.nod4args(a, b, c, d);
             fail("Exception was not thrown");
-        } catch (IncorrectArgumentException e) {
+        } catch (IntegerOverflowException e) {
             //correct behavior
         }
 
@@ -724,7 +725,7 @@ class GreatestCommonDivisorTest {
             setInAndOut(input);
             Main.main();
             fail("Exception was not thrown.");
-        } catch (IncorrectArgumentException e) {
+        } catch (IntegerOverflowException e) {
             //correct behavior
         }
     }
