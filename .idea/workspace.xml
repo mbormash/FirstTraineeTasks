@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4a985dfb-d202-474b-a364-f23dfd434018" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MainClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainClassTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HouseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HouseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SwapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SwapTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/MainClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MainClassTest.class" afterDir="false" />
     </list>
     <list id="f9591f48-e10a-4606-b9c1-1ae11a0a2706" name="Revert &quot;Adding JavaDoc.&quot;" comment="Revert &quot;Adding JavaDoc.&quot;&#10;&#10;This reverts commit 507ca828">
@@ -151,10 +152,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FibonacciTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DayOfWeekTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FirstTasks" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FibonacciTest" />
+      <option name="MAIN_CLASS_NAME" value="DayOfWeekTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -198,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainClassTest" />
+        <item itemvalue="JUnit.DayOfWeekTest" />
         <item itemvalue="JUnit.HouseTest" />
+        <item itemvalue="JUnit.MainClassTest" />
         <item itemvalue="JUnit.SwapTest" />
         <item itemvalue="JUnit.GreatestCommonDivisorTest" />
-        <item itemvalue="JUnit.FibonacciTest" />
       </list>
     </recent_temporary>
   </component>
@@ -448,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564065190977</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Refactoring MainTest.">
+      <created>1564068709465</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1564068709465</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -498,7 +506,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changing logic of Main.class" />
     <MESSAGE value="Making tests for main by overriding other tests." />
     <MESSAGE value="Creating javadoc for new methods. Improving OOP." />
     <MESSAGE value="Simplification for main tests." />
@@ -523,7 +530,8 @@
     <MESSAGE value="Adding new tests for DayOfWeek." />
     <MESSAGE value="Changing message in exceptions." />
     <MESSAGE value="Changing logic of tests for main." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing logic of tests for main." />
+    <MESSAGE value="Refactoring MainTest." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring MainTest." />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">

@@ -37,6 +37,13 @@ class DayOfWeekTest {
     private static final int MAX_DAY_OF_MONTH_31 = 31;
 
     /**
+     * Message shown for all cases in main.
+     */
+    private static final String MESSAGE = "Input number of task from 1 to 5." + L_S +
+            "Task 5: day of week." + L_S +
+            "Input day of New Year, day to find, month to find." + L_S;
+
+    /**
      * Tests with valid args for task5 (day of week).
      * 7 tests for several values return from "Monday" to "Sunday";
      * 7 * 12 * 7 (168) boundary and special values tests;
@@ -1705,11 +1712,8 @@ class DayOfWeekTest {
 
         //Task 5 in main
         String input = "5" + L_S + dayOfNewYear + L_S + dayToFind + L_S + monthToFind;
-        String expectedMain =
-                "Input number of task from 1 to 5." + L_S +
-                        "Task 5: day of week." + L_S +
-                        "Input day of New Year, day to find, month to find." + L_S +
-                        expected + L_S;
+        String expectedMain = MESSAGE +
+                expected + L_S;
 
         runMain(input, expectedMain);
     }
@@ -1739,9 +1743,7 @@ class DayOfWeekTest {
         //Task 5 in main
         String input = "5" + L_S + dayOfNewYear + L_S + dayToFind + L_S + monthToFind;
 
-        String expected = "Input number of task from 1 to 5." + L_S +
-                "Task 5: day of week." + L_S +
-                "Input day of New Year, day to find, month to find." + L_S +
+        String expected = MESSAGE +
                 "Wrong input. Expected: valid date for day and month." + L_S +
                 "Got: " + dayToFind + " day, " + months[monthToFind - 1].name() + " month" + L_S;
 

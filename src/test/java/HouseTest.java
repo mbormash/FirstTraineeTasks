@@ -1084,11 +1084,8 @@ class HouseTest {
 
         //Task 2 in main
         String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
-        String expectedMain =
-                "Input number of task from 1 to 5." + L_S +
-                        "Task 2: house." + L_S +
-                        "Input number of floors in house, number of flats on floor and number of flat." + L_S +
-                        numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house" + L_S;
+        String expectedMain = MESSAGE +
+                numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house" + L_S;
 
         runMain(input, expectedMain);
     }

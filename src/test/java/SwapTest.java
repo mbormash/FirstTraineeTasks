@@ -24,6 +24,13 @@ class SwapTest {
     private static final String L_S = System.lineSeparator();
 
     /**
+     * Message shown for all cases in main.
+     */
+    private static final String MESSAGE = "Input number of task from 1 to 5." + L_S +
+            "Task 1: swap." + L_S +
+            "Input 2 integer numbers." + L_S;
+
+    /**
      * Object of Swap.
      */
     private static Swap obj;
@@ -238,14 +245,11 @@ class SwapTest {
 
         //Task 1 in main
         String input = "1" + L_S + aBefore + L_S + bBefore;
-        String expected =
-                "Input number of task from 1 to 5." + L_S +
-                        "Task 1: swap." + L_S +
-                        "Input 2 integer numbers." + L_S +
-                        "Before reversing:" + L_S +
-                        "a: " + aBefore + ", b: " + bBefore + L_S +
-                        "After reversing:" + L_S +
-                        "a: " + bBefore + ", b: " + aBefore + L_S;
+        String expected = MESSAGE +
+                "Before reversing:" + L_S +
+                "a: " + aBefore + ", b: " + bBefore + L_S +
+                "After reversing:" + L_S +
+                "a: " + bBefore + ", b: " + aBefore + L_S;
 
         ByteArrayOutputStream output = setInAndOut(input);
         Main.main();
