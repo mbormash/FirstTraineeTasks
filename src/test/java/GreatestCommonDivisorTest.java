@@ -1,8 +1,8 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
-import com.implemica.bormashenko.IntegerOverflowException;
 import com.implemica.bormashenko.Main;
 import com.implemica.bormashenko.GreatestCommonDivisor;
 import org.junit.jupiter.api.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -22,6 +22,13 @@ class GreatestCommonDivisorTest {
      * Constant for lineSeparator.
      */
     private static final String L_S = System.lineSeparator();
+
+    /**
+     * Message shown for all cases in main.
+     */
+    private static final String MESSAGE = "Input number of task from 1 to 5." + L_S +
+            "Task 3: gcd." + L_S +
+            "Input 4 integer numbers." + L_S;
 
     /**
      * Tests with valid args for task3 (gcd).
@@ -688,15 +695,10 @@ class GreatestCommonDivisorTest {
 
         //Task 3 in main
         String input = "3" + L_S + a + L_S + b + L_S + c + L_S + d;
-        String expectedMain =
-                "Input number of task from 1 to 5." + L_S +
-                        "Task 3: gcd." + L_S +
-                        "Input 4 integer numbers." + L_S +
-                        expected + L_S;
+        String expectedMain = MESSAGE +
+                expected + L_S;
 
-        ByteArrayOutputStream output = setInAndOut(input);
-        Main.main();
-        assertEquals(expectedMain, output.toString());
+        runMain(input, expectedMain);
     }
 
     /**
@@ -708,27 +710,37 @@ class GreatestCommonDivisorTest {
      * @param b second parameter.
      * @param c third parameter.
      * @param d fourth parameter.
-     * @see IntegerOverflowException
+     * @see IncorrectArgumentException
      */
     void checkException(int a, int b, int c, int d) {
         //Task 3 by itself
         try {
             GreatestCommonDivisor.nod4args(a, b, c, d);
             fail("Exception was not thrown");
-        } catch (IntegerOverflowException e) {
+        } catch (IncorrectArgumentException e) {
             //correct behavior
         }
 
         //Task 3 in main
         String input = "3" + L_S + a + L_S + b + L_S + c + L_S + d;
-        setInAndOut(input);
+        String expectedMain = MESSAGE +
+                "Wrong input. Expected: numbers not less than " + MIN_VALUE + L_S +
+                "Got: " + a + ", " + b + ", " + c + ", " + d + L_S;
 
-        try {
-            Main.main();
-            fail("Exception was not thrown.");
-        } catch (IntegerOverflowException e) {
-            //correct behavior
-        }
+        runMain(input, expectedMain);
+    }
+
+    /**
+     * Runs main method with args in System.In and checks if
+     * the expected string is the same as in System.Out.
+     *
+     * @param input    string to put into System.In.
+     * @param expected string to compare with System.Out.
+     */
+    private void runMain(String input, String expected) {
+        ByteArrayOutputStream output = setInAndOut(input);
+        Main.main();
+        assertEquals(expected, output.toString());
     }
 
     /**

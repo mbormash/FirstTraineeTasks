@@ -1,8 +1,8 @@
 import com.implemica.bormashenko.IncorrectArgumentException;
-import com.implemica.bormashenko.IntegerOverflowException;
 import com.implemica.bormashenko.Main;
 import com.implemica.bormashenko.House;
 import org.junit.jupiter.api.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -23,6 +23,13 @@ class HouseTest {
      * Constant for lineSeparator.
      */
     private static final String L_S = System.lineSeparator();
+
+    /**
+     * Message shown for all cases in main.
+     */
+    private static final String MESSAGE = "Input number of task from 1 to 5." + L_S +
+            "Task 2: house." + L_S +
+            "Input number of floors in house, number of flats on floor and number of flat." + L_S;
 
     /**
      * Value of sqrt of Integer.MAX_VALUE, converted to int.
@@ -785,266 +792,276 @@ class HouseTest {
     @Test
     void nonValidArgsTests() {
         //50 random non-positive args
-        checkException(-6134, 75134, 1);
-        checkException(-5123, 12313, 5123);
-        checkException(-824, 6134, 6412);
-        checkException(-312314, 751, 641);
-        checkException(-64, 1, 8652);
-        checkException(-123, 214151, 876524);
-        checkException(-8523, 15141, 8523);
-        checkException(-41412, 12415, 124);
-        checkException(-7452, 78513, 123);
-        checkException(-123154, 123, 851);
-        checkException(13124, -12313, 13123);
-        checkException(7513, -74213, 6412);
-        checkException(521, -1236, 12314);
-        checkException(8624, -513, 6142);
-        checkException(1235, -1416, 1246);
-        checkException(12, -151, 7523);
-        checkException(123, -7651, 97345);
-        checkException(1, -85143, 21141);
-        checkException(897651312, -5242, 6241);
-        checkException(1314, -8, 725);
-        checkException(13124, 52341, 0);
-        checkException(151, 1314, -1313);
-        checkException(7421, 52341, -723);
-        checkException(65134, 718, -72432);
-        checkException(1415, 148, -8523);
-        checkException(14216, 65341, -134);
-        checkException(17852, 98, -1);
-        checkException(13124, 7513, -65412);
-        checkException(7653, 5, -865243);
-        checkException(6, 6, -76523);
-        checkException(-6, -2, 725);
-        checkException(-652, -7352, 2341);
-        checkException(-252, -2424, 1623);
-        checkException(0, -237, 234);
-        checkException(-623, -6243, 752);
-        checkException(-14, 6234, -65134);
-        checkException(-312431, 124, -123);
-        checkException(-16144, 123, -13);
-        checkException(-1236, 1231, -6417);
-        checkException(-513, 614, -86258);
-        checkException(4143, -1512, -511);
-        checkException(125, -16, -7324);
-        checkException(725, -235, -625);
-        checkException(7852, -246, -62);
-        checkException(2345, -862, -234);
-        checkException(-132, -51, -6134);
-        checkException(-265, -2424, -8083);
-        checkException(-876234262, -621, -9734);
-        checkException(-23524, -2424, -234);
-        checkException(-234, -6243, -925);
+        //for floors in house
+        //one invalid parameter
+        checkExceptionForFloorsInHouse(-6134, 75134, 1);
+        checkExceptionForFloorsInHouse(-5123, 12313, 5123);
+        checkExceptionForFloorsInHouse(-824, 6134, 6412);
+        checkExceptionForFloorsInHouse(-312314, 751, 641);
+        checkExceptionForFloorsInHouse(-64, 1, 8652);
+        checkExceptionForFloorsInHouse(-123, 214151, 876524);
+        checkExceptionForFloorsInHouse(-8523, 15141, 8523);
+        checkExceptionForFloorsInHouse(-41412, 12415, 124);
+        checkExceptionForFloorsInHouse(-7452, 78513, 123);
+        checkExceptionForFloorsInHouse(-123154, 123, 851);
+        checkExceptionForFloorsInHouse(-6, -2, 725);
+        checkExceptionForFloorsInHouse(-652, -7352, 2341);
+        checkExceptionForFloorsInHouse(-252, -2424, 1623);
+        checkExceptionForFloorsInHouse(0, -237, 234);
+        checkExceptionForFloorsInHouse(-623, -6243, 752);
+        checkExceptionForFloorsInHouse(-14, 6234, -65134);
+        checkExceptionForFloorsInHouse(-312431, 124, -123);
+        checkExceptionForFloorsInHouse(-16144, 123, -13);
+        checkExceptionForFloorsInHouse(-1236, 1231, -6417);
+        checkExceptionForFloorsInHouse(-513, 614, -86258);
+        checkExceptionForFloorsInHouse(-132, -51, -6134);
+        checkExceptionForFloorsInHouse(-265, -2424, -8083);
+        checkExceptionForFloorsInHouse(-876234262, -621, -9734);
+        checkExceptionForFloorsInHouse(-23524, -2424, -234);
+        checkExceptionForFloorsInHouse(-234, -6243, -925);
+
+        //for flats on floor
+        checkExceptionForFlatsOnFloor(13124, -12313, 13123);
+        checkExceptionForFlatsOnFloor(7513, -74213, 6412);
+        checkExceptionForFlatsOnFloor(521, -1236, 12314);
+        checkExceptionForFlatsOnFloor(8624, -513, 6142);
+        checkExceptionForFlatsOnFloor(1235, -1416, 1246);
+        checkExceptionForFlatsOnFloor(12, -151, 7523);
+        checkExceptionForFlatsOnFloor(123, -7651, 97345);
+        checkExceptionForFlatsOnFloor(1, -85143, 21141);
+        checkExceptionForFlatsOnFloor(897651312, -5242, 6241);
+        checkExceptionForFlatsOnFloor(1314, -8, 725);
+
+        checkExceptionForFlat(13124, 52341, 0);
+        checkExceptionForFlat(151, 1314, -1313);
+        checkExceptionForFlat(7421, 52341, -723);
+        checkExceptionForFlat(65134, 718, -72432);
+        checkExceptionForFlat(1415, 148, -8523);
+        checkExceptionForFlat(14216, 65341, -134);
+        checkExceptionForFlat(17852, 98, -1);
+        checkExceptionForFlat(13124, 7513, -65412);
+        checkExceptionForFlat(7653, 5, -865243);
+        checkExceptionForFlat(6, 6, -76523);
+
+        checkExceptionForFlatsOnFloor(4143, -1512, -511);
+        checkExceptionForFlatsOnFloor(125, -16, -7324);
+        checkExceptionForFlatsOnFloor(725, -235, -625);
+        checkExceptionForFlatsOnFloor(7852, -246, -62);
+        checkExceptionForFlatsOnFloor(2345, -862, -234);
 
         //25 random too large numbers
-        checkException(444444444, 5, 1239);
-        checkException(1235141, 1242313123, 3);
-        checkException(92184014, 151251251, 13124);
-        checkException(734252352, 2342342, 98423);
-        checkException(897149814, 182571, 1234);
-        checkException(1249871491, 142141, 131231);
-        checkException(124109481, 1412414, 5141);
-        checkException(20213, 62351151, 141241);
-        checkException(6135411, 513141, 625412415);
-        checkException(511513121, 512512412, 151231);
-        checkException(51412311, 141276, 1143123);
-        checkException(21471864, 7816481, 413139999);
-        checkException(6551515, 565464, 5656546);
-        checkException(169286336, 555892314, 48899166);
-        checkException(15313216, 3151651, 9155233);
-        checkException(6525665, 565656, 8949433);
-        checkException(265626403, 6565648, 234526532);
-        checkException(8532702, 965275638, 65236523);
-        checkException(514, 51231141, 612412431);
-        checkException(125154, 141231, 15124);
-        checkException(124141, 51141, 1512);
-        checkException(62356, 97815, 5171);
-        checkException(91748214, 154124, 51412);
-        checkException(982198274, 1421314, 1412);
-        checkException(1412414, 12414, 692481);
+        checkExceptionForTooLarge(444444444, 5, 1239);
+        checkExceptionForTooLarge(1235141, 1242313123, 3);
+        checkExceptionForTooLarge(92184014, 151251251, 13124);
+        checkExceptionForTooLarge(734252352, 2342342, 98423);
+        checkExceptionForTooLarge(897149814, 182571, 1234);
+        checkExceptionForTooLarge(1249871491, 142141, 131231);
+        checkExceptionForTooLarge(124109481, 1412414, 5141);
+        checkExceptionForTooLarge(20213, 62351151, 141241);
+        checkExceptionForTooLarge(6135411, 513141, 625412415);
+        checkExceptionForTooLarge(511513121, 512512412, 151231);
+        checkExceptionForTooLarge(51412311, 141276, 1143123);
+        checkExceptionForTooLarge(21471864, 7816481, 413139999);
+        checkExceptionForTooLarge(6551515, 565464, 5656546);
+        checkExceptionForTooLarge(169286336, 555892314, 48899166);
+        checkExceptionForTooLarge(15313216, 3151651, 9155233);
+        checkExceptionForTooLarge(6525665, 565656, 8949433);
+        checkExceptionForTooLarge(265626403, 6565648, 234526532);
+        checkExceptionForTooLarge(8532702, 965275638, 65236523);
+        checkExceptionForTooLarge(514, 51231141, 612412431);
+        checkExceptionForTooLarge(125154, 141231, 15124);
+        checkExceptionForTooLarge(124141, 51141, 1512);
+        checkExceptionForTooLarge(62356, 97815, 5171);
+        checkExceptionForTooLarge(91748214, 154124, 51412);
+        checkExceptionForTooLarge(982198274, 1421314, 1412);
+        checkExceptionForTooLarge(1412414, 12414, 692481);
 
         //boundary tests for too large numbers
         //(int)(MAX_VALUE + 1L) / 2 and 2
-        checkException((int) (MAX_VALUE + 1L) / 2, 2, 1);
-        checkException((int) (MAX_VALUE + 1L) / 2, 2, 2);
-        checkException((int) (MAX_VALUE + 1L) / 2, 2, MAX_VALUE / 2);
-        checkException((int) (MAX_VALUE + 1L) / 2, 2, MAX_VALUE - 1);
-        checkException((int) (MAX_VALUE + 1L) / 2, 2, MAX_VALUE);
+        //for floors in house
+        checkExceptionForTooLarge((int) ((MAX_VALUE + 1L) / 2), 2, 1);
+        checkExceptionForTooLarge((int) ((MAX_VALUE + 1L) / 2), 2, 2);
+        checkExceptionForTooLarge((int) ((MAX_VALUE + 1L) / 2), 2, MAX_VALUE / 2);
+        checkExceptionForTooLarge((int) ((MAX_VALUE + 1L) / 2), 2, MAX_VALUE - 1);
+        checkExceptionForTooLarge((int) ((MAX_VALUE + 1L) / 2), 2, MAX_VALUE);
 
-        checkException(2, (int) (MAX_VALUE + 1L) / 2, 1);
-        checkException(2, (int) (MAX_VALUE + 1L) / 2, 2);
-        checkException(2, (int) (MAX_VALUE + 1L) / 2, MAX_VALUE / 2);
-        checkException(2, (int) (MAX_VALUE + 1L) / 2, MAX_VALUE - 1);
-        checkException(2, (int) (MAX_VALUE + 1L) / 2, MAX_VALUE);
+        checkExceptionForTooLarge(2, (int) ((MAX_VALUE + 1L) / 2), 1);
+        checkExceptionForTooLarge(2, (int) ((MAX_VALUE + 1L) / 2), 2);
+        checkExceptionForTooLarge(2, (int) ((MAX_VALUE + 1L) / 2), MAX_VALUE / 2);
+        checkExceptionForTooLarge(2, (int) ((MAX_VALUE + 1L) / 2), MAX_VALUE - 1);
+        checkExceptionForTooLarge(2, (int) ((MAX_VALUE + 1L) / 2), MAX_VALUE);
 
         //MAX_VALUE / 2
         //and 3
-        checkException(MAX_VALUE / 2, 3, 1);
-        checkException(MAX_VALUE / 2, 3, 2);
-        checkException(MAX_VALUE / 2, 3, MAX_VALUE / 2);
-        checkException(MAX_VALUE / 2, 3, MAX_VALUE - 1);
-        checkException(MAX_VALUE / 2, 3, MAX_VALUE);
+        //for floors in house
+        checkExceptionForTooLarge(MAX_VALUE / 2, 3, 1);
+        checkExceptionForTooLarge(MAX_VALUE / 2, 3, 2);
+        checkExceptionForTooLarge(MAX_VALUE / 2, 3, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE / 2, 3, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE / 2, 3, MAX_VALUE);
 
-        checkException(3, MAX_VALUE / 2, 1);
-        checkException(3, MAX_VALUE / 2, 2);
-        checkException(3, MAX_VALUE / 2, MAX_VALUE / 2);
-        checkException(3, MAX_VALUE / 2, MAX_VALUE - 1);
-        checkException(3, MAX_VALUE / 2, MAX_VALUE);
+        checkExceptionForTooLarge(3, MAX_VALUE / 2, 1);
+        checkExceptionForTooLarge(3, MAX_VALUE / 2, 2);
+        checkExceptionForTooLarge(3, MAX_VALUE / 2, MAX_VALUE / 2);
+        checkExceptionForTooLarge(3, MAX_VALUE / 2, MAX_VALUE - 1);
+        checkExceptionForTooLarge(3, MAX_VALUE / 2, MAX_VALUE);
 
         //and MAX_VALUE / 2
-        checkException(MAX_VALUE / 2, MAX_VALUE / 2, 1);
-        checkException(MAX_VALUE / 2, MAX_VALUE / 2, 2);
-        checkException(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE / 2);
-        checkException(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE - 1);
-        checkException(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE);
+        //for floors in house
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE / 2, 1);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE / 2, 2);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE / 2, MAX_VALUE);
 
         //and MAX_VALUE - 1
-        checkException(MAX_VALUE / 2, MAX_VALUE - 1, 1);
-        checkException(MAX_VALUE / 2, MAX_VALUE - 1, 2);
-        checkException(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE / 2);
-        checkException(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE - 1);
-        checkException(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE - 1, 1);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE - 1, 2);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE - 1, MAX_VALUE);
 
-        checkException(MAX_VALUE - 1, MAX_VALUE / 2, 1);
-        checkException(MAX_VALUE - 1, MAX_VALUE / 2, 2);
-        checkException(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE / 2);
-        checkException(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE - 1);
-        checkException(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE / 2, 1);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE / 2, 2);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE / 2, MAX_VALUE);
 
         //and MAX_VALUE
-        checkException(MAX_VALUE / 2, MAX_VALUE, 1);
-        checkException(MAX_VALUE / 2, MAX_VALUE, 2);
-        checkException(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE / 2);
-        checkException(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE - 1);
-        checkException(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE, 1);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE, 2);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE / 2, MAX_VALUE, MAX_VALUE);
 
-        checkException(MAX_VALUE, MAX_VALUE / 2, 1);
-        checkException(MAX_VALUE, MAX_VALUE / 2, 2);
-        checkException(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE / 2);
-        checkException(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE - 1);
-        checkException(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE / 2, 1);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE / 2, 2);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE / 2, MAX_VALUE);
 
         //MAX_VALUE - 1
         //and 2
-        checkException(MAX_VALUE - 1, 2, 1);
-        checkException(MAX_VALUE - 1, 2, 2);
-        checkException(MAX_VALUE - 1, 2, MAX_VALUE / 2);
-        checkException(MAX_VALUE - 1, 2, MAX_VALUE - 1);
-        checkException(MAX_VALUE - 1, 2, MAX_VALUE);
+        checkExceptionForTooLarge(MAX_VALUE - 1, 2, 1);
+        checkExceptionForTooLarge(MAX_VALUE - 1, 2, 2);
+        checkExceptionForTooLarge(MAX_VALUE - 1, 2, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE - 1, 2, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE - 1, 2, MAX_VALUE);
 
-        checkException(2, MAX_VALUE - 1, 1);
-        checkException(2, MAX_VALUE - 1, 2);
-        checkException(2, MAX_VALUE - 1, MAX_VALUE / 2);
-        checkException(2, MAX_VALUE - 1, MAX_VALUE - 1);
-        checkException(2, MAX_VALUE - 1, MAX_VALUE);
+        checkExceptionForTooLarge(2, MAX_VALUE - 1, 1);
+        checkExceptionForTooLarge(2, MAX_VALUE - 1, 2);
+        checkExceptionForTooLarge(2, MAX_VALUE - 1, MAX_VALUE / 2);
+        checkExceptionForTooLarge(2, MAX_VALUE - 1, MAX_VALUE - 1);
+        checkExceptionForTooLarge(2, MAX_VALUE - 1, MAX_VALUE);
 
         //and MAX_VALUE - 1
-        checkException(MAX_VALUE - 1, MAX_VALUE - 1, 1);
-        checkException(MAX_VALUE - 1, MAX_VALUE - 1, 2);
-        checkException(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE / 2);
-        checkException(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE - 1);
-        checkException(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE - 1, 1);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE - 1, 2);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE - 1, MAX_VALUE);
 
         //and MAX_VALUE
-        checkException(MAX_VALUE - 1, MAX_VALUE, 1);
-        checkException(MAX_VALUE - 1, MAX_VALUE, 2);
-        checkException(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE / 2);
-        checkException(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE - 1);
-        checkException(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE, 1);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE, 2);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE - 1, MAX_VALUE, MAX_VALUE);
 
-        checkException(MAX_VALUE, MAX_VALUE - 1, 1);
-        checkException(MAX_VALUE, MAX_VALUE - 1, 2);
-        checkException(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE / 2);
-        checkException(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE - 1);
-        checkException(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE - 1, 1);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE - 1, 2);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE - 1, MAX_VALUE);
 
         //MAX_VALUE
         //and 2
-        checkException(MAX_VALUE, 2, 1);
-        checkException(MAX_VALUE, 2, 2);
-        checkException(MAX_VALUE, 2, MAX_VALUE / 2);
-        checkException(MAX_VALUE, 2, MAX_VALUE - 1);
-        checkException(MAX_VALUE, 2, MAX_VALUE);
+        checkExceptionForTooLarge(MAX_VALUE, 2, 1);
+        checkExceptionForTooLarge(MAX_VALUE, 2, 2);
+        checkExceptionForTooLarge(MAX_VALUE, 2, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE, 2, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE, 2, MAX_VALUE);
 
-        checkException(2, MAX_VALUE, 1);
-        checkException(2, MAX_VALUE, 2);
-        checkException(2, MAX_VALUE, MAX_VALUE / 2);
-        checkException(2, MAX_VALUE, MAX_VALUE - 1);
-        checkException(2, MAX_VALUE, MAX_VALUE);
+        checkExceptionForTooLarge(2, MAX_VALUE, 1);
+        checkExceptionForTooLarge(2, MAX_VALUE, 2);
+        checkExceptionForTooLarge(2, MAX_VALUE, MAX_VALUE / 2);
+        checkExceptionForTooLarge(2, MAX_VALUE, MAX_VALUE - 1);
+        checkExceptionForTooLarge(2, MAX_VALUE, MAX_VALUE);
 
         //and MAX_VALUE
-        checkException(MAX_VALUE, MAX_VALUE, 1);
-        checkException(MAX_VALUE, MAX_VALUE, 2);
-        checkException(MAX_VALUE, MAX_VALUE, MAX_VALUE / 2);
-        checkException(MAX_VALUE, MAX_VALUE, MAX_VALUE - 1);
-        checkException(MAX_VALUE, MAX_VALUE, MAX_VALUE);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE, 1);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE, 2);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE, MAX_VALUE / 2);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE, MAX_VALUE - 1);
+        checkExceptionForTooLarge(MAX_VALUE, MAX_VALUE, MAX_VALUE);
 
         //non-positive numbers tests
         //first
         //with random negative
-        checkException(MIN_VALUE, -75362, -23424);
-        checkException(MIN_VALUE + 1, -1325, -42241);
-        checkException(MIN_VALUE / 2, -3424, -634562);
-        checkException(-1, -1374, -525);
-        checkException(0, -6734, -13425);
+        //for floors in house
+        checkExceptionForFloorsInHouse(MIN_VALUE, -75362, -23424);
+        checkExceptionForFloorsInHouse(MIN_VALUE + 1, -1325, -42241);
+        checkExceptionForFloorsInHouse(MIN_VALUE / 2, -3424, -634562);
+        checkExceptionForFloorsInHouse(-1, -1374, -525);
+        checkExceptionForFloorsInHouse(0, -6734, -13425);
 
         //with random positive
-        checkException(MIN_VALUE, 1342, 1835345);
-        checkException(MIN_VALUE + 1, 13414, 13213);
-        checkException(MIN_VALUE / 2, 15535, 124313);
-        checkException(-1, 14312, 123);
-        checkException(0, 12365, 123137);
+        checkExceptionForFloorsInHouse(MIN_VALUE, 1342, 1835345);
+        checkExceptionForFloorsInHouse(MIN_VALUE + 1, 13414, 13213);
+        checkExceptionForFloorsInHouse(MIN_VALUE / 2, 15535, 124313);
+        checkExceptionForFloorsInHouse(-1, 14312, 123);
+        checkExceptionForFloorsInHouse(0, 12365, 123137);
 
         //with 0
-        checkException(MIN_VALUE, 0, 0);
-        checkException(MIN_VALUE + 1, 0, 0);
-        checkException(MIN_VALUE / 2, 0, 0);
-        checkException(-1, 0, 0);
-        checkException(0, 0, 0);
+        checkExceptionForFloorsInHouse(MIN_VALUE, 0, 0);
+        checkExceptionForFloorsInHouse(MIN_VALUE + 1, 0, 0);
+        checkExceptionForFloorsInHouse(MIN_VALUE / 2, 0, 0);
+        checkExceptionForFloorsInHouse(-1, 0, 0);
+        checkExceptionForFloorsInHouse(0, 0, 0);
 
         //second
         //with random negative
-        checkException(-52452, MIN_VALUE, -3425);
-        checkException(-145, MIN_VALUE + 1, -725);
-        checkException(-12313, MIN_VALUE / 2, -75643);
-        checkException(-413413, -1, -5241);
-        checkException(-84, 0, -3242);
+        checkExceptionForFloorsInHouse(-52452, MIN_VALUE, -3425);
+        checkExceptionForFloorsInHouse(-145, MIN_VALUE + 1, -725);
+        checkExceptionForFloorsInHouse(-12313, MIN_VALUE / 2, -75643);
+        checkExceptionForFloorsInHouse(-413413, -1, -5241);
+        checkExceptionForFloorsInHouse(-84, 0, -3242);
 
         //with random positive
-        checkException(13123, MIN_VALUE, 12314);
-        checkException(6234, MIN_VALUE + 1, 12417);
-        checkException(14124, MIN_VALUE / 2, 6);
-        checkException(147234, -1, 1241);
-        checkException(96425, 0, 16421);
+        checkExceptionForFlatsOnFloor(13123, MIN_VALUE, 12314);
+        checkExceptionForFlatsOnFloor(6234, MIN_VALUE + 1, 12417);
+        checkExceptionForFlatsOnFloor(14124, MIN_VALUE / 2, 6);
+        checkExceptionForFlatsOnFloor(147234, -1, 1241);
+        checkExceptionForFlatsOnFloor(96425, 0, 16421);
 
         //with 0
-        checkException(0, MIN_VALUE, 0);
-        checkException(0, MIN_VALUE + 1, 0);
-        checkException(0, MIN_VALUE / 2, 0);
-        checkException(0, -1, 0);
-        checkException(0, 0, 0);
+        checkExceptionForFloorsInHouse(0, MIN_VALUE, 0);
+        checkExceptionForFloorsInHouse(0, MIN_VALUE + 1, 0);
+        checkExceptionForFloorsInHouse(0, MIN_VALUE / 2, 0);
+        checkExceptionForFloorsInHouse(0, -1, 0);
+        checkExceptionForFloorsInHouse(0, 0, 0);
 
         //third
         //with random negative
-        checkException(-43, -524523, MIN_VALUE);
-        checkException(-23424, -12315, MIN_VALUE + 1);
-        checkException(-123414, -23424, MIN_VALUE / 2);
-        checkException(-23521, -673, -1);
-        checkException(-241, -63, 0);
+        checkExceptionForFloorsInHouse(-43, -524523, MIN_VALUE);
+        checkExceptionForFloorsInHouse(-23424, -12315, MIN_VALUE + 1);
+        checkExceptionForFloorsInHouse(-123414, -23424, MIN_VALUE / 2);
+        checkExceptionForFloorsInHouse(-23521, -673, -1);
+        checkExceptionForFloorsInHouse(-241, -63, 0);
 
         //with random positive
-        checkException(131, 1755, MIN_VALUE);
-        checkException(9465, 12575, MIN_VALUE + 1);
-        checkException(1, 7514, MIN_VALUE / 2);
-        checkException(21512, 14156, -1);
-        checkException(1415, 12314, 0);
+        checkExceptionForFlat(131, 1755, MIN_VALUE);
+        checkExceptionForFlat(9465, 12575, MIN_VALUE + 1);
+        checkExceptionForFlat(1, 7514, MIN_VALUE / 2);
+        checkExceptionForFlat(21512, 14156, -1);
+        checkExceptionForFlat(1415, 12314, 0);
 
         //with 0
-        checkException(0, 0, MIN_VALUE);
-        checkException(0, 0, MIN_VALUE + 1);
-        checkException(0, 0, MIN_VALUE / 2);
-        checkException(0, 0, -1);
-        checkException(0, 0, 0);
+        checkExceptionForFloorsInHouse(0, 0, MIN_VALUE);
+        checkExceptionForFloorsInHouse(0, 0, MIN_VALUE + 1);
+        checkExceptionForFloorsInHouse(0, 0, MIN_VALUE / 2);
+        checkExceptionForFloorsInHouse(0, 0, -1);
+        checkExceptionForFloorsInHouse(0, 0, 0);
     }
 
     /**
@@ -1069,46 +1086,134 @@ class HouseTest {
         String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
         String expectedMain =
                 "Input number of task from 1 to 5." + L_S +
-                        "Task 2: flat." + L_S +
+                        "Task 2: house." + L_S +
                         "Input number of floors in house, number of flats on floor and number of flat." + L_S +
                         numberOfFlat + ": " + expectedFloor + " floor, " + expectedHouse + " house" + L_S;
 
-        ByteArrayOutputStream output = setInAndOut(input);
-        Main.main();
-        assertEquals(expectedMain, output.toString());
+        runMain(input, expectedMain);
     }
 
     /**
      * Function for testing non-valid args for task2 (flats).
-     * For inputted parameters an IncorrectArgumentException or
-     * IntegerOverflowException should be thrown.
+     * For inputted parameters an IncorrectArgumentException should be thrown.
+     *
+     * @param floorsInHouse number of floors in house.
+     * @param flatsOnFloor  number of flats on floor.
+     * @param numberOfFlat  non-valid number of flat to find.
+     */
+    private void checkExceptionInTask(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
+        try {
+            new House(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
+            fail("Exception was not thrown");
+        } catch (IncorrectArgumentException e) {
+            //correct behavior
+        }
+    }
+
+    /**
+     * Function for testing non-valid args for task2 (flats) where first parameter is non-valid.
+     * For inputted parameters an exception with message should be thrown.
+     * Simulates user input from console with non-valid args.
+     *
+     * @param floorsInHouse non-valid number of floors in house.
+     * @param flatsOnFloor  number of flats on floor.
+     * @param numberOfFlat  number of flat to find.
+     */
+    private void checkExceptionForFloorsInHouse(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
+        //Task 2 by itself
+        checkExceptionInTask(floorsInHouse, flatsOnFloor, numberOfFlat);
+
+        //Task 2 in main
+        String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
+
+        String expected = MESSAGE +
+                "Wrong input. Expected: positive number of floors in house" + L_S +
+                "Got: " + floorsInHouse + L_S;
+
+        runMain(input, expected);
+    }
+
+    /**
+     * Function for testing non-valid args for task2 (flats) where second parameter is non-valid.
+     * For inputted parameters an exception with message should be thrown.
+     * Simulates user input from console with non-valid args.
+     *
+     * @param floorsInHouse number of floors in house.
+     * @param flatsOnFloor  non-valid number of flats on floor.
+     * @param numberOfFlat  number of flat to find.
+     */
+    private void checkExceptionForFlatsOnFloor(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
+        //Task 2 by itself
+        checkExceptionInTask(floorsInHouse, flatsOnFloor, numberOfFlat);
+
+        //Task 2 in main
+        String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
+
+        String expected = MESSAGE +
+                "Wrong input. Expected: positive number of flats on floor" + L_S +
+                "Got: " + flatsOnFloor + L_S;
+
+        runMain(input, expected);
+    }
+
+    /**
+     * Function for testing non-valid args for task2 (flats) where third parameter is non-valid.
+     * For inputted parameters an exception with message should be thrown.
      * Simulates user input from console with non-valid args.
      *
      * @param floorsInHouse number of floors in house.
      * @param flatsOnFloor  number of flats on floor.
-     * @param numberOfFlat  number of flat, for which have to define house and floor.
-     * @see IncorrectArgumentException
-     * @see IntegerOverflowException
+     * @param numberOfFlat  non-valid number of flat to find.
      */
-    void checkException(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
+    private void checkExceptionForFlat(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
         //Task 2 by itself
-        try {
-            new House(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
-            fail("Exception was not thrown");
-        } catch (IncorrectArgumentException | IntegerOverflowException e) {
-            //correct behavior
-        }
+        checkExceptionInTask(floorsInHouse, flatsOnFloor, numberOfFlat);
 
         //Task 2 in main
         String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
-        setInAndOut(input);
 
-        try {
-            Main.main();
-            fail("Exception was not thrown.");
-        } catch (IncorrectArgumentException | IntegerOverflowException e) {
-            //correct behavior
-        }
+        String expected = MESSAGE +
+                "Wrong input. Expected: positive number of flat" + L_S +
+                "Got: " + numberOfFlat + L_S;
+
+        runMain(input, expected);
+    }
+
+    /**
+     * Function for testing non-valid args for task2 (flats) where args are too large.
+     * For inputted parameters an exception with message should be thrown.
+     * Simulates user input from console with non-valid args where args are too large.
+     *
+     * @param floorsInHouse number of floors in house.
+     * @param flatsOnFloor  number of flats on floor.
+     * @param numberOfFlat  number of flat to find.
+     */
+    private void checkExceptionForTooLarge(int floorsInHouse, int flatsOnFloor, int numberOfFlat) {
+        //Task 2 by itself
+        checkExceptionInTask(floorsInHouse, flatsOnFloor, numberOfFlat);
+
+        //Task 2 in main
+        String input = "2" + L_S + floorsInHouse + L_S + flatsOnFloor + L_S + numberOfFlat;
+
+        String expected = MESSAGE +
+                "Wrong input. Expected: numbers of floors in house and flats on floor so that result " +
+                "of multiplying them is not more than " + MAX_VALUE + L_S +
+                "Got: " + floorsInHouse + ", " + flatsOnFloor + L_S;
+
+        runMain(input, expected);
+    }
+
+    /**
+     * Runs main method with args in System.In and checks if
+     * the expected string is the same as in System.Out.
+     *
+     * @param input    string to put into System.In.
+     * @param expected string to compare with System.Out.
+     */
+    private void runMain(String input, String expected) {
+        ByteArrayOutputStream output = setInAndOut(input);
+        Main.main();
+        assertEquals(expected, output.toString());
     }
 
     /**

@@ -31,7 +31,7 @@ public class DayOfWeek {
      */
     public static String defineDayOfWeek(DaysOfWeek dayOfNewYear, int dayToFind, Months monthToFind) {
         if (!isValidDate(dayToFind, monthToFind)) {
-            String message = "Expected: valid date with day and month." + System.lineSeparator() +
+            String message = "Expected: valid date for day and month." + System.lineSeparator() +
                     "Got: " + dayToFind + " day, " + monthToFind + " month";
             throw new IncorrectArgumentException(message);
         }

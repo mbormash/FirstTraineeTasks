@@ -20,13 +20,13 @@ public class GreatestCommonDivisor {
      * @param a first number.
      * @param b second number.
      * @return greatest common divisor for these numbers.
-     * @throws IntegerOverflowException if at least one number is Integer.MIN_VALUE.
+     * @throws IncorrectArgumentException if at least one number is Integer.MIN_VALUE.
      */
     private static int nod2args(int a, int b) {
         if (a == MIN_VALUE || b == MIN_VALUE) {
             String message = "Expected: numbers not less than " + MIN_VALUE + System.lineSeparator() +
                     "Got: " + a + ", " + b;
-            throw new IntegerOverflowException(message);
+            throw new IncorrectArgumentException(message);
         }
 
         int x = Math.abs(a);
@@ -66,11 +66,17 @@ public class GreatestCommonDivisor {
      * @param c third number.
      * @param d fourth number.
      * @return greatest common divisor for these numbers.
-     * @throws IntegerOverflowException if at least one number is Integer.MIN_VALUE.
+     * @throws IncorrectArgumentException if at least one number is Integer.MIN_VALUE.
      */
     public static int nod4args(int a, int b, int c, int d) {
-        int nodAB = nod2args(a, b);
-        int nodCD = nod2args(c, d);
-        return nod2args(nodAB, nodCD);
+        try {
+            int nodAB = nod2args(a, b);
+            int nodCD = nod2args(c, d);
+            return nod2args(nodAB, nodCD);
+        } catch (IncorrectArgumentException e) {
+            String message = "Expected: numbers not less than " + MIN_VALUE + System.lineSeparator() +
+                    "Got: " + a + ", " + b + ", " + c + ", " + d;
+            throw new IncorrectArgumentException(message);
+        }
     }
 }

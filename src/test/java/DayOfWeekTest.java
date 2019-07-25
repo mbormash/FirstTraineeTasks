@@ -25,10 +25,12 @@ class DayOfWeekTest {
      * Max amount of days in 28-day month.
      */
     private static final int MAX_DAY_OF_MONTH_28 = 28;
+
     /**
      * Max amount of days in 30-day months.
      */
     private static final int MAX_DAY_OF_MONTH_30 = 30;
+
     /**
      * Max amount of days in 31-day months.
      */
@@ -1057,7 +1059,7 @@ class DayOfWeekTest {
         checkException(7, Integer.MAX_VALUE / 2, 9);
         checkException(7, Integer.MAX_VALUE - 1, 9);
         checkException(7, Integer.MAX_VALUE, 9);
-        
+
         //month is 11
         //day of week is 1
         checkException(1, Integer.MIN_VALUE, 11);
@@ -1709,9 +1711,7 @@ class DayOfWeekTest {
                         "Input day of New Year, day to find, month to find." + L_S +
                         expected + L_S;
 
-        ByteArrayOutputStream output = setInAndOut(input);
-        Main.main();
-        assertEquals(expectedMain, output.toString());
+        runMain(input, expectedMain);
     }
 
     /**
@@ -1736,16 +1736,29 @@ class DayOfWeekTest {
             //correct behavior
         }
 
+        //Task 5 in main
+        String input = "5" + L_S + dayOfNewYear + L_S + dayToFind + L_S + monthToFind;
 
-        try {
-            //Task 5 in main
-            String input = "5" + L_S + dayOfNewYear + L_S + dayToFind + L_S + monthToFind;
-            setInAndOut(input);
-            Main.main();
-            fail("Exception was not thrown.");
-        } catch (IncorrectArgumentException e) {
-            //correct behavior
-        }
+        String expected = "Input number of task from 1 to 5." + L_S +
+                "Task 5: day of week." + L_S +
+                "Input day of New Year, day to find, month to find." + L_S +
+                "Wrong input. Expected: valid date for day and month." + L_S +
+                "Got: " + dayToFind + " day, " + months[monthToFind - 1].name() + " month" + L_S;
+
+        runMain(input, expected);
+    }
+
+    /**
+     * Runs main method with args in System.In and checks if
+     * the expected string is the same as in System.Out.
+     *
+     * @param input    string to put into System.In.
+     * @param expected string to compare with System.Out.
+     */
+    private void runMain(String input, String expected) {
+        ByteArrayOutputStream output = setInAndOut(input);
+        Main.main();
+        assertEquals(expected, output.toString());
     }
 
     /**
@@ -1755,7 +1768,6 @@ class DayOfWeekTest {
      * @return System.out that should be converted to ByteArrayOutputStream.
      */
     private ByteArrayOutputStream setInAndOut(String input) {
-        if(true)throw new IncorrectArgumentException("");
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         System.setOut(new PrintStream(output));
         System.setIn(new ByteArrayInputStream(input.getBytes()));

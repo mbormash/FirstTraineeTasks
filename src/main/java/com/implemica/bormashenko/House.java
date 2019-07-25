@@ -39,8 +39,8 @@ public class House {
      *
      * @param floorsInHouse number of floors in house.
      * @param flatsOnFloor  number of flats on floor.
-     * @throws IncorrectArgumentException if any argument is non-positive.
-     * @throws IntegerOverflowException   if result of multiplying these parameters is larger than Integer.MAX_VALUE.
+     * @throws IncorrectArgumentException if any argument is non-positive or if result of multiplying
+     *                                    these parameters is larger than Integer.MAX_VALUE.
      */
     public House(int floorsInHouse, int flatsOnFloor) {
         if (floorsInHouse <= 0) {
@@ -59,7 +59,7 @@ public class House {
             String message = "Expected: numbers of floors in house and flats on floor so that result of" +
                     " multiplying them is not more than " + Integer.MAX_VALUE + System.lineSeparator() +
                     "Got: " + floorsInHouse + ", " + flatsOnFloor;
-            throw new IntegerOverflowException(message);
+            throw new IncorrectArgumentException(message);
         }
 
         this.floorsInHouse = floorsInHouse;
@@ -75,7 +75,7 @@ public class House {
      */
     public String defineHouseAndFloor(int flat) {
         if (flat <= 0) {
-            String message = "Expected: positive number of flat " + System.lineSeparator() +
+            String message = "Expected: positive number of flat" + System.lineSeparator() +
                     "Got: " + flat;
             throw new IncorrectArgumentException(message);
         }
@@ -91,6 +91,7 @@ public class House {
 
     /**
      * Finds number of house for flat.
+     *
      * @param flat number of flat to search.
      */
     private void defineHouse(int flat, int flatsInHome) {
@@ -108,6 +109,7 @@ public class House {
 
     /**
      * Finds number of floor for flat.
+     *
      * @param flat number of flat to search.
      */
     private void defineFloor(int flat, int flatsInHome) {

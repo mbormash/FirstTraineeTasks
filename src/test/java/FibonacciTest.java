@@ -2,6 +2,7 @@ import com.implemica.bormashenko.Fibonacci;
 import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.Main;
 import org.junit.jupiter.api.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -20,6 +21,13 @@ class FibonacciTest {
      * Constant for lineSeparator.
      */
     private static final String L_S = System.lineSeparator();
+
+    /**
+     * Message shown for all cases in main.
+     */
+    private static final String MESSAGE = "Input number of task from 1 to 5." + L_S +
+            "Task 4: fibonacci." + L_S +
+            "Input integer number." + L_S;
 
     /**
      * Special point for testing.
@@ -179,15 +187,10 @@ class FibonacciTest {
 
         //Task 4 in main
         String input = "4" + L_S + n;
-        String expectedMain =
-                "Input number of task from 1 to 5." + L_S +
-                "Task 4: fibonacci." + L_S +
-                "Input integer number." + L_S +
+        String expectedMain = MESSAGE +
                 expected + L_S;
 
-        ByteArrayOutputStream output = setInAndOut(input);
-        Main.main();
-        assertEquals(expectedMain, output.toString());
+        runMain(input, expectedMain);
     }
 
     /**
@@ -209,14 +212,24 @@ class FibonacciTest {
 
         //Task 4 in main
         String input = "4" + L_S + n;
-        setInAndOut(input);
+        String expectedMain = MESSAGE +
+                "Wrong input. Expected: non-negative number." + L_S +
+                "Got: " + n + L_S;
 
-        try {
-            Main.main();
-            fail("Exception was not thrown.");
-        } catch (IncorrectArgumentException e) {
-            //correct behavior
-        }
+        runMain(input, expectedMain);
+    }
+
+    /**
+     * Runs main method with args in System.In and checks if
+     * the expected string is the same as in System.Out.
+     *
+     * @param input    string to put into System.In.
+     * @param expected string to compare with System.Out.
+     */
+    private void runMain(String input, String expected) {
+        ByteArrayOutputStream output = setInAndOut(input);
+        Main.main();
+        assertEquals(expected, output.toString());
     }
 
     /**

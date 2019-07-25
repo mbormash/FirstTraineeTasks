@@ -1,6 +1,5 @@
 package com.implemica.bormashenko;
 
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import static com.implemica.bormashenko.DayOfWeek.DaysOfWeek;
@@ -16,6 +15,18 @@ public class Main {
 
     /**
      * Entry point for program.
+     *
+     * @param args command line args.
+     */
+    public static void main(String... args) {
+        try {
+            chooseTask();
+        } catch (IncorrectArgumentException e) {
+            System.out.println("Wrong input. " + e.getMessage());
+        }
+    }
+
+    /**
      * Allows user to choose number of task to work with.
      * 1st task is Swap;
      * 2nd task is House;
@@ -23,37 +34,35 @@ public class Main {
      * 4th task is Fibonacci;
      * 5th task is DayOfWeek.
      *
-     * @param args command line args.
-     * @throws IncorrectArgumentException     if inputted number of task or args for tasks are incorrect.
-     * @throws NumberFormatException          if inputted args do not contain requested type.
-     * @throws NoSuchElementException         if inputted args do not contain enough parameters.
-     * @throws IntegerOverflowException       while using {@code House} or {@code GCD} with incorrect args.
-     * 
-     * @// TODO: 24-Jul-19 commit, new method for main, show message 
+     * @throws IncorrectArgumentException if inputted number of task or args for tasks are incorrect.
      */
-    public static void main(String... args) throws IncorrectArgumentException, NumberFormatException,
-            NoSuchElementException, IntegerOverflowException {
+    private static void chooseTask() throws IncorrectArgumentException {
         System.out.println("Input number of task from 1 to 5.");
 
         try (Scanner in = new Scanner(System.in)) {
-            int task;
-            task = in.nextInt();
+            String taskStr = in.next();
+            int task = Integer.parseInt(taskStr);
 
             if (task == 1) {
-                task1(in);
+                taskSwap(in);
             } else if (task == 2) {
-                task2(in);
+                taskHouse(in);
             } else if (task == 3) {
-                task3(in);
+                taskGCD(in);
             } else if (task == 4) {
-                task4(in);
+                taskFibonacci(in);
             } else if (task == 5) {
-                task5(in);
+                taskDayOfWeek(in);
             } else {
                 String message = "Expected: number of task from 1 to 5." + System.lineSeparator() +
                         "Got: " + task + " number of task";
                 throw new IncorrectArgumentException(message);
             }
+
+        } catch (NumberFormatException e) {
+            String message = "Expected: integer number." + System.lineSeparator() +
+                    "Got: " + e.getMessage();
+            throw new IncorrectArgumentException(message);
         }
     }
 
@@ -61,16 +70,15 @@ public class Main {
      * Allows user to check how {@code Swap} works.
      *
      * @param in scanner that allows user to input numbers from console input.
-     * @throws NumberFormatException  if inputted args do not contain requested type (Integer).
-     * @throws NoSuchElementException if inputted args do not contain enough parameters.
+     * @throws NumberFormatException if inputted args do not contain requested type (Integer).
      * @see Swap for more information.
      */
-    private static void task1(Scanner in) throws NumberFormatException, NoSuchElementException {
+    private static void taskSwap(Scanner in) throws NumberFormatException {
         System.out.println("Task 1: swap.");
         System.out.println("Input 2 integer numbers.");
 
-        int a = in.nextInt();
-        int b = in.nextInt();
+        int a = Integer.parseInt(in.next());
+        int b = Integer.parseInt(in.next());
 
         Swap swap = new Swap();
         swap.setA(a);
@@ -85,18 +93,15 @@ public class Main {
      * @param in scanner that allows user to input numbers from console input.
      * @throws IncorrectArgumentException if inputted args are non-valid for this task.
      * @throws NumberFormatException      if inputted args do not contain requested type (Integer).
-     * @throws NoSuchElementException     if inputted args do not contain enough parameters.
-     * @throws IntegerOverflowException   if one of inputted parameter is {@code Integer.MIN_VALUE}
      * @see House for more information.
      */
-    private static void task2(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-            NoSuchElementException, IntegerOverflowException {
-        System.out.println("Task 2: flat.");
+    private static void taskHouse(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+        System.out.println("Task 2: house.");
         System.out.println("Input number of floors in house, number of flats on floor and number of flat.");
 
-        int floorsInHouse = in.nextInt();
-        int flatsOnFloor = in.nextInt();
-        int flat = in.nextInt();
+        int floorsInHouse = Integer.parseInt(in.next());
+        int flatsOnFloor = Integer.parseInt(in.next());
+        int flat = Integer.parseInt(in.next());
 
         House house = new House(floorsInHouse, flatsOnFloor);
 
@@ -109,18 +114,16 @@ public class Main {
      * @param in scanner that allows user to input numbers from console input.
      * @throws IncorrectArgumentException if inputted args are non-valid for this task.
      * @throws NumberFormatException      if inputted args do not contain requested type (Integer).
-     * @throws NoSuchElementException     if inputted args do not contain enough parameters.
      * @see GreatestCommonDivisor for more information.
      */
-    private static void task3(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-            NoSuchElementException {
+    private static void taskGCD(Scanner in) throws IncorrectArgumentException, NumberFormatException {
         System.out.println("Task 3: gcd.");
         System.out.println("Input 4 integer numbers.");
 
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-        int d = in.nextInt();
+        int a = Integer.parseInt(in.next());
+        int b = Integer.parseInt(in.next());
+        int c = Integer.parseInt(in.next());
+        int d = Integer.parseInt(in.next());
 
         System.out.println(GreatestCommonDivisor.nod4args(a, b, c, d));
     }
@@ -131,15 +134,13 @@ public class Main {
      * @param in scanner that allows user to input numbers from console input.
      * @throws IncorrectArgumentException if inputted args are non-valid for this task.
      * @throws NumberFormatException      if inputted args do not contain requested type (Integer).
-     * @throws NoSuchElementException     if inputted args do not contain enough parameters.
      * @see Fibonacci for more information.
      */
-    private static void task4(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-            NoSuchElementException {
+    private static void taskFibonacci(Scanner in) throws IncorrectArgumentException, NumberFormatException {
         System.out.println("Task 4: fibonacci.");
         System.out.println("Input integer number.");
 
-        int n = in.nextInt();
+        int n = Integer.parseInt(in.next());
 
         System.out.println(Fibonacci.genNFib(n));
     }
@@ -148,19 +149,17 @@ public class Main {
      * Allows user to check how {@code DayOfWeek} works.
      *
      * @param in scanner that allows user to input numbers from console input.
-     * @throws IncorrectArgumentException     if inputted args are non-valid for this task.
-     * @throws NumberFormatException          if inputted args do not contain requested type (Integer).
-     * @throws NoSuchElementException         if inputted args do not contain enough parameters.
+     * @throws IncorrectArgumentException if inputted args are non-valid for this task.
+     * @throws NumberFormatException      if inputted args do not contain requested type (Integer).
      * @see DayOfWeek for more information.
      */
-    private static void task5(Scanner in) throws IncorrectArgumentException, NumberFormatException,
-            NoSuchElementException {
+    private static void taskDayOfWeek(Scanner in) throws IncorrectArgumentException, NumberFormatException {
         System.out.println("Task 5: day of week.");
         System.out.println("Input day of New Year, day to find, month to find.");
 
-        int dayOfNewYear = in.nextInt();
-        int dayToFind = in.nextInt();
-        int monthToFind = in.nextInt();
+        int dayOfNewYear = Integer.parseInt(in.next());
+        int dayToFind = Integer.parseInt(in.next());
+        int monthToFind = Integer.parseInt(in.next());
 
         DaysOfWeek[] daysOfWeeks = DaysOfWeek.values();
         Months[] months = Months.values();
