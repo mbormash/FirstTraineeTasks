@@ -4,14 +4,6 @@
     <list default="true" id="4a985dfb-d202-474b-a364-f23dfd434018" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IntegerOverflowException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FibonacciTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FibonacciTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HouseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HouseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MainClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainClassTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/MainClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MainClassTest.class" afterDir="false" />
     </list>
@@ -147,7 +139,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MainClassTest">
+  <component name="RunManager" selected="JUnit.All in FirstTasks">
     <configuration name="All in FirstTasks" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="FirstTasks" />
       <option name="PACKAGE_NAME" value="" />
@@ -449,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563986939019</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Changing logic of tests for main.">
+      <created>1564065190977</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1564065190977</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView">
@@ -499,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changing condition for IntegerOverflowException being thrown in Task2." />
     <MESSAGE value="Changing logic of Main.class" />
     <MESSAGE value="Making tests for main by overriding other tests." />
     <MESSAGE value="Creating javadoc for new methods. Improving OOP." />
@@ -524,7 +522,8 @@
     <MESSAGE value="Changing messages in exceptions. &#10;Changing try-catch blocks.&#10;Changing tests in DayOfWeek and Main." />
     <MESSAGE value="Adding new tests for DayOfWeek." />
     <MESSAGE value="Changing message in exceptions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing message in exceptions." />
+    <MESSAGE value="Changing logic of tests for main." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing logic of tests for main." />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">

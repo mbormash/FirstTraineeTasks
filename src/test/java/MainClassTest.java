@@ -549,27 +549,6 @@ class MainClassTest {
     }
 
     /**
-     * Runs main method with args in System.In and checks if
-     * the expected string is the same as in System.Out.
-     *
-     * @param expected string to compare with System.Out.
-     * @param args     parameters to put into System.In.
-     */
-    private void runMain(String expected, String... args) {
-        StringBuilder input = new StringBuilder();
-
-        for (String s : args) {
-            input.append(s);
-            input.append(" ");
-        }
-        input.deleteCharAt(input.length() - 1);
-
-        ByteArrayOutputStream output = setInAndOut(input.toString());
-        Main.main();
-        assertEquals(expected, output.toString());
-    }
-
-    /**
      * Method for testing non-valid integer parameter for number of task.
      *
      * @param args parameters to set in System.In. First parameter should be non-valid.
@@ -759,6 +738,28 @@ class MainClassTest {
                 "Wrong input. Expected: day of week of New Year from 1 to 7, month from 1 to 12." + L_S +
                 "Got: " + args[1] + " day of week of New Year, " + args[3] + " month" + L_S;
         runMain(expected, args);
+    }
+
+
+    /**
+     * Runs main method with args in System.In and checks if
+     * the expected string is the same as in System.Out.
+     *
+     * @param expected string to compare with System.Out.
+     * @param args     parameters to put into System.In.
+     */
+    private void runMain(String expected, String... args) {
+        StringBuilder input = new StringBuilder();
+
+        for (String s : args) {
+            input.append(s);
+            input.append(" ");
+        }
+        input.deleteCharAt(input.length() - 1);
+
+        ByteArrayOutputStream output = setInAndOut(input.toString());
+        Main.main();
+        assertEquals(expected, output.toString());
     }
 
     /**
