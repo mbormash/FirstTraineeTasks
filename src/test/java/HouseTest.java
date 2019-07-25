@@ -1,4 +1,3 @@
-import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.Main;
 import com.implemica.bormashenko.House;
 import org.junit.jupiter.api.Test;
@@ -1092,7 +1091,7 @@ class HouseTest {
 
     /**
      * Function for testing non-valid args for task2 (flats).
-     * For inputted parameters an IncorrectArgumentException should be thrown.
+     * For inputted parameters an IllegalArgumentException should be thrown.
      *
      * @param floorsInHouse number of floors in house.
      * @param flatsOnFloor  number of flats on floor.
@@ -1102,7 +1101,7 @@ class HouseTest {
         try {
             new House(floorsInHouse, flatsOnFloor).defineHouseAndFloor(numberOfFlat);
             fail("Exception was not thrown");
-        } catch (IncorrectArgumentException e) {
+        } catch (IllegalArgumentException e) {
             //correct behavior
         }
     }

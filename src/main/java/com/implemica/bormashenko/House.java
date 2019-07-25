@@ -39,27 +39,27 @@ public class House {
      *
      * @param floorsInHouse number of floors in house.
      * @param flatsOnFloor  number of flats on floor.
-     * @throws IncorrectArgumentException if any argument is non-positive or if result of multiplying
+     * @throws IllegalArgumentException if any argument is non-positive or if result of multiplying
      *                                    these parameters is larger than Integer.MAX_VALUE.
      */
     public House(int floorsInHouse, int flatsOnFloor) {
         if (floorsInHouse <= 0) {
             String message = "Expected: positive number of floors in house" + System.lineSeparator() +
                     "Got: " + floorsInHouse;
-            throw new IncorrectArgumentException(message);
+            throw new IllegalArgumentException(message);
         }
 
         if (flatsOnFloor <= 0) {
             String message = "Expected: positive number of flats on floor" + System.lineSeparator() +
                     "Got: " + flatsOnFloor;
-            throw new IncorrectArgumentException(message);
+            throw new IllegalArgumentException(message);
         }
 
         if (Integer.MAX_VALUE / floorsInHouse < flatsOnFloor) {
             String message = "Expected: numbers of floors in house and flats on floor so that result of" +
                     " multiplying them is not more than " + Integer.MAX_VALUE + System.lineSeparator() +
                     "Got: " + floorsInHouse + ", " + flatsOnFloor;
-            throw new IncorrectArgumentException(message);
+            throw new IllegalArgumentException(message);
         }
 
         this.floorsInHouse = floorsInHouse;
@@ -71,13 +71,13 @@ public class House {
      *
      * @param flat number of flat to search
      * @return string contains number of flat, house and floor where the flat located.
-     * @throws IncorrectArgumentException if number of flat is non-positive.
+     * @throws IllegalArgumentException if number of flat is non-positive.
      */
     public String defineHouseAndFloor(int flat) {
         if (flat <= 0) {
             String message = "Expected: positive number of flat" + System.lineSeparator() +
                     "Got: " + flat;
-            throw new IncorrectArgumentException(message);
+            throw new IllegalArgumentException(message);
         }
 
         this.flat = flat;

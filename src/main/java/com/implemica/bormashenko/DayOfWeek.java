@@ -25,7 +25,7 @@ public class DayOfWeek {
      * @param dayToFind    day of the date to find. Must be validated before using.
      * @param monthToFind  month (enum {@code Months}) of date to find.
      * @return day of week (enum {@code DaysOfWeek}) as a capitalized string.
-     * @throws IncorrectArgumentException if validation for day to find is not passed.
+     * @throws IllegalArgumentException if validation for day to find is not passed.
      * @see DaysOfWeek
      * @see Months
      */
@@ -33,7 +33,7 @@ public class DayOfWeek {
         if (!isValidDate(dayToFind, monthToFind)) {
             String message = "Expected: valid date for day and month." + System.lineSeparator() +
                     "Got: " + dayToFind + " day, " + monthToFind + " month";
-            throw new IncorrectArgumentException(message);
+            throw new IllegalArgumentException(message);
         }
 
         int numberOfDayOfNewYear = dayOfNewYear.ordinal();

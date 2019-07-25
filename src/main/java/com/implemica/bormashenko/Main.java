@@ -21,7 +21,7 @@ public class Main {
     public static void main(String... args) {
         try {
             chooseTask();
-        } catch (IncorrectArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Wrong input. " + e.getMessage());
         }
     }
@@ -34,9 +34,9 @@ public class Main {
      * 4th task is Fibonacci;
      * 5th task is DayOfWeek.
      *
-     * @throws IncorrectArgumentException if inputted number of task or args for tasks are incorrect.
+     * @throws IllegalArgumentException if inputted number of task or args for tasks are incorrect.
      */
-    private static void chooseTask() throws IncorrectArgumentException {
+    private static void chooseTask() throws IllegalArgumentException {
         System.out.println("Input number of task from 1 to 5.");
 
         try (Scanner in = new Scanner(System.in)) {
@@ -56,13 +56,13 @@ public class Main {
             } else {
                 String message = "Expected: number of task from 1 to 5." + System.lineSeparator() +
                         "Got: " + task + " number of task";
-                throw new IncorrectArgumentException(message);
+                throw new IllegalArgumentException(message);
             }
 
         } catch (NumberFormatException e) {
             String message = "Expected: integer number." + System.lineSeparator() +
                     "Got: " + e.getMessage();
-            throw new IncorrectArgumentException(message);
+            throw new IllegalArgumentException(message);
         }
     }
 
@@ -91,11 +91,11 @@ public class Main {
      * Allows user to check how {@code House} works.
      *
      * @param in scanner that allows user to input numbers from console input.
-     * @throws IncorrectArgumentException if inputted args are non-valid for this task.
+     * @throws IllegalArgumentException if inputted args are non-valid for this task.
      * @throws NumberFormatException      if inputted args do not contain requested type (Integer).
      * @see House for more information.
      */
-    private static void taskHouse(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+    private static void taskHouse(Scanner in) throws IllegalArgumentException, NumberFormatException {
         System.out.println("Task 2: house.");
         System.out.println("Input number of floors in house, number of flats on floor and number of flat.");
 
@@ -112,11 +112,11 @@ public class Main {
      * Allows user to check how {@code GreatestCommonDivisor} works.
      *
      * @param in scanner that allows user to input numbers from console input.
-     * @throws IncorrectArgumentException if inputted args are non-valid for this task.
+     * @throws IllegalArgumentException if inputted args are non-valid for this task.
      * @throws NumberFormatException      if inputted args do not contain requested type (Integer).
      * @see GreatestCommonDivisor for more information.
      */
-    private static void taskGCD(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+    private static void taskGCD(Scanner in) throws IllegalArgumentException, NumberFormatException {
         System.out.println("Task 3: gcd.");
         System.out.println("Input 4 integer numbers.");
 
@@ -132,11 +132,11 @@ public class Main {
      * Allows user to check how {@code Fibonacci} works.
      *
      * @param in scanner that allows user to input numbers from console input.
-     * @throws IncorrectArgumentException if inputted args are non-valid for this task.
+     * @throws IllegalArgumentException if inputted args are non-valid for this task.
      * @throws NumberFormatException      if inputted args do not contain requested type (Integer).
      * @see Fibonacci for more information.
      */
-    private static void taskFibonacci(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+    private static void taskFibonacci(Scanner in) throws IllegalArgumentException, NumberFormatException {
         System.out.println("Task 4: fibonacci.");
         System.out.println("Input integer number.");
 
@@ -149,11 +149,11 @@ public class Main {
      * Allows user to check how {@code DayOfWeek} works.
      *
      * @param in scanner that allows user to input numbers from console input.
-     * @throws IncorrectArgumentException if inputted args are non-valid for this task.
+     * @throws IllegalArgumentException if inputted args are non-valid for this task.
      * @throws NumberFormatException      if inputted args do not contain requested type (Integer).
      * @see DayOfWeek for more information.
      */
-    private static void taskDayOfWeek(Scanner in) throws IncorrectArgumentException, NumberFormatException {
+    private static void taskDayOfWeek(Scanner in) throws IllegalArgumentException, NumberFormatException {
         System.out.println("Task 5: day of week.");
         System.out.println("Input day of New Year, day to find, month to find.");
 
@@ -164,13 +164,15 @@ public class Main {
         DaysOfWeek[] daysOfWeeks = DaysOfWeek.values();
         Months[] months = Months.values();
 
+        String defineDayOfWeek;
         try {
-            System.out.println(DayOfWeek.defineDayOfWeek(daysOfWeeks[dayOfNewYear - 1],
-                    dayToFind, months[monthToFind - 1]));
+             defineDayOfWeek = DayOfWeek.defineDayOfWeek(daysOfWeeks[dayOfNewYear - 1],
+                    dayToFind, months[monthToFind - 1]);
         } catch (ArrayIndexOutOfBoundsException e) {
             String message = "Expected: day of week of New Year from 1 to 7, month from 1 to 12." + System.lineSeparator() +
                     "Got: " + dayOfNewYear + " day of week of New Year, " + monthToFind + " month";
-            throw new IncorrectArgumentException(message);
+            throw new IllegalArgumentException(message);
         }
+        System.out.println(defineDayOfWeek);
     }
 }

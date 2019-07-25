@@ -1720,13 +1720,13 @@ class DayOfWeekTest {
 
     /**
      * Function for testing non-valid args for task5 (day of week).
-     * For inputted parameters an IncorrectArgumentException should be thrown.
+     * For inputted parameters an IllegalArgumentException should be thrown.
      * Simulates user input from console with non-valid args.
      *
      * @param dayOfNewYear day of week from which the year started.
      * @param dayToFind    number of day to define day of week.
      * @param monthToFind  number of month to define day of week.
-     * @see IncorrectArgumentException
+     * @see IllegalArgumentException
      */
     void checkException(int dayOfNewYear, int dayToFind, int monthToFind) {
         //Task 5 by itself
@@ -1736,7 +1736,7 @@ class DayOfWeekTest {
         try {
             DayOfWeek.defineDayOfWeek(daysOfWeeks[dayOfNewYear - 1], dayToFind, months[monthToFind - 1]);
             fail("Exception was not thrown");
-        } catch (IncorrectArgumentException e) {
+        } catch (IllegalArgumentException e) {
             //correct behavior
         }
 

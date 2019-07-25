@@ -1,4 +1,3 @@
-import com.implemica.bormashenko.IncorrectArgumentException;
 import com.implemica.bormashenko.Main;
 import com.implemica.bormashenko.GreatestCommonDivisor;
 import org.junit.jupiter.api.Test;
@@ -703,21 +702,21 @@ class GreatestCommonDivisorTest {
 
     /**
      * Function for testing non-valid args for task3 (gcd).
-     * For inputted parameters an IncorrectArgumentException should be thrown.
+     * For inputted parameters an IllegalArgumentException should be thrown.
      * Simulates user input from console with non-valid args.
      *
      * @param a first parameter.
      * @param b second parameter.
      * @param c third parameter.
      * @param d fourth parameter.
-     * @see IncorrectArgumentException
+     * @see IllegalArgumentException
      */
     void checkException(int a, int b, int c, int d) {
         //Task 3 by itself
         try {
             GreatestCommonDivisor.nod4args(a, b, c, d);
             fail("Exception was not thrown");
-        } catch (IncorrectArgumentException e) {
+        } catch (IllegalArgumentException e) {
             //correct behavior
         }
 

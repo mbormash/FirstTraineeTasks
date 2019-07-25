@@ -3,13 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="4a985dfb-d202-474b-a364-f23dfd434018" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/DayOfWeek.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Fibonacci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/GreatestCommonDivisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/IncorrectArgumentException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/implemica/bormashenko/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DayOfWeekTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FibonacciTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FibonacciTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GreatestCommonDivisorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/HouseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HouseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SwapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SwapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/MainClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MainClassTest.class" afterDir="false" />
     </list>
     <list id="f9591f48-e10a-4606-b9c1-1ae11a0a2706" name="Revert &quot;Adding JavaDoc.&quot;" comment="Revert &quot;Adding JavaDoc.&quot;&#10;&#10;This reverts commit 507ca828">
-      <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/IncorrectArgumentException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/IncorrectArgumentException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/IncorrectArgumentException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/IntegerOverflowException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/implemica/bormashenko/Task1.class" beforeDir="false" />
@@ -41,72 +47,6 @@
         <option value="Enum" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>&quot; + System.lineseparator()</find>
-      <find>System.lineSeparator</find>
-      <find>lineSeparator()</find>
-      <find>L_S</find>
-      <find>APRIL</find>
-      <find>SEPTEMBER</find>
-      <find>NOVEMBER</find>
-      <find>DaysOfWeek.SUNDAY</find>
-      <find>, 1,</find>
-      <find>, 12, &quot;</find>
-      <find>MAX_DAY_OF_MONTH_30</find>
-      <find>FEBRUARY)</find>
-      <find>DECEMBER)</find>
-      <find>AUGUST,</find>
-      <find>AUGUST</find>
-      <find>AUGUST)</find>
-      <find>throw new</find>
-      <find>, 4);</find>
-      <find>, 9);</find>
-      <find>, 1);</find>
-      <find>, 3);</find>
-      <find>, 5);</find>
-      <find>, 10);</find>
-      <find>checkExceptionForTask</find>
-      <find>checkErrorTask4NotAnInteger</find>
-      <find>checkException</find>
-      <find>checkErrorNotAnIntegerTask</find>
-      <find>checkErrorTask1NotAnInteger</find>
-      <find>checkErrorTask5NotAnInteger</find>
-      <find>checkErrorNotATask</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>MARCH</replace>
-      <replace>MAY</replace>
-      <replace>JULY</replace>
-      <replace>AUGUST</replace>
-      <replace>OCTOBER</replace>
-      <replace>DECEMBER</replace>
-      <replace>SUNDAY</replace>
-      <replace>check(SUNDAY</replace>
-      <replace>, DECEMBER, &quot;</replace>
-      <replace>MAX_DAY_OF_MONTH_31</replace>
-      <replace>12)</replace>
-      <replace>8,</replace>
-      <replace>8)</replace>
-      <replace>, 6);</replace>
-      <replace>, 11);</replace>
-      <replace>, 3);</replace>
-      <replace>, 5);</replace>
-      <replace>, 7);</replace>
-      <replace>, 12);</replace>
-      <replace>checkExceptionForTask</replace>
-      <replace>checkExceptionForTaskNotInt</replace>
-      <replace>checkErrorNumberFormat</replace>
-      <replace>checkErrorTask1NotAnInteger</replace>
-      <replace>checkErrorTask5NotAnInteger</replace>
-      <replace>checkErrorTask5ArrayBoundException</replace>
-      <replace>checkExceptionForTooLarge</replace>
-      <replace>checkErrorNotATask</replace>
-      <replace>checkErrorTask1SecondParam</replace>
-      <replace>checkErrorTask5ThirdParam</replace>
-      <replace>checkErrorNotAIntegerTask</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -456,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564068709465</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Refactoring tests.">
+      <created>1564069272682</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1564069272682</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView">
@@ -506,7 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Making tests for main by overriding other tests." />
     <MESSAGE value="Creating javadoc for new methods. Improving OOP." />
     <MESSAGE value="Simplification for main tests." />
     <MESSAGE value="Merging tests for tasks and tests for main." />
@@ -531,7 +477,8 @@
     <MESSAGE value="Changing message in exceptions." />
     <MESSAGE value="Changing logic of tests for main." />
     <MESSAGE value="Refactoring MainTest." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring MainTest." />
+    <MESSAGE value="Refactoring tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring tests." />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">

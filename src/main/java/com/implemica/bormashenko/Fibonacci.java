@@ -19,13 +19,13 @@ public class Fibonacci {
      *
      * @param n fibonacci's number to generate.
      * @return value of n'th fibonacci's number.
-     * @throws IncorrectArgumentException if n is negative.
+     * @throws IllegalArgumentException if n is negative.
      */
     public static BigInteger genNFib(int n) {
         if (n < 0) {
             String message = "Expected: non-negative number." + System.lineSeparator() +
                     "Got: " + n;
-            throw new IncorrectArgumentException(message);
+            throw new IllegalArgumentException(message);
         }
 
         if (n == 0) {
